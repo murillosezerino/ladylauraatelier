@@ -1,33 +1,35 @@
 // components/Products.tsx
-// Substitua o arquivo inteiro por este conteúdo.
-// As 3 categorias agora são cards que linkam para as subpáginas do catálogo.
-
+"use client";
 import Link from "next/link";
+import ProductImage from "@/components/ProductImage";
 
 const categorias = [
   {
-    emoji: "🎂",
     titulo: "Bolos & Eventos",
+    foto: "/images/bolos/capa-bolos.jpg",
+    emoji: "🎂",
     descricao: "Bolos festivos e artísticos sob encomenda — naked cake, buttercream, drip cake, e muito mais. 12 sabores da casa para escolher.",
     destaques: ["Baby Cake · Aro 15 · Aro 20 · Aro 25", "Seleção fixa + Buttercream personalizado", "Doces para eventos"],
     href: "/cardapio/bolos",
-    wpp: "https://wa.me/5512997973143?text=Ol%C3%A1!%20Gostaria%20de%20encomendar%20um%20bolo%20personalizado.",
+    wpp: "https://wa.me/5512997973143?text=Olá!%20Gostaria%20de%20encomendar%20um%20bolo%20personalizado.",
   },
   {
-    emoji: "🌸",
     titulo: "Flores & Arranjos",
+    foto: "/images/flores/capa-flores.jpg",
+    emoji: "🌸",
     descricao: "Arranjos frescos montados diariamente, rosas nobres, flores secas, vasos de cristal e peças especiais assinadas por Renata Chagas.",
     destaques: ["Arranjos frescos (6 tamanhos)", "Rosas · Flores secas · Vasos", "Galocha de Cerâmica · Aquário de Orquídea"],
     href: "/cardapio/flores",
-    wpp: "https://wa.me/5512997973143?text=Ol%C3%A1!%20Tenho%20interesse%20nas%20flores%20e%20arranjos.",
+    wpp: "https://wa.me/5512997973143?text=Olá!%20Tenho%20interesse%20nas%20flores%20e%20arranjos.",
   },
   {
-    emoji: "🎁",
     titulo: "Kits & Presentes",
+    foto: "/images/kits/capa-presentes.jpg",
+    emoji: "🎁",
     descricao: "Kits especiais para datas comemorativas, casamentos, empresas e momentos que merecem ser lembrados — com flores, chocolates e espumantes.",
     destaques: ["Box Café da Manhã · Breakfast at Tiffany's", "15+ kits com flores nomeados", "Latinhas · Chocolates · Linha Home"],
     href: "/cardapio/kits",
-    wpp: "https://wa.me/5512997973143?text=Ol%C3%A1!%20Gostaria%20de%20montar%20um%20kit%20especial.",
+    wpp: "https://wa.me/5512997973143?text=Olá!%20Gostaria%20de%20montar%20um%20kit%20especial.",
   },
 ];
 
@@ -35,6 +37,7 @@ export default function Products() {
   return (
     <section id="cardapio" className="py-24 bg-[#fdfaf7]">
       <div className="max-w-6xl mx-auto px-4">
+
         {/* Cabeçalho */}
         <div className="text-center mb-16">
           <p className="text-rose-400 tracking-widest text-xs uppercase mb-3 font-medium">Notre Carte</p>
@@ -49,10 +52,13 @@ export default function Products() {
               key={cat.titulo}
               className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
             >
-              {/* Ícone / topo */}
-              <div className="bg-rose-50 flex items-center justify-center py-10 text-6xl">
-                {cat.emoji}
-              </div>
+              {/* Imagem de capa — usa emoji como fallback enquanto foto não existir */}
+              <ProductImage
+                src={cat.foto}
+                alt={cat.titulo}
+                fallbackEmoji={cat.emoji}
+                aspectClass="aspect-[4/3]"
+              />
 
               {/* Conteúdo */}
               <div className="p-6 flex flex-col flex-1">
