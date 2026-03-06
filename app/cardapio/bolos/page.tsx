@@ -1,6 +1,8 @@
 // app/cardapio/bolos/page.tsx
 import Link from "next/link";
 import { bolosData } from "@/lib/catalog-data";
+import ImageCarousel from "@/components/ImageCarousel";
+import ProductImage from "@/components/ProductImage";
 
 const wppBase = "https://wa.me/5512997973143?text=";
 
@@ -9,14 +11,6 @@ function PrecoTag({ valor }: { valor: number }) {
     <span className="inline-block bg-rose-100 text-rose-700 font-semibold text-sm px-3 py-1 rounded-full">
       R$ {valor.toLocaleString("pt-BR")}
     </span>
-  );
-}
-
-function Foto({ emoji = "🎂", alt }: { emoji?: string; alt: string }) {
-  return (
-    <div className="w-full aspect-[4/3] bg-rose-50 flex items-center justify-center text-6xl" aria-label={alt}>
-      {emoji}
-    </div>
   );
 }
 
@@ -71,6 +65,7 @@ export default function BolosPage() {
         <div className="w-10 h-px bg-rose-300 mt-4 mb-6" />
         <p className="text-stone-500 text-sm mb-8 max-w-lg">{bolosFestivos.descricao}</p>
 
+        {/* Tabela de tamanhos */}
         <div className="overflow-x-auto mb-12">
           <table className="w-full text-sm bg-white rounded-2xl border border-rose-100 overflow-hidden">
             <thead className="bg-rose-50">
@@ -97,12 +92,17 @@ export default function BolosPage() {
           </table>
         </div>
 
+        {/* Sabores */}
         <h3 className="text-xl font-serif text-stone-700 mb-6">Sabores disponíveis</h3>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {bolosFestivos.sabores.map((s) => (
             <div key={s.nome} className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col">
               <div className="relative">
-                <Foto emoji="🎂" alt={s.nome} />
+                <ProductImage
+                  src={`/images/bolos/${s.foto}`}
+                  alt={s.nome}
+                  fallbackEmoji="🎂"
+                />
                 {s.badge === "best-seller" && (
                   <span className="absolute top-3 right-3 bg-amber-400 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full shadow">
                     Best Seller
@@ -126,7 +126,7 @@ export default function BolosPage() {
         </div>
       </section>
 
-      {/* BUTTERCREAM */}
+      {/* BOLOS BUTTERCREAM */}
       <section className="bg-rose-50/50 py-20" id="bolos-buttercream">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-serif text-stone-800">Bolos em Buttercream</h2>
@@ -134,6 +134,7 @@ export default function BolosPage() {
           <div className="w-10 h-px bg-rose-300 mt-4 mb-6" />
           <p className="text-stone-500 text-sm mb-8 max-w-lg">{bolosButtercream.descricao}</p>
 
+          {/* Tabela de tamanhos */}
           <div className="overflow-x-auto mb-10">
             <table className="w-full text-sm bg-white rounded-2xl border border-rose-100 overflow-hidden">
               <thead className="bg-rose-50">
@@ -159,6 +160,7 @@ export default function BolosPage() {
             </table>
           </div>
 
+          {/* Sabores disponíveis */}
           <div className="bg-white border border-rose-100 rounded-2xl p-6 mb-8">
             <h3 className="text-base font-semibold text-stone-700 mb-3">Sabores disponíveis</h3>
             <div className="flex flex-wrap gap-2">
@@ -169,17 +171,40 @@ export default function BolosPage() {
             <p className="text-stone-400 text-xs mt-4">{bolosButtercream.nota}</p>
           </div>
 
+          {/* Estilos de decoração */}
           <h3 className="text-xl font-serif text-stone-700 mb-6">Estilos de decoração</h3>
           <div className="grid md:grid-cols-2 gap-6 mb-8">
-            {bolosButtercream.estilosDecoracao.map((e) => (
-              <div key={e.nome} className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
-                <Foto emoji="🎨" alt={e.nome} />
-                <div className="p-5">
-                  <h4 className="text-lg font-serif text-stone-800 mb-2">{e.nome}</h4>
-                  <p className="text-stone-500 text-sm leading-relaxed">{e.descricao}</p>
-                </div>
+
+            {/* Macarons & Flores — imagem única */}
+            <div className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
+              <ProductImage
+                src="/images/bolos/buttercream-flores.jpg"
+                alt="Macarons & Flores"
+                fallbackEmoji="🎨"
+              />
+              <div className="p-5">
+                <h4 className="text-lg font-serif text-stone-800 mb-2">{bolosButtercream.estilosDecoracao[0].nome}</h4>
+                <p className="text-stone-500 text-sm leading-relaxed">{bolosButtercream.estilosDecoracao[0].descricao}</p>
               </div>
-            ))}
+            </div>
+
+            {/* Drip Cake — carrossel com 4 imagens */}
+            <div className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
+              <ImageCarousel
+                images={[
+                  "/images/bolos/drip-cake1.jpg",
+                  "/images/bolos/drip-cake2.jpg",
+                  "/images/bolos/drip-cake3.jpg",
+                  "/images/bolos/drip-cake4.jpg",
+                ]}
+                alt="Drip Cake"
+              />
+              <div className="p-5">
+                <h4 className="text-lg font-serif text-stone-800 mb-2">{bolosButtercream.estilosDecoracao[1].nome}</h4>
+                <p className="text-stone-500 text-sm leading-relaxed">{bolosButtercream.estilosDecoracao[1].descricao}</p>
+              </div>
+            </div>
+
           </div>
 
           <a
@@ -198,7 +223,12 @@ export default function BolosPage() {
         <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-2">Doces para Eventos</h2>
         <div className="w-10 h-px bg-rose-300 mb-6" />
         <div className="bg-white border border-rose-100 rounded-2xl overflow-hidden grid md:grid-cols-2">
-          <div className="bg-rose-50 flex items-center justify-center text-8xl min-h-[260px]">🍬</div>
+          <ProductImage
+            src="/images/bolos/doces-eventos.jpg"
+            alt="Doces para Eventos"
+            fallbackEmoji="🍬"
+            aspectClass="aspect-square"
+          />
           <div className="p-8 flex flex-col justify-center">
             <p className="text-stone-600 leading-relaxed mb-6">{docesEventos.descricao}</p>
             <p className="text-stone-400 text-sm italic mb-8">{docesEventos.observacao}</p>
