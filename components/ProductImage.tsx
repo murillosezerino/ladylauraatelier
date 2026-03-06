@@ -1,7 +1,5 @@
 "use client";
 // components/ProductImage.tsx
-// Imagem única com fallback para emoji caso o arquivo não exista.
-
 import { useState } from "react";
 import Image from "next/image";
 
@@ -29,7 +27,7 @@ export default function ProductImage({ src, alt, fallbackEmoji = "🎂", aspectC
         src={src}
         alt={alt}
         fill
-        className="object-cover"
+        className="object-contain"
         sizes="(max-width: 768px) 100vw, 50vw"
         onError={() => setError(true)}
       />

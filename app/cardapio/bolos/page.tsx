@@ -6,6 +6,22 @@ import ProductImage from "@/components/ProductImage";
 
 const wppBase = "https://wa.me/5512997973143?text=";
 
+// Mapa manual de foto por sabor — garante nomes corretos independente do catalog-data
+const FOTOS: Record<string, string> = {
+  "Praliné":                "/images/bolos/praline.jpg",
+  "Red Velvet":             "/images/bolos/red-velvet.jpg",
+  "Matilda":                "/images/bolos/matilda.jpg",
+  "Pistache com Framboesa": "/images/bolos/pistache-framboesa.jpg",
+  "Dulce Nut":              "/images/bolos/dulce-nut.jpg",
+  "Strawberry Fields":      "/images/bolos/strawberry-fields.jpg",
+  "Dois Amores":            "/images/bolos/dois-amores.jpg",
+  "Trovão":                 "/images/bolos/trovao.jpg",
+  "Yellow Submarine":       "/images/bolos/yellow-submarine.jpg",
+  "Pink Limonade":          "/images/bolos/pink-lemonade.jpg",
+  "Fraisier":               "/images/bolos/fraisier.jpg",
+  "Tiramisù":               "/images/bolos/tiramisu.jpg",
+};
+
 function PrecoTag({ valor }: { valor: number }) {
   return (
     <span className="inline-block bg-rose-100 text-rose-700 font-semibold text-sm px-3 py-1 rounded-full">
@@ -45,10 +61,10 @@ export default function BolosPage() {
       <section className="max-w-5xl mx-auto px-4 pb-16">
         <div className="grid md:grid-cols-2 gap-4">
           {[
-            { label: "Prazo", texto: intro.antecedencia },
+            { label: "Prazo",      texto: intro.antecedencia },
             { label: "Como pedir", texto: intro.pedido },
-            { label: "Pagamento", texto: intro.pagamento },
-            { label: "Retirada", texto: intro.retirada },
+            { label: "Pagamento",  texto: intro.pagamento },
+            { label: "Retirada",   texto: intro.retirada },
           ].map((item) => (
             <div key={item.label} className="bg-white border border-rose-100 rounded-2xl p-5">
               <p className="text-xs font-semibold uppercase tracking-wider text-rose-400 mb-1">{item.label}</p>
@@ -99,7 +115,7 @@ export default function BolosPage() {
             <div key={s.nome} className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col">
               <div className="relative">
                 <ProductImage
-                  src={`/images/bolos/${s.foto}`}
+                  src={FOTOS[s.nome] ?? ""}
                   alt={s.nome}
                   fallbackEmoji="🎂"
                 />
@@ -171,16 +187,20 @@ export default function BolosPage() {
             <p className="text-stone-400 text-xs mt-4">{bolosButtercream.nota}</p>
           </div>
 
-          {/* Estilos de decoração */}
+          {/* Estilos — ambos com carrossel */}
           <h3 className="text-xl font-serif text-stone-700 mb-6">Estilos de decoração</h3>
           <div className="grid md:grid-cols-2 gap-6 mb-8">
 
-            {/* Macarons & Flores — imagem única */}
+            {/* Macarons & Flores — carrossel com 4 fotos */}
             <div className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
-              <ProductImage
-                src="/images/bolos/buttercream-flores.jpg"
+              <ImageCarousel
+                images={[
+                  "/images/bolos/macarons1.jpg",
+                  "/images/bolos/macarons2.jpg",
+                  "/images/bolos/macarons3.jpg",
+                  "/images/bolos/macarons4.jpg",
+                ]}
                 alt="Macarons & Flores"
-                fallbackEmoji="🎨"
               />
               <div className="p-5">
                 <h4 className="text-lg font-serif text-stone-800 mb-2">{bolosButtercream.estilosDecoracao[0].nome}</h4>
@@ -188,7 +208,7 @@ export default function BolosPage() {
               </div>
             </div>
 
-            {/* Drip Cake — carrossel com 4 imagens */}
+            {/* Drip Cake — carrossel com 4 fotos */}
             <div className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
               <ImageCarousel
                 images={[
@@ -223,12 +243,7 @@ export default function BolosPage() {
         <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-2">Doces para Eventos</h2>
         <div className="w-10 h-px bg-rose-300 mb-6" />
         <div className="bg-white border border-rose-100 rounded-2xl overflow-hidden grid md:grid-cols-2">
-          <ProductImage
-            src="/images/bolos/doces-eventos.jpg"
-            alt="Doces para Eventos"
-            fallbackEmoji="🍬"
-            aspectClass="aspect-square"
-          />
+          <div className="bg-rose-50 flex items-center justify-center text-8xl min-h-[260px]">🍬</div>
           <div className="p-8 flex flex-col justify-center">
             <p className="text-stone-600 leading-relaxed mb-6">{docesEventos.descricao}</p>
             <p className="text-stone-400 text-sm italic mb-8">{docesEventos.observacao}</p>

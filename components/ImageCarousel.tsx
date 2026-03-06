@@ -1,15 +1,12 @@
 "use client";
 // components/ImageCarousel.tsx
-// Carrossel simples para múltiplas fotos de um produto.
-// Uso: <ImageCarousel images={["img1.jpg","img2.jpg"]} alt="Drip Cake" />
-
 import { useState } from "react";
 import Image from "next/image";
 
 interface Props {
   images: string[];
   alt: string;
-  aspectClass?: string; // ex: "aspect-[4/3]" (padrão)
+  aspectClass?: string;
 }
 
 export default function ImageCarousel({ images, alt, aspectClass = "aspect-[4/3]" }: Props) {
@@ -22,34 +19,31 @@ export default function ImageCarousel({ images, alt, aspectClass = "aspect-[4/3]
 
   return (
     <div className={`relative w-full ${aspectClass} bg-rose-50 overflow-hidden group`}>
-      {/* Imagem */}
       <Image
         src={images[current]}
         alt={`${alt} ${current + 1}`}
         fill
-        className="object-cover transition-opacity duration-300"
+        className="object-contain transition-opacity duration-300"
         sizes="(max-width: 768px) 100vw, 50vw"
       />
 
-      {/* Setas — só aparecem se houver mais de 1 imagem */}
       {images.length > 1 && (
         <>
           <button
             onClick={prev}
             aria-label="Foto anterior"
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-rose-500 rounded-full w-8 h-8 flex items-center justify-center shadow opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-rose-500 rounded-full w-8 h-8 flex items-center justify-center shadow opacity-0 group-hover:opacity-100 transition-opacity text-lg leading-none"
           >
             ‹
           </button>
           <button
             onClick={next}
             aria-label="Próxima foto"
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-rose-500 rounded-full w-8 h-8 flex items-center justify-center shadow opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-rose-500 rounded-full w-8 h-8 flex items-center justify-center shadow opacity-0 group-hover:opacity-100 transition-opacity text-lg leading-none"
           >
             ›
           </button>
 
-          {/* Dots */}
           <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
             {images.map((_, i) => (
               <button
@@ -57,7 +51,7 @@ export default function ImageCarousel({ images, alt, aspectClass = "aspect-[4/3]
                 onClick={() => setCurrent(i)}
                 aria-label={`Foto ${i + 1}`}
                 className={`w-1.5 h-1.5 rounded-full transition-colors ${
-                  i === current ? "bg-white" : "bg-white/50"
+                  i === current ? "bg-rose-400" : "bg-rose-200"
                 }`}
               />
             ))}
