@@ -1,0 +1,7 @@
+# Coloque aqui as fotos reais do atelier
+# Nomes esperados:
+# - bolos.jpg
+# - flores.jpg
+# - kits.jpg
+# - chef-laura.jpg
+# - og-image.jpg (1200x630px para SEO/redes sociais)

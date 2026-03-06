@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-cinzel: 'Cinzel', serif;
+  --font-sacramento: 'Sacramento', cursive;
+  --font-nunito: 'Nunito', sans-serif;
+  --font-josefin: 'Josefin Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-nunito);
+  background-color: #FBF6F0;
+  color: #2A1E28;
+}
+
+/* Reveal animation classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Decorative separator */
+.separator {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  color: #B8966A;
+  font-size: 1.25rem;
+  letter-spacing: 0.5rem;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #B8966A);
+}
+
+.separator::after {
+  background: linear-gradient(to left, transparent, #B8966A);
+}

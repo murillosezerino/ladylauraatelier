@@ -1,0 +1,72 @@
+import type { Metadata } from 'next'
+import './globals.css'
+import { siteConfig } from '@/lib/data'
+
+export const metadata: Metadata = {
+  title: {
+    default: `${siteConfig.name} · ${siteConfig.tagline}`,
+    template: `%s · ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: [
+    'confeitaria São José dos Campos',
+    'bolos personalizados SJC',
+    'confeitaria Jacareí',
+    'bolo de casamento SJC',
+    'flores de açúcar',
+    'kits de presentes',
+    'Le Cordon Bleu',
+    'pâtisserie artesanal',
+    'Lady Laura Atelier',
+    'bolo personalizado',
+    'confeitaria artesanal',
+  ],
+  authors: [{ name: 'Lady Laura Atelier' }],
+  creator: 'Lady Laura Atelier',
+  metadataBase: new URL('https://ladylaura.com.br'), // atualizar com domínio real
+  openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    url: 'https://ladylaura.com.br',
+    title: `${siteConfig.name} · ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: '/og-image.jpg', // adicionar imagem OG real
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${siteConfig.name} · ${siteConfig.tagline}`,
+    description: siteConfig.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="pt-BR">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
+      <body>{children}</body>
+    </html>
+  )
+}
