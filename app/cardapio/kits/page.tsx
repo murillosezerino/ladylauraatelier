@@ -1,6 +1,5 @@
 // app/cardapio/kits/page.tsx
 import Link from "next/link";
-import Image from "next/image";
 import { kitsData } from "@/lib/catalog-data";
 
 const wppBase = "https://wa.me/5512997973143?text=";
@@ -13,15 +12,20 @@ function PrecoTag({ valor }: { valor: number }) {
   );
 }
 
+function Foto({ emoji = "🎁", alt }: { emoji?: string; alt: string }) {
+  return (
+    <div className="w-full aspect-[4/3] bg-rose-50 flex items-center justify-center text-6xl" aria-label={alt}>
+      {emoji}
+    </div>
+  );
+}
+
 function KitCard({ kit }: { kit: { nome: string; preco: number; foto: string; itens: string[]; observacao?: string } }) {
   return (
-    <div className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow group flex flex-col">
-      <div className="relative w-full aspect-[4/3] bg-rose-50 flex items-center justify-center overflow-hidden">
-        <Image src={kit.foto} alt={kit.nome} fill className="object-cover group-hover:scale-105 transition-transform duration-500" onError={() => {}} />
-        <span className="text-5xl select-none" aria-hidden>🎁</span>
-      </div>
+    <div className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+      <Foto emoji="🎁" alt={kit.nome} />
       <div className="p-5 flex flex-col flex-1">
-        <div className="flex items-start justify-between gap-2 mb-3">
+        <div className="flex items-start justify-between gap-2 mb-3 flex-wrap">
           <h4 className="text-lg font-serif text-stone-800 leading-tight">{kit.nome}</h4>
           <PrecoTag valor={kit.preco} />
         </div>
@@ -33,9 +37,7 @@ function KitCard({ kit }: { kit: { nome: string; preco: number; foto: string; it
             </li>
           ))}
         </ul>
-        {kit.observacao && (
-          <p className="text-stone-400 text-xs italic mb-4">{kit.observacao}</p>
-        )}
+        {kit.observacao && <p className="text-stone-400 text-xs italic mb-4">{kit.observacao}</p>}
         <div className="mt-auto pt-3 border-t border-rose-50">
           <a
             href={`${wppBase}${encodeURIComponent(`Olá! Gostaria de encomendar o ${kit.nome}.`)}`}
@@ -51,22 +53,13 @@ function KitCard({ kit }: { kit: { nome: string; preco: number; foto: string; it
   );
 }
 
-function SectionTitle({ children, sub }: { children: React.ReactNode; sub?: string }) {
-  return (
-    <div className="mb-8">
-      <h2 className="text-2xl md:text-3xl font-serif text-stone-800">{children}</h2>
-      {sub && <p className="text-stone-500 text-sm mt-1 max-w-lg">{sub}</p>}
-      <div className="w-10 h-px bg-rose-300 mt-4" />
-    </div>
-  );
-}
-
 export default function KitsPage() {
   const { cafeDaManha, kitsComFlores, kitsSemFlores, latinhasEChocolates, caixasBrigous, caixasMacarons, caixasTrufas, linhaHome, nota } = kitsData;
 
   return (
     <main className="min-h-screen bg-[#fdfaf7] text-stone-800">
-      {/* ── BREADCRUMB ── */}
+
+      {/* BREADCRUMB */}
       <div className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-rose-100">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-2 text-sm text-stone-500">
           <Link href="/" className="hover:text-rose-500 transition-colors">Lady Laura Atelier</Link>
@@ -77,7 +70,7 @@ export default function KitsPage() {
         </div>
       </div>
 
-      {/* ── HERO ── */}
+      {/* HERO */}
       <section className="max-w-6xl mx-auto px-4 pt-16 pb-10 text-center">
         <p className="text-rose-400 tracking-widest text-xs uppercase mb-3 font-medium">Catálogo</p>
         <h1 className="text-4xl md:text-5xl font-serif font-light text-stone-800 mb-4">Kits & Presentes</h1>
@@ -85,13 +78,11 @@ export default function KitsPage() {
         <p className="text-stone-500 max-w-xl mx-auto text-sm leading-relaxed">{nota}</p>
       </section>
 
-      {/* ──────────────────────────────
-          SECÇÃO 1 — CAFÉ DA MANHÃ
-      ────────────────────────────── */}
+      {/* CAFÉ DA MANHÃ */}
       <section className="max-w-6xl mx-auto px-4 pb-20" id="cafe-da-manha">
-        <SectionTitle sub="Kits completos para um café da manhã inesquecível com flores, doces e itens selecionados.">
-          Café da Manhã
-        </SectionTitle>
+        <h2 className="text-2xl md:text-3xl font-serif text-stone-800">Café da Manhã</h2>
+        <p className="text-stone-500 text-sm mt-1 mb-2 max-w-lg">Kits completos para um café da manhã inesquecível com flores, doces e itens selecionados.</p>
+        <div className="w-10 h-px bg-rose-300 mt-3 mb-8" />
         <div className="grid md:grid-cols-2 gap-6">
           {cafeDaManha.map((kit) => (
             <KitCard key={kit.nome} kit={kit} />
@@ -99,14 +90,12 @@ export default function KitsPage() {
         </div>
       </section>
 
-      {/* ──────────────────────────────
-          SECÇÃO 2 — KITS COM FLORES
-      ────────────────────────────── */}
+      {/* KITS COM FLORES */}
       <section className="bg-rose-50/50 py-20" id="kits-com-flores">
         <div className="max-w-6xl mx-auto px-4">
-          <SectionTitle sub="Cada kit combina arranjos florais frescos ou secos com chocolates, espumantes e doces artesanais.">
-            Kits com Flores
-          </SectionTitle>
+          <h2 className="text-2xl md:text-3xl font-serif text-stone-800">Kits com Flores</h2>
+          <p className="text-stone-500 text-sm mt-1 mb-2 max-w-lg">Cada kit combina arranjos florais com chocolates, espumantes e doces artesanais.</p>
+          <div className="w-10 h-px bg-rose-300 mt-3 mb-8" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {kitsComFlores.map((kit) => (
               <KitCard key={kit.nome} kit={kit} />
@@ -115,13 +104,11 @@ export default function KitsPage() {
         </div>
       </section>
 
-      {/* ──────────────────────────────
-          SECÇÃO 3 — KITS SEM FLORES
-      ────────────────────────────── */}
+      {/* KITS SEM FLORES */}
       <section className="max-w-6xl mx-auto px-4 py-20" id="kits-sem-flores">
-        <SectionTitle sub="Kits especiais de doces e espumantes — ótimos para qualquer ocasião.">
-          Kits de Doces & Espumante
-        </SectionTitle>
+        <h2 className="text-2xl md:text-3xl font-serif text-stone-800">Kits de Doces & Espumante</h2>
+        <p className="text-stone-500 text-sm mt-1 mb-2 max-w-lg">Kits especiais de doces e espumantes — ótimos para qualquer ocasião.</p>
+        <div className="w-10 h-px bg-rose-300 mt-3 mb-8" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {kitsSemFlores.map((kit) => (
             <KitCard key={kit.nome} kit={kit} />
@@ -129,26 +116,20 @@ export default function KitsPage() {
         </div>
       </section>
 
-      {/* ──────────────────────────────
-          SECÇÃO 4 — LATINHAS & CHOCOLATES
-      ────────────────────────────── */}
+      {/* LATINHAS & CHOCOLATES */}
       <section className="bg-rose-50/50 py-20" id="latinhas">
         <div className="max-w-6xl mx-auto px-4">
-          <SectionTitle sub="Peças avulsas para montar o seu presente perfeito ou complementar qualquer kit.">
-            Latinhas, Chocolates & Doces Avulsos
-          </SectionTitle>
+          <h2 className="text-2xl md:text-3xl font-serif text-stone-800">Latinhas, Chocolates & Doces Avulsos</h2>
+          <p className="text-stone-500 text-sm mt-1 mb-2 max-w-lg">Peças avulsas para montar o seu presente perfeito ou complementar qualquer kit.</p>
+          <div className="w-10 h-px bg-rose-300 mt-3 mb-8" />
 
-          {/* Cards dos produtos unitários */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {latinhasEChocolates.map((p) => (
-              <div key={p.nome} className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow group flex flex-col">
-                <div className="relative w-full aspect-square bg-rose-50 flex items-center justify-center overflow-hidden">
-                  <Image src={p.foto} alt={p.nome} fill className="object-cover group-hover:scale-105 transition-transform duration-500" onError={() => {}} />
-                  <span className="text-4xl select-none" aria-hidden>🍫</span>
-                </div>
+              <div key={p.nome} className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+                <div className="w-full aspect-square bg-rose-50 flex items-center justify-center text-5xl">🍫</div>
                 <div className="p-4 flex flex-col flex-1">
                   <h4 className="font-serif text-stone-800 mb-1">{p.nome}</h4>
-                  {p.descricao && <p className="text-stone-500 text-xs leading-relaxed mb-3">{p.descricao}</p>}
+                  {p.descricao && <p className="text-stone-500 text-xs leading-relaxed mb-3 flex-1">{p.descricao}</p>}
                   <div className="mt-auto pt-2 border-t border-rose-50 flex items-center justify-between">
                     <span className="inline-block bg-rose-100 text-rose-700 font-semibold text-sm px-3 py-1 rounded-full">
                       R$ {p.preco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
@@ -188,7 +169,7 @@ export default function KitsPage() {
                 </div>
                 <div className="px-5 py-3">
                   <a
-                    href={`${wppBase}${encodeURIComponent(`Olá! Gostaria de encomendar: ${tbl.titulo.replace(/[^a-zA-ZÀ-ÿ\s]/g, "").trim()}.`)}`}
+                    href={`${wppBase}${encodeURIComponent(`Olá! Gostaria de encomendar: ${tbl.titulo.replace(/[^\w\sÀ-ÿ]/g, "").trim()}.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block text-center text-xs uppercase tracking-widest text-rose-500 border border-rose-300 rounded-full px-4 py-2 hover:bg-rose-50 transition-colors"
@@ -202,13 +183,12 @@ export default function KitsPage() {
         </div>
       </section>
 
-      {/* ──────────────────────────────
-          SECÇÃO 5 — LINHA HOME
-      ────────────────────────────── */}
+      {/* LINHA HOME */}
       <section className="max-w-6xl mx-auto px-4 py-20" id="linha-home">
-        <SectionTitle sub={linhaHome.descricao}>Linha Home</SectionTitle>
+        <h2 className="text-2xl md:text-3xl font-serif text-stone-800">Linha Home</h2>
+        <p className="text-stone-500 text-sm mt-1 mb-2 max-w-lg">{linhaHome.descricao}</p>
+        <div className="w-10 h-px bg-rose-300 mt-3 mb-6" />
 
-        {/* Aromas disponíveis */}
         <div className="flex flex-wrap gap-2 mb-8">
           <span className="text-xs text-stone-500 self-center mr-1">Aromas:</span>
           {linhaHome.aromas.map((a) => (
@@ -218,17 +198,14 @@ export default function KitsPage() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {linhaHome.produtos.map((p) => (
-            <div key={p.nome + p.descricao} className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow group flex flex-col">
-              <div className="relative w-full aspect-[4/3] bg-amber-50/50 flex items-center justify-center overflow-hidden">
-                <Image src={p.foto} alt={p.nome} fill className="object-cover group-hover:scale-105 transition-transform duration-500" onError={() => {}} />
-                <span className="text-5xl select-none" aria-hidden>🕯️</span>
-              </div>
+            <div key={p.nome + p.descricao} className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+              <div className="w-full aspect-[4/3] bg-amber-50/50 flex items-center justify-center text-6xl">🕯️</div>
               <div className="p-5 flex flex-col flex-1">
                 <h4 className="font-serif text-stone-800 mb-1">{p.nome}</h4>
                 <p className="text-stone-500 text-sm mb-4 flex-1">{p.descricao}</p>
                 <div className="pt-3 border-t border-rose-50 flex items-center justify-between">
                   <span className="inline-block bg-rose-100 text-rose-700 font-semibold text-sm px-3 py-1 rounded-full">
-                    R$ {p.preco.toLocaleString("pt-BR", { minimumFractionDigits: 0 })}
+                    R$ {p.preco.toLocaleString("pt-BR")}
                   </span>
                   <a
                     href={`${wppBase}${encodeURIComponent(`Olá! Gostaria de encomendar: ${p.nome} — ${p.descricao}.`)}`}
@@ -245,9 +222,8 @@ export default function KitsPage() {
         </div>
       </section>
 
-      {/* ── FOOTER INTERNO ── */}
       <div className="text-center pb-16">
-        <Link href="/#cardapio" className="inline-block text-sm text-stone-400 hover:text-rose-500 transition-colors border-b border-transparent hover:border-rose-300">
+        <Link href="/#cardapio" className="inline-block text-sm text-stone-400 hover:text-rose-500 transition-colors">
           ← Voltar ao Cardápio
         </Link>
       </div>
