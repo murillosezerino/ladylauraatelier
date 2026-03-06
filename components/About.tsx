@@ -19,16 +19,16 @@ export default function About() {
               className="relative rounded-2xl overflow-hidden aspect-[4/5] max-w-sm mx-auto lg:mx-0"
               style={{ background: '#FAF0F4' }}
             >
-              {/* Placeholder — replace with real photo */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-rose-mid">
-                <div className="text-8xl">👩‍🍳</div>
-                <p
-                  className="text-xs tracking-widest uppercase text-ink-3"
-                  style={{ fontFamily: 'var(--font-josefin)' }}
-                >
-                  Foto da Chef Laura
-                </p>
-              </div>
+{/* Placeholder — replace with real photo */}
+<div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-rose-mid">
+  <div className="text-8xl">👩‍🍳</div>
+  <p
+    className="text-xs tracking-widest uppercase text-ink-3"
+    style={{ fontFamily: 'var(--font-josefin)' }}
+  >
+    Foto da Chef Thay
+  </p>
+</div>
             </div>
 
             {/* Floating credential badge */}
