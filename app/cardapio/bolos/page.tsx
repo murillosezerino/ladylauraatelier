@@ -5,7 +5,7 @@ import ProductImage from "@/components/ProductImage";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import ScrollReveal from "@/components/ScrollReveal";
 
-const wppBase = "https://wa.me/5512997973143?text=";
+const wppBase = "https://wa.me/5512982910000?text=";
 
 const FOTOS: Record<string, string> = {
   "Praliné":                "/images/bolos/praline.jpg",

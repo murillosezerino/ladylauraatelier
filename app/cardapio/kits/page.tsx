@@ -4,7 +4,7 @@ import { kitsData } from "@/lib/catalog-data";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import ScrollReveal from "@/components/ScrollReveal"
 
-const wppBase = "https://wa.me/5512997973143?text=";
+const wppBase = "https://wa.me/5512982910000?text=";
 
 function PrecoTag({ valor }: { valor: number }) {
   return (
@@ -66,7 +66,7 @@ export default function KitsPage() {
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center gap-2 text-stone-500" style={{ fontFamily: 'var(--font-josefin)', fontSize: '0.8rem', letterSpacing: '0.08em' }}>
           <Link href="/" className="hover:text-rose-500 transition-colors">Lady Laura Atelier</Link>
           <span>›</span>
-          <Link href="/#cardapio" className="hover:text-rose-500 transition-colors">Cardápio</Link>
+          <Link href="/#catalogo" className="hover:text-rose-500 transition-colors">Cardápio</Link>
           <span>›</span>
           <span className="text-rose-500">Kits & Presentes</span>
         </div>
@@ -194,7 +194,7 @@ export default function KitsPage() {
       </section>
 
       <div className="text-center pb-20">
-        <Link href="/#cardapio" className="text-stone-400 hover:text-rose-500 transition-colors label-caps">← Voltar ao Cardápio</Link>
+        <Link href="/#catalogo" className="text-stone-400 hover:text-rose-500 transition-colors label-caps">← Voltar ao Cardápio</Link>
       </div>
     </main>
   );
