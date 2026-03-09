@@ -95,7 +95,7 @@ export default function Hero() {
             {hero.ctaLabel}
           </a>
           <a
-            href="#cardapio"
+            href="#catalogo"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-rose-deep text-sm font-semibold tracking-widest uppercase border border-rose-soft hover:border-rose hover:bg-rose-pale transition-all"
             style={{ fontFamily: 'var(--font-josefin)' }}
           >
