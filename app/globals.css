@@ -3,38 +3,39 @@
 @tailwind utilities;
 
 :root {
-  /* Títulos principais — editorial, refinado */
   --font-cinzel: 'Cormorant Garamond', serif;
-
-  /* Script — acentos cursivos elegantes */
   --font-sacramento: 'Great Vibes', cursive;
-
-  /* Corpo de texto — leve, legível, francês */
   --font-nunito: 'Cormorant Garamond', serif;
-
-  /* Labels, small caps, categorias */
   --font-josefin: 'Josefin Sans', sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: 18px; /* base aumentada de 16 → 18px */
 }
 
 body {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.0625rem; /* 17px — Cormorant precisa de um toque maior */
+  font-size: 1.125rem;
   font-weight: 400;
+  line-height: 1.75;
   background-color: #FBF6F0;
   color: #2A1E28;
 }
 
-/* Reveal animation classes */
+/* Escala tipográfica aumentada */
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: 0.01em; }
+h2 { font-size: clamp(2rem, 4vw, 3.25rem);  letter-spacing: 0.01em; }
+h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+h4 { font-size: 1.375rem; }
+p  { font-size: 1.125rem; line-height: 1.8; }
+
+/* Reveal animation */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-
 .reveal.on {
   opacity: 1;
   transform: translateY(0);
@@ -50,7 +51,6 @@ body {
   font-size: 1.25rem;
   letter-spacing: 0.5rem;
 }
-
 .separator::before,
 .separator::after {
   content: '';
@@ -59,21 +59,32 @@ body {
   height: 1px;
   background: linear-gradient(to right, transparent, #B8966A);
 }
-
 .separator::after {
   background: linear-gradient(to left, transparent, #B8966A);
 }
 
-/* Cormorant Garamond fica melhor com tracking ligeiramente mais largo */
-h1, h2, h3, h4, h5, h6 {
-  letter-spacing: 0.01em;
-}
-
-/* Josefin Sans para labels em caixa alta */
+/* Labels em small caps (Josefin Sans) */
 .label-caps {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 0.6875rem;
-  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 400;
+}
+
+/* Carrossel horizontal — hide scrollbar mas mantém scroll */
+.scroll-row {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.scroll-row::-webkit-scrollbar { display: none; }
+.scroll-row { -ms-overflow-style: none; scrollbar-width: none; }
+
+.scroll-card {
+  flex: none;
+  scroll-snap-align: start;
 }
