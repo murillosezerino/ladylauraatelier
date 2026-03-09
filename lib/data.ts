@@ -34,7 +34,7 @@ export const hero = {
   subheadline:
     'Confeitaria artesanal com alma francesa e coração brasileiro.\nBolos que contam histórias, flores que encantam, momentos que ficam.',
   ctaLabel: 'Encomendar pelo WhatsApp',
-  ctaSecondary: 'Ver cat',
+  ctaSecondary: 'Ver catálogo',
 }
 
 export const products = [
