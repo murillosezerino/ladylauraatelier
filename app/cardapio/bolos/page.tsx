@@ -1,7 +1,6 @@
 // app/cardapio/bolos/page.tsx
 import Link from "next/link";
 import { bolosData } from "@/lib/catalog-data";
-import ImageCarousel from "@/components/ImageCarousel";
 import ProductImage from "@/components/ProductImage";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -202,27 +201,21 @@ export default function BolosPage() {
           {/* Carrossel de estilos */}
           <p className="label-caps text-stone-400 mb-6">Estilos de decoração</p>
           <HorizontalScroll>
-            <div className="flex-none w-80 bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
-              <ImageCarousel
-                images={["/images/bolos/macarons1.jpg", "/images/bolos/macarons2.jpg", "/images/bolos/macarons3.jpg", "/images/bolos/macarons4.jpg"]}
-                alt="Macarons & Flores"
-              />
-              <div className="p-5">
-                <h4 className="font-cinzel text-stone-800 mb-2" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '1.125rem' }}>{bolosButtercream.estilosDecoracao[0].nome}</h4>
-                <p className="text-stone-500 text-sm leading-relaxed">{bolosButtercream.estilosDecoracao[0].descricao}</p>
-              </div>
-            </div>
+            <div className="flex-none w-72 bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+  <ProductImage src="/images/bolos/macarons1.jpg" alt="Macarons & Flores" fallbackEmoji="🎂" />
+  <div className="p-5 flex flex-col flex-1">
+    <h4 className="font-cinzel text-stone-800 mb-2" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '1.125rem' }}>{bolosButtercream.estilosDecoracao[0].nome}</h4>
+    <p className="text-stone-500 text-sm leading-relaxed flex-1">{bolosButtercream.estilosDecoracao[0].descricao}</p>
+  </div>
+</div>
 
-            <div className="flex-none w-80 bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
-              <ImageCarousel
-                images={["/images/bolos/drip-cake1.jpg", "/images/bolos/drip-cake2.jpg", "/images/bolos/drip-cake3.jpg", "/images/bolos/drip-cake4.jpg"]}
-                alt="Drip Cake"
-              />
-              <div className="p-5">
-                <h4 className="font-cinzel text-stone-800 mb-2" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '1.125rem' }}>{bolosButtercream.estilosDecoracao[1].nome}</h4>
-                <p className="text-stone-500 text-sm leading-relaxed">{bolosButtercream.estilosDecoracao[1].descricao}</p>
-              </div>
-            </div>
+            <div className="flex-none w-72 bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+  <ProductImage src="/images/bolos/drip-cake1.jpg" alt="Drip Cake" fallbackEmoji="🎂" />
+  <div className="p-5 flex flex-col flex-1">
+    <h4 className="font-cinzel text-stone-800 mb-2" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '1.125rem' }}>{bolosButtercream.estilosDecoracao[1].nome}</h4>
+    <p className="text-stone-500 text-sm leading-relaxed flex-1">{bolosButtercream.estilosDecoracao[1].descricao}</p>
+  </div>
+</div>
           </HorizontalScroll>
 
           <div className="mt-10">
