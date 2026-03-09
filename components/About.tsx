@@ -61,24 +61,28 @@ function PersonCard({
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {person.credentials.map((cred, i) => (
-            <div
-              key={i}
-              className="reveal flex items-center gap-3 bg-white/70 rounded-xl p-4 border border-rose-soft/20"
-            >
-              <span className="text-2xl">{cred.icon}</span>
-              <div>
-                <p
-                  className="text-xs font-semibold text-ink tracking-wide"
-                  style={{ fontFamily: 'var(--font-josefin)' }}
-                >
-                  {cred.label}
-                </p>
-                <p className="text-xs text-ink-3">{cred.detail}</p>
-              </div>
-            </div>
-          ))}
+  {person.credentials.map((cred, i) => {
+    const inner = (
+      <>
+        <span className="text-2xl">{cred.icon}</span>
+        <div>
+          <p className="text-xs font-semibold text-ink tracking-wide" style={{ fontFamily: 'var(--font-josefin)' }}>{cred.label}</p>
+          <p className="text-xs text-ink-3">{cred.detail}</p>
         </div>
+      </>
+    )
+    return cred.href ? (
+      <a key={i} href={cred.href} target="_blank" rel="noopener noreferrer"
+        className="reveal flex items-center gap-3 bg-white/70 rounded-xl p-4 border border-rose-soft/20 hover:border-rose-mid transition-colors">
+        {inner}
+      </a>
+    ) : (
+      <div key={i} className="reveal flex items-center gap-3 bg-white/70 rounded-xl p-4 border border-rose-soft/20">
+        {inner}
+      </div>
+    )
+  })}
+</div>
       </div>
     </div>
   )
@@ -127,28 +131,25 @@ export default function About() {
         <PersonCard person={about.renata} reverse />
 
         {/* Stats da empresa */}
-        <div className="mt-24 grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {[
-            { numero: '13', label: 'anos de confeitaria' },
-            { numero: '12', label: 'anos de flores' },
-            { numero: '2',  label: 'unidades SJC + Jacareí' },
-            { numero: '44K', label: 'seguidores @ladylauraatelier' },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="reveal text-center bg-white/60 rounded-2xl p-6 border border-rose-soft/20"
-            >
-              <p
-                className="text-4xl font-light text-rose mb-1"
-                style={{ fontFamily: 'var(--font-cinzel)' }}
-              >
-                {stat.numero}
-              </p>
-              <p className="text-xs text-ink-3" style={{ fontFamily: 'var(--font-josefin)', letterSpacing: '0.08em' }}>
-                {stat.label}
-              </p>
-            </div>
-          ))}
+        {[
+  { numero: '13', label: 'anos de confeitaria', href: null },
+  { numero: '12', label: 'anos de flores', href: null },
+  { numero: '44K', label: 'seguidores @ladylauraatelier', href: 'https://www.instagram.com/ladylauraatelier' },
+].map((stat) => (
+  <div key={stat.label} className="reveal text-center bg-white/60 rounded-2xl p-6 border border-rose-soft/20">
+    {stat.href ? (
+      <a href={stat.href} target="_blank" rel="noopener noreferrer" className="block hover:opacity-70 transition-opacity">
+        <p className="text-4xl font-light text-rose mb-1" style={{ fontFamily: 'var(--font-cinzel)' }}>{stat.numero}</p>
+        <p className="text-xs text-ink-3 underline underline-offset-2" style={{ fontFamily: 'var(--font-josefin)', letterSpacing: '0.08em' }}>{stat.label}</p>
+      </a>
+    ) : (
+      <>
+        <p className="text-4xl font-light text-rose mb-1" style={{ fontFamily: 'var(--font-cinzel)' }}>{stat.numero}</p>
+        <p className="text-xs text-ink-3" style={{ fontFamily: 'var(--font-josefin)', letterSpacing: '0.08em' }}>{stat.label}</p>
+      </>
+    )}
+  </div>
+))}
         </div>
 
       </div>
