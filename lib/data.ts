@@ -123,10 +123,10 @@ export const about = {
     image: '/images/renata-chagas.jpg',
     imageAlt: 'Renata Chagas — Designer Floral Lady Laura Atelier',
     credentials: [
-      { icon: '🌸', label: 'Designer Floral', detail: '12 anos de curadoria' },
-      { icon: '💐', label: 'Flores frescas diárias', detail: 'Seleção do dia' },
-      { icon: '🎁', label: 'Flores & Presentes', detail: 'Know-how principal' },
-    ],
+  { icon: '🌸', label: 'Designer Floral', detail: '12 anos de curadoria', href: null },
+  { icon: '💐', label: 'Flores frescas diárias', detail: 'Seleção do dia', href: null },
+  { icon: '🎁', label: 'Flores & Presentes', detail: 'Know-how principal', href: null },
+],
   },
 
   // Credenciais gerais da empresa (mantidas para compatibilidade)
