@@ -36,10 +36,22 @@ const config: Config = {
         },
       },
       fontFamily: {
-        cinzel: ['var(--font-cinzel)', 'serif'],
-        sacramento: ['var(--font-sacramento)', 'cursive'],
-        nunito: ['var(--font-nunito)', 'sans-serif'],
-        josefin: ['var(--font-josefin)', 'sans-serif'],
+        // Títulos principais — Cormorant Garamond (editorial francês)
+        cinzel: ['Cormorant Garamond', 'serif'],
+        // Script / acentos cursivos
+        sacramento: ['Great Vibes', 'cursive'],
+        // Corpo de texto
+        nunito: ['Cormorant Garamond', 'serif'],
+        // Labels e small caps
+        josefin: ['Josefin Sans', 'sans-serif'],
+        // Aliases diretos para uso no código
+        cormorant: ['Cormorant Garamond', 'serif'],
+        'great-vibes': ['Great Vibes', 'cursive'],
+      },
+      fontSize: {
+        // Cormorant precisa de tamanhos ligeiramente maiores para boa leitura
+        'body': ['1.0625rem', { lineHeight: '1.75' }],
+        'body-lg': ['1.125rem', { lineHeight: '1.75' }],
       },
       animation: {
         'fade-up': 'fadeUp 0.7s ease forwards',

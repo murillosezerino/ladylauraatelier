@@ -3,9 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --font-cinzel: 'Cinzel', serif;
-  --font-sacramento: 'Sacramento', cursive;
-  --font-nunito: 'Nunito', sans-serif;
+  /* Títulos principais — editorial, refinado */
+  --font-cinzel: 'Cormorant Garamond', serif;
+
+  /* Script — acentos cursivos elegantes */
+  --font-sacramento: 'Great Vibes', cursive;
+
+  /* Corpo de texto — leve, legível, francês */
+  --font-nunito: 'Cormorant Garamond', serif;
+
+  /* Labels, small caps, categorias */
   --font-josefin: 'Josefin Sans', sans-serif;
 }
 
@@ -14,7 +21,9 @@ html {
 }
 
 body {
-  font-family: var(--font-nunito);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.0625rem; /* 17px — Cormorant precisa de um toque maior */
+  font-weight: 400;
   background-color: #FBF6F0;
   color: #2A1E28;
 }
@@ -53,4 +62,18 @@ body {
 
 .separator::after {
   background: linear-gradient(to left, transparent, #B8966A);
+}
+
+/* Cormorant Garamond fica melhor com tracking ligeiramente mais largo */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 0.01em;
+}
+
+/* Josefin Sans para labels em caixa alta */
+.label-caps {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.6875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 400;
 }
