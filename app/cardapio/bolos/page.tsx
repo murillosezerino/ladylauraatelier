@@ -3,7 +3,8 @@ import Link from "next/link";
 import { bolosData } from "@/lib/catalog-data";
 import ImageCarousel from "@/components/ImageCarousel";
 import ProductImage from "@/components/ProductImage";
-import ScrollReveal from "@/components/ScrollReveal"
+import HorizontalScroll from "@/components/HorizontalScroll";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const wppBase = "https://wa.me/5512997973143?text=";
 
@@ -46,13 +47,14 @@ export default function BolosPage() {
 
   return (
     <main className="min-h-screen bg-[#fdfaf7] text-stone-800">
+      <ScrollReveal />
 
       {/* BREADCRUMB */}
       <div className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-rose-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center gap-2 text-stone-500" style={{ fontFamily: 'var(--font-josefin)', fontSize: '0.8rem', letterSpacing: '0.08em' }}>
           <Link href="/" className="hover:text-rose-500 transition-colors">Lady Laura Atelier</Link>
           <span>›</span>
-          <Link href="/#cardapio" className="hover:text-rose-500 transition-colors">Cardápio</Link>
+          <Link href="/#catalogo" className="hover:text-rose-500 transition-colors">Catálogo</Link>
           <span>›</span>
           <span className="text-rose-500">Bolos & Eventos</span>
         </div>
@@ -79,7 +81,7 @@ export default function BolosPage() {
             { label: "Pagamento",  texto: intro.pagamento },
             { label: "Retirada",   texto: intro.retirada },
           ].map((item) => (
-            <div key={item.label} className="bg-white border border-rose-100 rounded-2xl p-6">
+            <div key={item.label} className="reveal bg-white border border-rose-100 rounded-2xl p-6">
               <p className="label-caps text-rose-400 mb-2">{item.label}</p>
               <p className="text-stone-600">{item.texto}</p>
             </div>
@@ -124,9 +126,9 @@ export default function BolosPage() {
 
         {/* Carrossel de sabores */}
         <p className="label-caps text-stone-400 mb-6">Deslize para ver todos os sabores →</p>
-        <div className="scroll-row">
+        <HorizontalScroll>
           {bolosFestivos.sabores.map((s) => (
-            <div key={s.nome} className="scroll-card w-72 bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+            <div key={s.nome} className="flex-none w-72 bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col">
               <div className="relative">
                 <ProductImage src={FOTOS[s.nome] ?? ""} alt={s.nome} fallbackEmoji="🎂" />
                 {s.badge === "best-seller" && (
@@ -148,7 +150,7 @@ export default function BolosPage() {
               </div>
             </div>
           ))}
-        </div>
+        </HorizontalScroll>
       </section>
 
       {/* BOLOS BUTTERCREAM */}
@@ -199,9 +201,8 @@ export default function BolosPage() {
 
           {/* Carrossel de estilos */}
           <p className="label-caps text-stone-400 mb-6">Estilos de decoração</p>
-          <div className="scroll-row">
-            {/* Macarons & Flores */}
-            <div className="scroll-card w-80 bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
+          <HorizontalScroll>
+            <div className="flex-none w-80 bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
               <ImageCarousel
                 images={["/images/bolos/macarons1.jpg", "/images/bolos/macarons2.jpg", "/images/bolos/macarons3.jpg", "/images/bolos/macarons4.jpg"]}
                 alt="Macarons & Flores"
@@ -212,8 +213,7 @@ export default function BolosPage() {
               </div>
             </div>
 
-            {/* Drip Cake */}
-            <div className="scroll-card w-80 bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
+            <div className="flex-none w-80 bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
               <ImageCarousel
                 images={["/images/bolos/drip-cake1.jpg", "/images/bolos/drip-cake2.jpg", "/images/bolos/drip-cake3.jpg", "/images/bolos/drip-cake4.jpg"]}
                 alt="Drip Cake"
@@ -223,7 +223,7 @@ export default function BolosPage() {
                 <p className="text-stone-500 text-sm leading-relaxed">{bolosButtercream.estilosDecoracao[1].descricao}</p>
               </div>
             </div>
-          </div>
+          </HorizontalScroll>
 
           <div className="mt-10">
             <a
@@ -257,8 +257,8 @@ export default function BolosPage() {
       </section>
 
       <div className="text-center pb-20">
-        <Link href="/#cardapio" className="text-stone-400 hover:text-rose-500 transition-colors label-caps">
-          ← Voltar ao Cardápio
+        <Link href="/#catalogo" className="text-stone-400 hover:text-rose-500 transition-colors label-caps">
+          ← Voltar ao Catálogo
         </Link>
       </div>
     </main>

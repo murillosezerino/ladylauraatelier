@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { siteConfig } from '@/lib/data'
 
 const links = [
-  { label: 'Catálogo', href: '#cardapio' },
+  { label: 'Catálogo', href: '#catalogo' },
   { label: 'Sobre Nós', href: '#sobre' },
   { label: 'Avaliações', href: '#avaliacoes' },
   { label: 'Contato', href: '#contato' },

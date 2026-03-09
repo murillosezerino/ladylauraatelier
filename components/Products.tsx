@@ -35,13 +35,13 @@ const categorias = [
 
 export default function Products() {
   return (
-    <section id="cardapio" className="py-24 bg-[#fdfaf7]">
+    <section id="catalogo" className="py-24 bg-[#fdfaf7]">
       <div className="max-w-6xl mx-auto px-4">
 
         {/* Cabeçalho */}
         <div className="text-center mb-16">
           <p className="text-rose-400 tracking-widest text-xs uppercase mb-3 font-medium">Notre Carte</p>
-          <h2 className="text-3xl md:text-4xl font-serif font-light text-stone-800 mb-4">Cardápio</h2>
+          <h2 className="text-3xl md:text-4xl font-serif font-light text-stone-800 mb-4">Catálogo</h2>
           <span className="inline-block text-rose-300 text-xl">✦</span>
         </div>
 
