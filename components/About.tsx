@@ -87,7 +87,7 @@ function PersonCard({
 export default function About() {
   return (
     <section
-      id="chef"
+      id="sobre"
       className="py-24 px-6"
       style={{
         background:
