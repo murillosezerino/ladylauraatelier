@@ -5,7 +5,7 @@ import { siteConfig } from '@/lib/data'
 
 const links = [
   { label: 'Cardápio', href: '#cardapio' },
-  { label: 'A Chef', href: '#chef' },
+  { label: 'Sobre Nós', href: '#sobre' },
   { label: 'Avaliações', href: '#avaliacoes' },
   { label: 'Contato', href: '#contato' },
 ]
