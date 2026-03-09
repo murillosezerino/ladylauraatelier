@@ -26,16 +26,8 @@ export default function Footer() {
             &copy; {year} Lady Laura Atelier · Todos os direitos reservados
           </p>
           <p className="text-ink-4 text-xs mt-1">
-            Desenvolvido por{' '}
-            <a
-              href="CZ Studio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gold hover:text-gold-light transition-colors"
-            >
-              Murillo Sezerino
-            </a>
-          </p>
+  Desenvolvido por CZ Studio
+</p>
         </div>
 
         <div className="flex items-center gap-4">

@@ -134,8 +134,8 @@ export const about = {
   { icon: '🎓', label: 'Le Cordon Bleu Paris', detail: '2018 · Pâtisserie', href: 'https://www.instagram.com/lecordonbleu/' },
   { icon: '🇮🇹', label: 'Pasticceria Italiana', detail: '2023 · Firenze', href: null },
   { icon: '📅', label: '13 anos de experiência', detail: 'Desde os 15 anos', href: null },
-  { icon: '📍', label: 'Jacareí · Pátio Villa Branca', detail: 'Jacareí', href: 'https://maps.app.goo.gl/ladylauravillabranca' },
-  { icon: '📍', label: 'São José dos Campos', detail: 'Esplanada', href: 'https://maps.app.goo.gl/ladylauraesplanada' },
+{ icon: '📍', label: 'São José dos Campos', detail: 'Esplanada', href: 'https://share.google/ZXDvqAoRNmVu2hoxz' },
+{ icon: '📍', label: 'Jacareí · Pátio Villa Branca', detail: 'Jacareí', href: 'https://share.google/d9P4cAW2ksoO7R9nW' },
   { icon: '❤️', label: '44K seguidores', detail: '@ladylauraatelier', href: 'https://www.instagram.com/ladylauraatelier' },
 ],
 

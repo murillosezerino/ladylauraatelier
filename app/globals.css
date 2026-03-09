@@ -16,7 +16,7 @@ html {
 
 body {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-weight: 400;
   line-height: 1.75;
   background-color: #FBF6F0;
@@ -27,7 +27,7 @@ h1 { font-size: clamp(2rem, 5vw, 3.75rem);  letter-spacing: 0.01em; }
 h2 { font-size: clamp(1.625rem, 3.5vw, 2.75rem); letter-spacing: 0.01em; }
 h3 { font-size: clamp(1.25rem, 2.5vw, 1.875rem); }
 h4 { font-size: 1.125rem; }
-p  { font-size: 1rem; line-height: 1.8; }
+p  { font-size: 1.0625rem; line-height: 1.8; }
 
 /* Reveal animation */
 .reveal {
