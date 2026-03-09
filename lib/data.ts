@@ -106,10 +106,10 @@ export const about = {
     image: '/images/chef-thay.jpg',
     imageAlt: 'Thay Chagas — Lady Laura Atelier',
     credentials: [
-      { icon: '🎓', label: 'Le Cordon Bleu Paris', detail: '2018 · Pâtisserie' },
-      { icon: '🇮🇹', label: 'Pasticceria Italiana', detail: '2023 · Firenze' },
-      { icon: '📅', label: '13 anos de experiência', detail: 'Desde os 15 anos' },
-    ],
+  { icon: '🎓', label: 'Le Cordon Bleu Paris', detail: '2018 · Pâtisserie', href: 'https://www.instagram.com/lecordonbleu/' },
+  { icon: '🇮🇹', label: 'Pasticceria Italiana', detail: '2023 · Firenze', href: null },
+  { icon: '📅', label: '13 anos de experiência', detail: 'Desde os 15 anos', href: null },
+],
   },
 
   // Renata Chagas — Flores
@@ -131,12 +131,13 @@ export const about = {
 
   // Credenciais gerais da empresa (mantidas para compatibilidade)
   credentials: [
-    { icon: '🎓', label: 'Le Cordon Bleu Paris', detail: '2018 · Pâtisserie' },
-    { icon: '🇮🇹', label: 'Pasticceria Italiana', detail: '2023 · Firenze' },
-    { icon: '📅', label: '13 anos de experiência', detail: 'Desde os 15 anos' },
-    { icon: '📍', label: '2 unidades', detail: 'SJC + Jacareí' },
-    { icon: '❤️', label: '44K seguidores', detail: '@ladylauraatelier' },
-  ],
+  { icon: '🎓', label: 'Le Cordon Bleu Paris', detail: '2018 · Pâtisserie', href: 'https://www.instagram.com/lecordonbleu/' },
+  { icon: '🇮🇹', label: 'Pasticceria Italiana', detail: '2023 · Firenze', href: null },
+  { icon: '📅', label: '13 anos de experiência', detail: 'Desde os 15 anos', href: null },
+  { icon: '📍', label: 'Jacareí · Pátio Villa Branca', detail: 'Jacareí', href: 'https://maps.app.goo.gl/ladylauravillabranca' },
+  { icon: '📍', label: 'São José dos Campos', detail: 'Esplanada', href: 'https://maps.app.goo.gl/ladylauraesplanada' },
+  { icon: '❤️', label: '44K seguidores', detail: '@ladylauraatelier', href: 'https://www.instagram.com/ladylauraatelier' },
+],
 
   // Mantidos para não quebrar outros usos
   bio: [

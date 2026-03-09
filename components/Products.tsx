@@ -53,12 +53,14 @@ export default function Products() {
               className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
             >
               {/* Imagem de capa — usa emoji como fallback enquanto foto não existir */}
-              <ProductImage
-                src={cat.foto}
-                alt={cat.titulo}
-                fallbackEmoji={cat.emoji}
-                aspectClass="aspect-[4/3]"
-              />
+              <Link href={cat.href}>
+  <ProductImage
+    src={cat.foto}
+    alt={cat.titulo}
+    fallbackEmoji={cat.emoji}
+    aspectClass="aspect-[4/3]"
+  />
+</Link>
 
               {/* Conteúdo */}
               <div className="p-6 flex flex-col flex-1">

@@ -27,10 +27,7 @@ function PersonCard({
 
         {/* Badge com role */}
         <div className="absolute -bottom-4 -right-4 lg:right-auto lg:-left-6 bg-white rounded-xl shadow-lg p-4 border border-rose-soft/30 max-w-[180px]">
-          <p
-            className="text-xs text-gold font-semibold tracking-wide"
-            style={{ fontFamily: 'var(--font-josefin)' }}
-          >
+          <p className="text-xs text-gold font-semibold tracking-wide" style={{ fontFamily: 'var(--font-josefin)' }}>
             {person.name}
           </p>
           <p className="text-xs text-ink-3">{person.role}</p>
@@ -39,50 +36,42 @@ function PersonCard({
 
       {/* Text */}
       <div className={reverse ? 'lg:order-1' : ''}>
-        <p
-          className="text-rose mb-1 reveal"
-          style={{ fontFamily: 'var(--font-sacramento)', fontSize: '2.5rem' }}
-        >
+        <p className="text-rose mb-1 reveal" style={{ fontFamily: 'var(--font-sacramento)', fontSize: '2.5rem' }}>
           {person.role}
         </p>
-        <h3
-          className="font-semibold text-ink tracking-tight mb-6 reveal"
-          style={{ fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)' }}
-        >
+        <h3 className="font-semibold text-ink tracking-tight mb-6 reveal" style={{ fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
           {person.name}
         </h3>
 
         <div className="space-y-4 mb-8">
           {person.bio.map((paragraph, i) => (
-            <p key={i} className="text-ink-2 leading-relaxed reveal">
-              {paragraph}
-            </p>
+            <p key={i} className="text-ink-2 leading-relaxed reveal">{paragraph}</p>
           ))}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-  {person.credentials.map((cred, i) => {
-    const inner = (
-      <>
-        <span className="text-2xl">{cred.icon}</span>
-        <div>
-          <p className="text-xs font-semibold text-ink tracking-wide" style={{ fontFamily: 'var(--font-josefin)' }}>{cred.label}</p>
-          <p className="text-xs text-ink-3">{cred.detail}</p>
+          {person.credentials.map((cred, i) => {
+            const inner = (
+              <>
+                <span className="text-2xl">{cred.icon}</span>
+                <div>
+                  <p className="text-xs font-semibold text-ink tracking-wide" style={{ fontFamily: 'var(--font-josefin)' }}>{cred.label}</p>
+                  <p className="text-xs text-ink-3">{cred.detail}</p>
+                </div>
+              </>
+            )
+            return cred.href ? (
+              <a key={i} href={cred.href} target="_blank" rel="noopener noreferrer"
+                className="reveal flex items-center gap-3 bg-white/70 rounded-xl p-4 border border-rose-soft/20 hover:border-rose-mid transition-colors">
+                {inner}
+              </a>
+            ) : (
+              <div key={i} className="reveal flex items-center gap-3 bg-white/70 rounded-xl p-4 border border-rose-soft/20">
+                {inner}
+              </div>
+            )
+          })}
         </div>
-      </>
-    )
-    return cred.href ? (
-      <a key={i} href={cred.href} target="_blank" rel="noopener noreferrer"
-        className="reveal flex items-center gap-3 bg-white/70 rounded-xl p-4 border border-rose-soft/20 hover:border-rose-mid transition-colors">
-        {inner}
-      </a>
-    ) : (
-      <div key={i} className="reveal flex items-center gap-3 bg-white/70 rounded-xl p-4 border border-rose-soft/20">
-        {inner}
-      </div>
-    )
-  })}
-</div>
       </div>
     </div>
   )
@@ -93,25 +82,16 @@ export default function About() {
     <section
       id="sobre"
       className="py-24 px-6"
-      style={{
-        background:
-          'linear-gradient(160deg, #FDF5F7 0%, #FBF6F0 40%, #F5EDE0 100%)',
-      }}
+      style={{ background: 'linear-gradient(160deg, #FDF5F7 0%, #FBF6F0 40%, #F5EDE0 100%)' }}
     >
       <div className="max-w-6xl mx-auto">
 
-        {/* Cabeçalho da seção */}
+        {/* Cabeçalho */}
         <div className="text-center mb-20 reveal">
-          <p
-            className="text-rose mb-2"
-            style={{ fontFamily: 'var(--font-sacramento)', fontSize: '3rem' }}
-          >
+          <p className="text-rose mb-2" style={{ fontFamily: 'var(--font-sacramento)', fontSize: '3rem' }}>
             {about.scriptText}
           </p>
-          <h2
-            className="font-semibold text-ink tracking-tight"
-            style={{ fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem, 4vw, 3.25rem)' }}
-          >
+          <h2 className="font-semibold text-ink tracking-tight" style={{ fontFamily: 'var(--font-cinzel)', fontSize: 'clamp(2rem, 4vw, 3.25rem)' }}>
             {about.title}
           </h2>
           <div className="w-16 h-px bg-gold mx-auto mt-6" />
@@ -131,25 +111,27 @@ export default function About() {
         <PersonCard person={about.renata} reverse />
 
         {/* Stats da empresa */}
-        {[
-  { numero: '13', label: 'anos de confeitaria', href: null },
-  { numero: '12', label: 'anos de flores', href: null },
-  { numero: '44K', label: 'seguidores @ladylauraatelier', href: 'https://www.instagram.com/ladylauraatelier' },
-].map((stat) => (
-  <div key={stat.label} className="reveal text-center bg-white/60 rounded-2xl p-6 border border-rose-soft/20">
-    {stat.href ? (
-      <a href={stat.href} target="_blank" rel="noopener noreferrer" className="block hover:opacity-70 transition-opacity">
-        <p className="text-4xl font-light text-rose mb-1" style={{ fontFamily: 'var(--font-cinzel)' }}>{stat.numero}</p>
-        <p className="text-xs text-ink-3 underline underline-offset-2" style={{ fontFamily: 'var(--font-josefin)', letterSpacing: '0.08em' }}>{stat.label}</p>
-      </a>
-    ) : (
-      <>
-        <p className="text-4xl font-light text-rose mb-1" style={{ fontFamily: 'var(--font-cinzel)' }}>{stat.numero}</p>
-        <p className="text-xs text-ink-3" style={{ fontFamily: 'var(--font-josefin)', letterSpacing: '0.08em' }}>{stat.label}</p>
-      </>
-    )}
-  </div>
-))}
+        <div className="mt-24 grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {[
+            { numero: '13', label: 'anos de confeitaria', href: null },
+            { numero: '12', label: 'anos de flores', href: null },
+            { numero: '2',  label: 'unidades SJC + Jacareí', href: null },
+            { numero: '44K', label: 'seguidores @ladylauraatelier', href: 'https://www.instagram.com/ladylauraatelier' },
+          ].map((stat) => (
+            <div key={stat.label} className="reveal text-center bg-white/60 rounded-2xl p-6 border border-rose-soft/20">
+              {stat.href ? (
+                <a href={stat.href} target="_blank" rel="noopener noreferrer" className="block hover:opacity-70 transition-opacity">
+                  <p className="text-4xl font-light text-rose mb-1" style={{ fontFamily: 'var(--font-cinzel)' }}>{stat.numero}</p>
+                  <p className="text-xs text-ink-3 underline underline-offset-2" style={{ fontFamily: 'var(--font-josefin)', letterSpacing: '0.08em' }}>{stat.label}</p>
+                </a>
+              ) : (
+                <>
+                  <p className="text-4xl font-light text-rose mb-1" style={{ fontFamily: 'var(--font-cinzel)' }}>{stat.numero}</p>
+                  <p className="text-xs text-ink-3" style={{ fontFamily: 'var(--font-josefin)', letterSpacing: '0.08em' }}>{stat.label}</p>
+                </>
+              )}
+            </div>
+          ))}
         </div>
 
       </div>
