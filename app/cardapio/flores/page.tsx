@@ -3,6 +3,7 @@ import Link from "next/link";
 import { floresData } from "@/lib/catalog-data";
 import ProductImage from "@/components/ProductImage";
 import HorizontalScroll from "@/components/HorizontalScroll";
+import ScrollReveal from "@/components/ScrollReveal"
 
 const wppBase = "https://wa.me/5512997973143?text=";
 

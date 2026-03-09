@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState, useCallback, ReactNode } from 'react'
+import { useRef, useState, useEffect, ReactNode } from 'react'
 
 interface Props {
   children: ReactNode
@@ -8,131 +8,130 @@ interface Props {
 }
 
 export default function HorizontalScroll({ children, className = '' }: Props) {
-  const ref = useRef<HTMLDivElement>(null)
-  const [isDragging, setIsDragging] = useState(false)
-  const [canScrollLeft, setCanScrollLeft] = useState(false)
-  const [canScrollRight, setCanScrollRight] = useState(true)
+  const trackRef = useRef<HTMLDivElement>(null)
+  const [canLeft, setCanLeft] = useState(false)
+  const [canRight, setCanRight] = useState(false)
 
+  // drag state
+  const dragging = useRef(false)
   const startX = useRef(0)
-  const scrollLeft = useRef(0)
-  const velocity = useRef(0)
+  const startScroll = useRef(0)
+  const velX = useRef(0)
   const lastX = useRef(0)
-  const lastTime = useRef(0)
-  const animFrame = useRef<number>(0)
+  const lastT = useRef(0)
+  const raf = useRef(0)
 
-  const updateArrows = useCallback(() => {
-    const el = ref.current
+  const sync = () => {
+    const el = trackRef.current
     if (!el) return
-    setCanScrollLeft(el.scrollLeft > 4)
-    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 4)
+    setCanLeft(el.scrollLeft > 2)
+    setCanRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 2)
+  }
+
+  useEffect(() => {
+    sync()
+    const el = trackRef.current
+    if (!el) return
+    const ro = new ResizeObserver(sync)
+    ro.observe(el)
+    return () => ro.disconnect()
   }, [])
 
-  const onMouseDown = (e: React.MouseEvent) => {
-    const el = ref.current
+  // Pointer events — works on mouse AND touch-emulation
+  const onPointerDown = (e: React.PointerEvent) => {
+    const el = trackRef.current
     if (!el) return
-    cancelAnimationFrame(animFrame.current)
-    setIsDragging(true)
-    startX.current = e.pageX - el.offsetLeft
-    scrollLeft.current = el.scrollLeft
-    lastX.current = e.pageX
-    lastTime.current = Date.now()
-    velocity.current = 0
+    el.setPointerCapture(e.pointerId)
+    dragging.current = true
+    startX.current = e.clientX
+    startScroll.current = el.scrollLeft
+    velX.current = 0
+    lastX.current = e.clientX
+    lastT.current = Date.now()
+    cancelAnimationFrame(raf.current)
   }
 
-  const onMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return
-    const el = ref.current
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (!dragging.current) return
+    const el = trackRef.current
     if (!el) return
-    e.preventDefault()
-    const x = e.pageX - el.offsetLeft
-    const walk = (x - startX.current) * 1
-    el.scrollLeft = scrollLeft.current - walk
+    const dx = e.clientX - startX.current
+    el.scrollLeft = startScroll.current - dx
 
     const now = Date.now()
-    const dt = now - lastTime.current
-    if (dt > 0) {
-      velocity.current = (e.pageX - lastX.current) / dt
-    }
-    lastX.current = e.pageX
-    lastTime.current = now
-    updateArrows()
+    const dt = now - lastT.current
+    if (dt > 0) velX.current = (e.clientX - lastX.current) / dt
+    lastX.current = e.clientX
+    lastT.current = now
+    sync()
   }
 
-  const onMouseUp = () => {
-    if (!isDragging) return
-    setIsDragging(false)
-    applyMomentum()
-  }
-
-  const applyMomentum = () => {
-    const el = ref.current
+  const onPointerUp = () => {
+    if (!dragging.current) return
+    dragging.current = false
+    const el = trackRef.current
     if (!el) return
-    let v = velocity.current * 12
 
-    const step = () => {
-      if (Math.abs(v) < 0.5) return
+    let v = velX.current * 15
+    const coast = () => {
+      if (Math.abs(v) < 0.3) { sync(); return }
       el.scrollLeft -= v
-      v *= 0.93
-      updateArrows()
-      animFrame.current = requestAnimationFrame(step)
+      v *= 0.92
+      sync()
+      raf.current = requestAnimationFrame(coast)
     }
-    animFrame.current = requestAnimationFrame(step)
+    raf.current = requestAnimationFrame(coast)
   }
 
   const scrollBy = (dir: 'left' | 'right') => {
-    const el = ref.current
+    const el = trackRef.current
     if (!el) return
-    const amount = el.clientWidth * 0.75
+    const amount = Math.min(320, el.clientWidth * 0.8)
     el.scrollBy({ left: dir === 'right' ? amount : -amount, behavior: 'smooth' })
-    setTimeout(updateArrows, 400)
+    setTimeout(sync, 450)
   }
 
   return (
-    <div className="relative group">
+    <div className="relative">
       {/* Seta esquerda */}
-      {canScrollLeft && (
-        <button
-          onClick={() => scrollBy('left')}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-rose-100 flex items-center justify-center text-rose-400 hover:text-rose-600 hover:shadow-xl transition-all opacity-0 group-hover:opacity-100"
-          aria-label="Anterior"
-        >
-          ‹
-        </button>
-      )}
+      <button
+        onClick={() => scrollBy('left')}
+        aria-label="Anterior"
+        className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-9 h-9 rounded-full bg-white shadow-md border border-rose-100 flex items-center justify-center text-rose-400 hover:text-rose-600 hover:shadow-lg transition-all text-xl leading-none
+          ${canLeft ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      >
+        ‹
+      </button>
 
       {/* Seta direita */}
-      {canScrollRight && (
-        <button
-          onClick={() => scrollBy('right')}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-rose-100 flex items-center justify-center text-rose-400 hover:text-rose-600 hover:shadow-xl transition-all opacity-0 group-hover:opacity-100"
-          aria-label="Próximo"
-        >
-          ›
-        </button>
-      )}
+      <button
+        onClick={() => scrollBy('right')}
+        aria-label="Próximo"
+        className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-9 h-9 rounded-full bg-white shadow-md border border-rose-100 flex items-center justify-center text-rose-400 hover:text-rose-600 hover:shadow-lg transition-all text-xl leading-none
+          ${canRight ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      >
+        ›
+      </button>
 
       {/* Track */}
       <div
-        ref={ref}
-        onMouseDown={onMouseDown}
-        onMouseMove={onMouseMove}
-        onMouseUp={onMouseUp}
-        onMouseLeave={onMouseUp}
-        onScroll={updateArrows}
-        className={`flex gap-5 overflow-x-auto pb-4 select-none ${className}`}
+        ref={trackRef}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+        onScroll={sync}
+        className={`flex gap-5 overflow-x-auto pb-4 ${className}`}
         style={{
-          cursor: isDragging ? 'grabbing' : 'grab',
+          cursor: dragging.current ? 'grabbing' : 'grab',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
           WebkitOverflowScrolling: 'touch',
+          userSelect: 'none',
         }}
       >
         {children}
       </div>
-
-      <style jsx>{`
-        div::-webkit-scrollbar { display: none; }
-      `}</style>
     </div>
   )
 }

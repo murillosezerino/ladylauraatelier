@@ -3,6 +3,7 @@ import Link from "next/link";
 import { bolosData } from "@/lib/catalog-data";
 import ImageCarousel from "@/components/ImageCarousel";
 import ProductImage from "@/components/ProductImage";
+import ScrollReveal from "@/components/ScrollReveal"
 
 const wppBase = "https://wa.me/5512997973143?text=";
 

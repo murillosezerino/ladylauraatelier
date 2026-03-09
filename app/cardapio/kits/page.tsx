@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { kitsData } from "@/lib/catalog-data";
 import HorizontalScroll from "@/components/HorizontalScroll";
+import ScrollReveal from "@/components/ScrollReveal"
 
 const wppBase = "https://wa.me/5512997973143?text=";
 
@@ -59,6 +60,7 @@ export default function KitsPage() {
 
   return (
     <main className="min-h-screen bg-[#fdfaf7] text-stone-800">
+  <ScrollReveal />
 
       <div className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-rose-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center gap-2 text-stone-500" style={{ fontFamily: 'var(--font-josefin)', fontSize: '0.8rem', letterSpacing: '0.08em' }}>
