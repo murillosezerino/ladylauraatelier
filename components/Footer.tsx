@@ -28,7 +28,7 @@ export default function Footer() {
           <p className="text-ink-4 text-xs mt-1">
             Desenvolvido por{' '}
             <a
-              href="https://murillosezerino.com"
+              href="CZ Studio"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gold hover:text-gold-light transition-colors"

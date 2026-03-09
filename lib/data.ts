@@ -92,12 +92,44 @@ export const products = [
 ]
 
 export const about = {
-  scriptText: 'La Maîtresse',
-  title: 'Thay Chagas',
-  bio: [
-    'Começou aos 15 anos atendendo encomendas na casa dos pais — e nunca mais parou. Há 13 anos, Thay Chagas transforma ingredientes em memórias afetivas com as mesmas receitas de sempre.',
-    'Em 2018 se formou em Pâtisserie pela Le Cordon Bleu Paris, percorrendo mais de 15 cidades europeias em busca das receitas perfeitas. Em 2023 se especializou em Pasticceria Italiana em Firenze.',
-  ],
+  scriptText: 'Notre Histoire',
+  title: 'Sobre Nós',
+
+  // Thay Chagas — Confeitaria
+  thay: {
+    role: 'Maîtresse Pâtissière',
+    name: 'Thay Chagas',
+    bio: [
+      'Começou aos 15 anos atendendo encomendas na casa dos pais — e nunca mais parou. Há 13 anos, Thay Chagas transforma ingredientes em memórias afetivas com as mesmas receitas de sempre.',
+      'Em 2018 se formou em Pâtisserie pela Le Cordon Bleu Paris, percorrendo mais de 15 cidades europeias em busca das receitas perfeitas. Em 2023 se especializou em Pasticceria Italiana em Firenze.',
+    ],
+    image: '/images/chef-thay.jpg',
+    imageAlt: 'Thay Chagas — Lady Laura Atelier',
+    credentials: [
+      { icon: '🎓', label: 'Le Cordon Bleu Paris', detail: '2018 · Pâtisserie' },
+      { icon: '🇮🇹', label: 'Pasticceria Italiana', detail: '2023 · Firenze' },
+      { icon: '📅', label: '13 anos de experiência', detail: 'Desde os 15 anos' },
+    ],
+  },
+
+  // Renata Chagas — Flores
+  renata: {
+    role: 'Designer Floral',
+    name: 'Renata Chagas',
+    bio: [
+      'Há 12 anos, Renata Chagas cuida de cada pétala com a mesma dedicação de sempre. Especialista em arranjos florais, ela desenvolve composições exclusivas pensadas para transformar qualquer momento em uma memória bonita.',
+      'Todas as composições florais são montadas diariamente com as flores mais frescas e lindas do dia — respeitando a estação, a natureza e o gosto de cada cliente.',
+    ],
+    image: '/images/renata-chagas.jpg',
+    imageAlt: 'Renata Chagas — Designer Floral Lady Laura Atelier',
+    credentials: [
+      { icon: '🌸', label: 'Designer Floral', detail: '12 anos de curadoria' },
+      { icon: '💐', label: 'Flores frescas diárias', detail: 'Seleção do dia' },
+      { icon: '🎁', label: 'Flores & Presentes', detail: 'Know-how principal' },
+    ],
+  },
+
+  // Credenciais gerais da empresa (mantidas para compatibilidade)
   credentials: [
     { icon: '🎓', label: 'Le Cordon Bleu Paris', detail: '2018 · Pâtisserie' },
     { icon: '🇮🇹', label: 'Pasticceria Italiana', detail: '2023 · Firenze' },
@@ -105,7 +137,13 @@ export const about = {
     { icon: '📍', label: '2 unidades', detail: 'SJC + Jacareí' },
     { icon: '❤️', label: '44K seguidores', detail: '@ladylauraatelier' },
   ],
-  image: '/images/chef-laura.jpg',
+
+  // Mantidos para não quebrar outros usos
+  bio: [
+    'Começou aos 15 anos atendendo encomendas na casa dos pais — e nunca mais parou. Há 13 anos, Thay Chagas transforma ingredientes em memórias afetivas com as mesmas receitas de sempre.',
+    'Em 2018 se formou em Pâtisserie pela Le Cordon Bleu Paris, percorrendo mais de 15 cidades europeias em busca das receitas perfeitas. Em 2023 se especializou em Pasticceria Italiana em Firenze.',
+  ],
+  image: '/images/chef-thay.jpg',
   imageAlt: 'Thay Chagas — Lady Laura Atelier',
 }
 
