@@ -11,24 +11,23 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 18px; /* base aumentada de 16 → 18px */
+  font-size: 16px;
 }
 
 body {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.75;
   background-color: #FBF6F0;
   color: #2A1E28;
 }
 
-/* Escala tipográfica aumentada */
-h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: 0.01em; }
-h2 { font-size: clamp(2rem, 4vw, 3.25rem);  letter-spacing: 0.01em; }
-h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
-h4 { font-size: 1.375rem; }
-p  { font-size: 1.125rem; line-height: 1.8; }
+h1 { font-size: clamp(2rem, 5vw, 3.75rem);  letter-spacing: 0.01em; }
+h2 { font-size: clamp(1.625rem, 3.5vw, 2.75rem); letter-spacing: 0.01em; }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.875rem); }
+h4 { font-size: 1.125rem; }
+p  { font-size: 1rem; line-height: 1.8; }
 
 /* Reveal animation */
 .reveal {
@@ -48,7 +47,7 @@ p  { font-size: 1.125rem; line-height: 1.8; }
   gap: 1rem;
   justify-content: center;
   color: #B8966A;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   letter-spacing: 0.5rem;
 }
 .separator::before,
@@ -63,16 +62,16 @@ p  { font-size: 1.125rem; line-height: 1.8; }
   background: linear-gradient(to left, transparent, #B8966A);
 }
 
-/* Labels em small caps (Josefin Sans) */
+/* Labels em small caps */
 .label-caps {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 400;
 }
 
-/* Carrossel horizontal — hide scrollbar mas mantém scroll */
+/* Carrossel horizontal — hide scrollbar */
 .scroll-row {
   display: flex;
   gap: 1.25rem;
@@ -80,11 +79,20 @@ p  { font-size: 1.125rem; line-height: 1.8; }
   padding-bottom: 1rem;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  user-select: none;
 }
+.scroll-row:active { cursor: grabbing; }
 .scroll-row::-webkit-scrollbar { display: none; }
 .scroll-row { -ms-overflow-style: none; scrollbar-width: none; }
 
 .scroll-card {
   flex: none;
   scroll-snap-align: start;
+}
+
+/* Impede drag de imagens dentro do carrossel */
+.scroll-row img {
+  pointer-events: none;
+  -webkit-user-drag: none;
 }
