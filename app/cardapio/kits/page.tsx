@@ -1,6 +1,7 @@
 // app/cardapio/kits/page.tsx
 import Link from "next/link";
 import { kitsData } from "@/lib/catalog-data";
+import HorizontalScroll from "@/components/HorizontalScroll";
 
 const wppBase = "https://wa.me/5512997973143?text=";
 
@@ -42,11 +43,9 @@ function KitCard({ kit }: { kit: { nome: string; preco: number; foto?: string; i
         </ul>
         {kit.observacao && <p className="text-stone-400 text-xs italic mb-3">{kit.observacao}</p>}
         <div className="mt-auto pt-3 border-t border-rose-50">
-          <a
-            href={`${wppBase}${encodeURIComponent(`Olá! Gostaria de encomendar o ${kit.nome}.`)}`}
+          <a href={`${wppBase}${encodeURIComponent(`Olá! Gostaria de encomendar o ${kit.nome}.`)}`}
             target="_blank" rel="noopener noreferrer"
-            className="block text-center label-caps text-rose-500 border border-rose-300 rounded-full px-4 py-2 hover:bg-rose-50 transition-colors"
-          >
+            className="block text-center label-caps text-rose-500 border border-rose-300 rounded-full px-4 py-2 hover:bg-rose-50 transition-colors">
             Encomendar
           </a>
         </div>
@@ -61,7 +60,6 @@ export default function KitsPage() {
   return (
     <main className="min-h-screen bg-[#fdfaf7] text-stone-800">
 
-      {/* BREADCRUMB */}
       <div className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-rose-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center gap-2 text-stone-500" style={{ fontFamily: 'var(--font-josefin)', fontSize: '0.8rem', letterSpacing: '0.08em' }}>
           <Link href="/" className="hover:text-rose-500 transition-colors">Lady Laura Atelier</Link>
@@ -72,69 +70,44 @@ export default function KitsPage() {
         </div>
       </div>
 
-      {/* HERO */}
       <section className="max-w-6xl mx-auto px-6 pt-20 pb-12 text-center">
         <p className="label-caps text-rose-400 mb-4">Catálogo</p>
-        <h1 className="font-light text-stone-800 mb-4" style={{ fontFamily: 'var(--font-cinzel)' }}>
-          Kits & Presentes
-        </h1>
+        <h1 className="font-light text-stone-800 mb-4" style={{ fontFamily: 'var(--font-cinzel)' }}>Kits & Presentes</h1>
         <div className="w-20 h-px bg-rose-300 mx-auto mb-6" />
         <p className="text-stone-500 max-w-xl mx-auto">{nota}</p>
       </section>
 
-      {/* CAFÉ DA MANHÃ */}
       <section className="max-w-6xl mx-auto px-6 pb-20">
-        <SectionHeader
-          label="Especial"
-          title="Café da Manhã"
-          desc="Kits completos para um café da manhã inesquecível com flores, doces e itens selecionados."
-        />
+        <SectionHeader label="Especial" title="Café da Manhã" desc="Kits completos para um café da manhã inesquecível com flores, doces e itens selecionados." />
         <p className="label-caps text-stone-400 mb-5">Deslize para ver todos →</p>
-        <div className="scroll-row">
+        <HorizontalScroll>
           {cafeDaManha.map((kit) => <KitCard key={kit.nome} kit={kit} />)}
-        </div>
+        </HorizontalScroll>
       </section>
 
-      {/* KITS COM FLORES */}
       <section className="bg-rose-50/50 py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <SectionHeader
-            label="Combinados"
-            title="Kits com Flores"
-            desc="Cada kit combina arranjos florais com chocolates, espumantes e doces artesanais."
-          />
+          <SectionHeader label="Combinados" title="Kits com Flores" desc="Cada kit combina arranjos florais com chocolates, espumantes e doces artesanais." />
           <p className="label-caps text-stone-400 mb-5">Deslize para ver todos →</p>
-          <div className="scroll-row">
+          <HorizontalScroll>
             {kitsComFlores.map((kit) => <KitCard key={kit.nome} kit={kit} />)}
-          </div>
+          </HorizontalScroll>
         </div>
       </section>
 
-      {/* KITS SEM FLORES */}
       <section className="max-w-6xl mx-auto px-6 py-20">
-        <SectionHeader
-          label="Doces & Espumantes"
-          title="Kits de Doces & Espumante"
-          desc="Kits especiais de doces e espumantes — ótimos para qualquer ocasião."
-        />
+        <SectionHeader label="Doces & Espumantes" title="Kits de Doces & Espumante" desc="Kits especiais de doces e espumantes — ótimos para qualquer ocasião." />
         <p className="label-caps text-stone-400 mb-5">Deslize para ver todos →</p>
-        <div className="scroll-row">
+        <HorizontalScroll>
           {kitsSemFlores.map((kit) => <KitCard key={kit.nome} kit={kit} />)}
-        </div>
+        </HorizontalScroll>
       </section>
 
-      {/* LATINHAS & CHOCOLATES */}
       <section className="bg-rose-50/50 py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <SectionHeader
-            label="Avulsos"
-            title="Latinhas, Chocolates & Doces"
-            desc="Peças avulsas para montar o seu presente perfeito ou complementar qualquer kit."
-          />
-
-          {/* Carrossel de peças avulsas */}
+          <SectionHeader label="Avulsos" title="Latinhas, Chocolates & Doces" desc="Peças avulsas para montar o seu presente perfeito ou complementar qualquer kit." />
           <p className="label-caps text-stone-400 mb-5">Deslize para ver todos →</p>
-          <div className="scroll-row mb-12">
+          <HorizontalScroll className="mb-12">
             {latinhasEChocolates.map((p) => (
               <div key={p.nome} className="scroll-card bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col" style={{ width: '15rem' }}>
                 <div className="w-full bg-rose-50 flex items-center justify-center text-5xl" style={{ aspectRatio: '1' }}>🍫</div>
@@ -152,11 +125,10 @@ export default function KitsPage() {
                 </div>
               </div>
             ))}
-          </div>
+          </HorizontalScroll>
 
-          {/* Tabelas de caixas — carrossel horizontal */}
           <p className="label-caps text-stone-400 mb-5">Caixas por unidade →</p>
-          <div className="scroll-row">
+          <HorizontalScroll>
             {[
               { titulo: "Caixas de Brigous 🍬", rows: caixasBrigous },
               { titulo: "Caixa de Macarons 🌈", rows: caixasMacarons },
@@ -183,27 +155,20 @@ export default function KitsPage() {
                 </div>
               </div>
             ))}
-          </div>
+          </HorizontalScroll>
         </div>
       </section>
 
-      {/* LINHA HOME */}
       <section className="max-w-6xl mx-auto px-6 py-20">
-        <SectionHeader
-          label="Exclusiva"
-          title="Linha Home"
-          desc={linhaHome.descricao}
-        />
-
+        <SectionHeader label="Exclusiva" title="Linha Home" desc={linhaHome.descricao} />
         <div className="flex flex-wrap gap-2 mb-8">
           <span className="label-caps text-stone-400 self-center mr-2">Aromas:</span>
           {linhaHome.aromas.map((a) => (
             <span key={a} className="bg-amber-50 text-amber-700 px-3 py-1 rounded-full border border-amber-200 text-sm">{a}</span>
           ))}
         </div>
-
         <p className="label-caps text-stone-400 mb-5">Deslize para ver todos →</p>
-        <div className="scroll-row">
+        <HorizontalScroll>
           {linhaHome.produtos.map((p) => (
             <div key={p.nome + p.descricao} className="scroll-card bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col" style={{ width: '16rem' }}>
               <div className="w-full bg-amber-50/50 flex items-center justify-center text-5xl" style={{ aspectRatio: '4/3' }}>🕯️</div>
@@ -223,13 +188,11 @@ export default function KitsPage() {
               </div>
             </div>
           ))}
-        </div>
+        </HorizontalScroll>
       </section>
 
       <div className="text-center pb-20">
-        <Link href="/#cardapio" className="text-stone-400 hover:text-rose-500 transition-colors label-caps">
-          ← Voltar ao Cardápio
-        </Link>
+        <Link href="/#cardapio" className="text-stone-400 hover:text-rose-500 transition-colors label-caps">← Voltar ao Cardápio</Link>
       </div>
     </main>
   );
