@@ -32,7 +32,7 @@ function FlowerCard({ emoji, nome, sub, descricao, preco, observacao, wppMsg }: 
   preco: number | null; observacao?: string | null; wppMsg: string;
 }) {
   return (
-    <div className="scroll-card bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col" style={{ width: '17rem' }}>
+    <div className="flex-none bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col" style={{ width: '17rem' }}>
       <ProductImage src="" alt={nome} fallbackEmoji={emoji} />
       <div className="p-5 flex flex-col flex-1">
         <h4 className="text-stone-800 mb-0.5" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '1.0625rem' }}>{nome}</h4>
@@ -56,12 +56,13 @@ export default function FloresPage() {
 
   return (
     <main className="min-h-screen bg-[#fdfaf7] text-stone-800">
+      <ScrollReveal />
 
       <div className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-rose-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center gap-2 text-stone-500" style={{ fontFamily: 'var(--font-josefin)', fontSize: '0.8rem', letterSpacing: '0.08em' }}>
           <Link href="/" className="hover:text-rose-500 transition-colors">Lady Laura Atelier</Link>
           <span>›</span>
-          <Link href="/#catalogo" className="hover:text-rose-500 transition-colors">Cardápio</Link>
+          <Link href="/#catalogo" className="hover:text-rose-500 transition-colors">Catálogo</Link>
           <span>›</span>
           <span className="text-rose-500">Flores & Arranjos</span>
         </div>
@@ -127,7 +128,7 @@ export default function FloresPage() {
       </section>
 
       <div className="text-center py-20">
-        <Link href="/#catalogo" className="text-stone-400 hover:text-rose-500 transition-colors label-caps">← Voltar ao Cardápio</Link>
+        <Link href="/#catalogo" className="text-stone-400 hover:text-rose-500 transition-colors label-caps">← Voltar ao Catálogo</Link>
       </div>
     </main>
   );

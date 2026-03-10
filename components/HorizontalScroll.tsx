@@ -12,8 +12,8 @@ export default function HorizontalScroll({ children, className = '' }: Props) {
   const [canLeft, setCanLeft] = useState(false)
   const [canRight, setCanRight] = useState(false)
 
-  // drag state
   const dragging = useRef(false)
+  const didDrag = useRef(false)
   const startX = useRef(0)
   const startScroll = useRef(0)
   const velX = useRef(0)
@@ -37,12 +37,12 @@ export default function HorizontalScroll({ children, className = '' }: Props) {
     return () => ro.disconnect()
   }, [])
 
-  // Pointer events — works on mouse AND touch-emulation
   const onPointerDown = (e: React.PointerEvent) => {
     const el = trackRef.current
     if (!el) return
     el.setPointerCapture(e.pointerId)
     dragging.current = true
+    didDrag.current = false
     startX.current = e.clientX
     startScroll.current = el.scrollLeft
     velX.current = 0
@@ -56,6 +56,7 @@ export default function HorizontalScroll({ children, className = '' }: Props) {
     const el = trackRef.current
     if (!el) return
     const dx = e.clientX - startX.current
+    if (Math.abs(dx) > 5) didDrag.current = true
     el.scrollLeft = startScroll.current - dx
 
     const now = Date.now()
@@ -83,6 +84,15 @@ export default function HorizontalScroll({ children, className = '' }: Props) {
     raf.current = requestAnimationFrame(coast)
   }
 
+  // Bloqueia cliques em links/botões se o usuário arrastou
+  const onClickCapture = (e: React.MouseEvent) => {
+    if (didDrag.current) {
+      e.preventDefault()
+      e.stopPropagation()
+      didDrag.current = false
+    }
+  }
+
   const scrollBy = (dir: 'left' | 'right') => {
     const el = trackRef.current
     if (!el) return
@@ -93,7 +103,6 @@ export default function HorizontalScroll({ children, className = '' }: Props) {
 
   return (
     <div className="relative">
-      {/* Seta esquerda */}
       <button
         onClick={() => scrollBy('left')}
         aria-label="Anterior"
@@ -103,7 +112,6 @@ export default function HorizontalScroll({ children, className = '' }: Props) {
         ‹
       </button>
 
-      {/* Seta direita */}
       <button
         onClick={() => scrollBy('right')}
         aria-label="Próximo"
@@ -113,7 +121,6 @@ export default function HorizontalScroll({ children, className = '' }: Props) {
         ›
       </button>
 
-      {/* Track */}
       <div
         ref={trackRef}
         onPointerDown={onPointerDown}
@@ -121,13 +128,14 @@ export default function HorizontalScroll({ children, className = '' }: Props) {
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
         onScroll={sync}
+        onClickCapture={onClickCapture}
         className={`flex gap-5 overflow-x-auto pb-4 ${className}`}
         style={{
-          cursor: dragging.current ? 'grabbing' : 'grab',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
           WebkitOverflowScrolling: 'touch',
           userSelect: 'none',
+          cursor: 'grab',
         }}
       >
         {children}

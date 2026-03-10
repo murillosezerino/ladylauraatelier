@@ -27,7 +27,7 @@ function SectionHeader({ label, title, desc }: { label: string; title: string; d
 
 function KitCard({ kit }: { kit: { nome: string; preco: number; foto?: string; itens: string[]; observacao?: string } }) {
   return (
-    <div className="scroll-card bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col" style={{ width: '18rem' }}>
+    <div className="flex-none bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col" style={{ width: '18rem' }}>
       <div className="w-full bg-rose-50 flex items-center justify-center text-5xl" style={{ aspectRatio: '4/3' }}>🎁</div>
       <div className="p-5 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-2 mb-3 flex-wrap">
@@ -60,13 +60,13 @@ export default function KitsPage() {
 
   return (
     <main className="min-h-screen bg-[#fdfaf7] text-stone-800">
-  <ScrollReveal />
+      <ScrollReveal />
 
       <div className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-rose-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center gap-2 text-stone-500" style={{ fontFamily: 'var(--font-josefin)', fontSize: '0.8rem', letterSpacing: '0.08em' }}>
           <Link href="/" className="hover:text-rose-500 transition-colors">Lady Laura Atelier</Link>
           <span>›</span>
-          <Link href="/#catalogo" className="hover:text-rose-500 transition-colors">Cardápio</Link>
+          <Link href="/#catalogo" className="hover:text-rose-500 transition-colors">Catálogo</Link>
           <span>›</span>
           <span className="text-rose-500">Kits & Presentes</span>
         </div>
@@ -111,7 +111,7 @@ export default function KitsPage() {
           <p className="label-caps text-stone-400 mb-5">Deslize para ver todos →</p>
           <HorizontalScroll className="mb-12">
             {latinhasEChocolates.map((p) => (
-              <div key={p.nome} className="scroll-card bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col" style={{ width: '15rem' }}>
+              <div key={p.nome} className="flex-none bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col" style={{ width: '15rem' }}>
                 <div className="w-full bg-rose-50 flex items-center justify-center text-5xl" style={{ aspectRatio: '1' }}>🍫</div>
                 <div className="p-5 flex flex-col flex-1">
                   <h4 className="text-stone-800 mb-1" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '1rem' }}>{p.nome}</h4>
@@ -136,7 +136,7 @@ export default function KitsPage() {
               { titulo: "Caixa de Macarons 🌈", rows: caixasMacarons },
               { titulo: "Caixas de Trufas 🍫",  rows: caixasTrufas },
             ].map((tbl) => (
-              <div key={tbl.titulo} className="scroll-card bg-white border border-rose-100 rounded-2xl overflow-hidden" style={{ width: '15rem' }}>
+              <div key={tbl.titulo} className="flex-none bg-white border border-rose-100 rounded-2xl overflow-hidden" style={{ width: '15rem' }}>
                 <div className="bg-rose-50 px-5 py-3">
                   <p className="font-semibold text-stone-700">{tbl.titulo}</p>
                 </div>
@@ -172,7 +172,7 @@ export default function KitsPage() {
         <p className="label-caps text-stone-400 mb-5">Deslize para ver todos →</p>
         <HorizontalScroll>
           {linhaHome.produtos.map((p) => (
-            <div key={p.nome + p.descricao} className="scroll-card bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col" style={{ width: '16rem' }}>
+            <div key={p.nome + p.descricao} className="flex-none bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col" style={{ width: '16rem' }}>
               <div className="w-full bg-amber-50/50 flex items-center justify-center text-5xl" style={{ aspectRatio: '4/3' }}>🕯️</div>
               <div className="p-5 flex flex-col flex-1">
                 <h4 className="text-stone-800 mb-1" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '1rem' }}>{p.nome}</h4>
@@ -194,7 +194,7 @@ export default function KitsPage() {
       </section>
 
       <div className="text-center pb-20">
-        <Link href="/#catalogo" className="text-stone-400 hover:text-rose-500 transition-colors label-caps">← Voltar ao Cardápio</Link>
+        <Link href="/#catalogo" className="text-stone-400 hover:text-rose-500 transition-colors label-caps">← Voltar ao Catálogo</Link>
       </div>
     </main>
   );
