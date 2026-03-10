@@ -1,7 +1,7 @@
 import { siteConfig } from '@/lib/data'
 
 export default function Contact() {
-  const waLink = `https://wa.me/${siteConfig.whatsapp}?text=Olá!+Vim+pelo+site+e+gostaria+de+fazer+uma+encomenda.`
+  const waLink = `https://wa.me/${siteConfig.whatsapp}?text=Ol%C3%A1!+Vim+pelo+site+e+gostaria+de+fazer+uma+encomenda.`
 
   return (
     <section

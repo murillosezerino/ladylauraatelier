@@ -1,4 +1,4 @@
-// app/cardapio/kits/page.tsx
+// app/catalogo/kits/page.tsx
 import Link from "next/link";
 import { kitsData } from "@/lib/catalog-data";
 import HorizontalScroll from "@/components/HorizontalScroll";

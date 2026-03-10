@@ -10,7 +10,7 @@ const categorias = [
     emoji: "🎂",
     descricao: "Bolos festivos e artísticos sob encomenda — naked cake, buttercream, drip cake, e muito mais. 12 sabores da casa para escolher.",
     destaques: ["Baby Cake · Aro 15 · Aro 20 · Aro 25", "Seleção fixa + Buttercream personalizado", "Doces para eventos"],
-    href: "/cardapio/bolos",
+    href: "/catalogo/bolos",
     wpp: "https://wa.me/5512982910000?text=Olá!%20Gostaria%20de%20encomendar%20um%20bolo%20personalizado.",
   },
   {
@@ -19,7 +19,7 @@ const categorias = [
     emoji: "🌸",
     descricao: "Arranjos frescos montados diariamente, rosas nobres, flores secas, vasos de cristal e peças especiais assinadas por Renata Chagas.",
     destaques: ["Arranjos frescos (6 tamanhos)", "Rosas · Flores secas · Vasos", "Galocha de Cerâmica · Aquário de Orquídea"],
-    href: "/cardapio/flores",
+    href: "/catalogo/flores",
     wpp: "https://wa.me/5512982910000?text=Olá!%20Tenho%20interesse%20nas%20flores%20e%20arranjos.",
   },
   {
@@ -28,7 +28,7 @@ const categorias = [
     emoji: "🎁",
     descricao: "Kits especiais para datas comemorativas, casamentos, empresas e momentos que merecem ser lembrados — com flores, chocolates e espumantes.",
     destaques: ["Box Café da Manhã · Breakfast at Tiffany's", "15+ kits com flores nomeados", "Latinhas · Chocolates · Linha Home"],
-    href: "/cardapio/kits",
+    href: "/catalogo/kits",
     wpp: "https://wa.me/5512982910000?text=Olá!%20Gostaria%20de%20montar%20um%20kit%20especial.",
   },
 ];

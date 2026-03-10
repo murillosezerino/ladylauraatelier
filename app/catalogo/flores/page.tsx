@@ -1,4 +1,4 @@
-// app/cardapio/flores/page.tsx
+// app/catalogo/flores/page.tsx
 import Link from "next/link";
 import { floresData } from "@/lib/catalog-data";
 import ProductImage from "@/components/ProductImage";

@@ -1,4 +1,4 @@
-// app/cardapio/bolos/page.tsx
+// app/catalogo/bolos/page.tsx
 import Link from "next/link";
 import { bolosData } from "@/lib/catalog-data";
 import ProductImage from "@/components/ProductImage";

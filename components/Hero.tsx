@@ -1,7 +1,7 @@
 import { hero, siteConfig } from '@/lib/data'
 
 export default function Hero() {
-  const waLink = `https://wa.me/${siteConfig.whatsapp}?text=Olá!+Gostaria+de+fazer+uma+encomenda.`
+  const waLink = `https://wa.me/${siteConfig.whatsapp}?text=Ol%C3%A1!+Gostaria+de+fazer+uma+encomenda.`
 
   return (
     <section
