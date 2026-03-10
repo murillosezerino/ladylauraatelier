@@ -31,6 +31,15 @@ const categorias = [
     href: "/catalogo/kits",
     wpp: "https://wa.me/5512982910000?text=Olá!%20Gostaria%20de%20montar%20um%20kit%20especial.",
   },
+  {
+    titulo: "Eventos & Reservas",
+    foto: "/images/eventos/capa-eventos.jpg",
+    emoji: "🥂",
+    descricao: "Projetos especiais para celebrar momentos únicos — do brunch íntimo ao casamento dos sonhos, com decoração floral, menu e exclusividade.",
+    destaques: ["Sunday Brunch · Petit Comité", "Petit Jardin · Grand Royale", "Até 55 pessoas · Casa exclusiva"],
+    href: "/catalogo/eventos",
+    wpp: "https://wa.me/5512982910000?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20projetos%20de%20eventos.",
+  },
 ];
 
 export default function Products() {
@@ -46,7 +55,7 @@ export default function Products() {
         </div>
 
         {/* Cards de categoria */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
           {categorias.map((cat) => (
             <div
               key={cat.titulo}
