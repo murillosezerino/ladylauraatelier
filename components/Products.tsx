@@ -5,7 +5,7 @@ import ProductImage from "@/components/ProductImage";
 
 const categorias = [
   {
-    titulo: "Bolos & Eventos",
+    titulo: "Bolos & Doces",
     foto: "/images/bolos/capa-bolos.jpg",
     emoji: "🎂",
     descricao: "Bolos festivos e artísticos sob encomenda — naked cake, buttercream, drip cake, e muito mais. 12 sabores da casa para escolher.",

@@ -56,7 +56,7 @@ export default function BolosPage() {
           <span>›</span>
           <Link href="/#catalogo" className="hover:text-rose-500 transition-colors">Catálogo</Link>
           <span>›</span>
-          <span className="text-rose-500">Bolos & Eventos</span>
+          <span className="text-rose-500">Bolos & Doces</span>
         </div>
       </div>
 
