@@ -101,7 +101,7 @@ export default function FAQ() {
                 className="overflow-hidden transition-all duration-300"
                 style={{ maxHeight: open === i ? "300px" : "0px" }}
               >
-                <p className="px-6 pb-5 text-stone-500 text-sm leading-relaxed border-t border-rose-50 pt-4">
+                <p className="px-6 pb-5 text-stone-500 text-base leading-relaxed border-t border-rose-50 pt-4">
                   {faq.a}
                 </p>
               </div>
