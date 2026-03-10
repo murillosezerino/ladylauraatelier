@@ -2,9 +2,9 @@
 import Link from "next/link";
 import { bolosData } from "@/lib/catalog-data";
 import ProductImage from "@/components/ProductImage";
+import PhotoSwitcher from "@/components/PhotoSwitcher";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import ScrollReveal from "@/components/ScrollReveal";
-import PhotoSwitcher from "@/components/PhotoSwitcher";
 
 const wppBase = "https://wa.me/5512982910000?text=";
 
@@ -97,7 +97,6 @@ export default function BolosPage() {
           desc={bolosFestivos.descricao}
         />
 
-        {/* Tabela de tamanhos */}
         <div className="overflow-x-auto mb-12">
           <table className="w-full text-sm bg-white rounded-2xl border border-rose-100 overflow-hidden">
             <thead className="bg-rose-50">
@@ -124,7 +123,6 @@ export default function BolosPage() {
           </table>
         </div>
 
-        {/* Carrossel de sabores */}
         <p className="label-caps text-stone-400 mb-6">Deslize para ver todos os sabores →</p>
         <HorizontalScroll>
           {bolosFestivos.sabores.map((s) => (
@@ -141,7 +139,7 @@ export default function BolosPage() {
                 <h4 className="font-cinzel text-stone-800 mb-2" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '1.125rem' }}>{s.nome}</h4>
                 <p className="text-stone-500 text-sm leading-relaxed mb-4 flex-1">{s.descricao}</p>
                 <a
-                  href={`${wppBase}Olá!+Gostaria+de+encomendar+um+bolo+${encodeURIComponent(s.nome)}.`}
+                  href={`${wppBase}${encodeURIComponent(`Olá! Gostaria de encomendar um bolo ${s.nome}.`)}`}
                   target="_blank" rel="noopener noreferrer"
                   className="block text-center label-caps text-rose-500 border border-rose-300 rounded-full px-4 py-2 hover:bg-rose-50 transition-colors"
                 >
@@ -162,7 +160,6 @@ export default function BolosPage() {
             desc={bolosButtercream.descricao}
           />
 
-          {/* Tabela de tamanhos */}
           <div className="overflow-x-auto mb-10">
             <table className="w-full text-sm bg-white rounded-2xl border border-rose-100 overflow-hidden">
               <thead className="bg-rose-50">
@@ -188,7 +185,6 @@ export default function BolosPage() {
             </table>
           </div>
 
-          {/* Sabores disponíveis */}
           <div className="bg-white border border-rose-100 rounded-2xl p-6 mb-10">
             <p className="label-caps text-stone-500 mb-3">Sabores disponíveis</p>
             <div className="flex flex-wrap gap-2">
@@ -199,53 +195,52 @@ export default function BolosPage() {
             <p className="text-stone-400 text-sm mt-4 italic">{bolosButtercream.nota}</p>
           </div>
 
-          {/* Carrossel de estilos */}
           <p className="label-caps text-stone-400 mb-6">Estilos de decoração</p>
-<HorizontalScroll>
-  <div className="flex-none w-72 bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col">
-    <PhotoSwitcher
-      images={[
-        "/images/bolos/macarons1.jpg",
-        "/images/bolos/macarons2.jpg",
-        "/images/bolos/macarons3.jpg",
-        "/images/bolos/macarons4.jpg",
-      ]}
-      alt="Macarons & Flores"
-    />
-    <div className="p-5 flex flex-col flex-1">
-      <h4 className="font-cinzel text-stone-800 mb-2" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '1.125rem' }}>
-        {bolosButtercream.estilosDecoracao[0].nome}
-      </h4>
-      <p className="text-stone-500 text-sm leading-relaxed flex-1">
-        {bolosButtercream.estilosDecoracao[0].descricao}
-      </p>
-    </div>
-  </div>
+          <HorizontalScroll>
+            <div className="flex-none w-72 bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+              <PhotoSwitcher
+                images={[
+                  "/images/bolos/macarons1.jpg",
+                  "/images/bolos/macarons2.jpg",
+                  "/images/bolos/macarons3.jpg",
+                  "/images/bolos/macarons4.jpg",
+                ]}
+                alt="Macarons & Flores"
+              />
+              <div className="p-5 flex flex-col flex-1">
+                <h4 className="font-cinzel text-stone-800 mb-2" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '1.125rem' }}>
+                  {bolosButtercream.estilosDecoracao[0].nome}
+                </h4>
+                <p className="text-stone-500 text-sm leading-relaxed flex-1">
+                  {bolosButtercream.estilosDecoracao[0].descricao}
+                </p>
+              </div>
+            </div>
 
-  <div className="flex-none w-72 bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col">
-    <PhotoSwitcher
-      images={[
-        "/images/bolos/drip-cake1.jpg",
-        "/images/bolos/drip-cake2.jpg",
-        "/images/bolos/drip-cake3.jpg",
-        "/images/bolos/drip-cake4.jpg",
-      ]}
-      alt="Drip Cake"
-    />
-    <div className="p-5 flex flex-col flex-1">
-      <h4 className="font-cinzel text-stone-800 mb-2" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '1.125rem' }}>
-        {bolosButtercream.estilosDecoracao[1].nome}
-      </h4>
-      <p className="text-stone-500 text-sm leading-relaxed flex-1">
-        {bolosButtercream.estilosDecoracao[1].descricao}
-      </p>
-    </div>
-  </div>
-</HorizontalScroll>
+            <div className="flex-none w-72 bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+              <PhotoSwitcher
+                images={[
+                  "/images/bolos/drip-cake1.jpg",
+                  "/images/bolos/drip-cake2.jpg",
+                  "/images/bolos/drip-cake3.jpg",
+                  "/images/bolos/drip-cake4.jpg",
+                ]}
+                alt="Drip Cake"
+              />
+              <div className="p-5 flex flex-col flex-1">
+                <h4 className="font-cinzel text-stone-800 mb-2" style={{ fontFamily: 'var(--font-cinzel)', fontSize: '1.125rem' }}>
+                  {bolosButtercream.estilosDecoracao[1].nome}
+                </h4>
+                <p className="text-stone-500 text-sm leading-relaxed flex-1">
+                  {bolosButtercream.estilosDecoracao[1].descricao}
+                </p>
+              </div>
+            </div>
+          </HorizontalScroll>
 
           <div className="mt-10">
             <a
-              href={`${wppBase}Olá!+Gostaria+de+encomendar+um+bolo+em+Buttercream+personalizado.`}
+              href={`${wppBase}${encodeURIComponent('Olá! Gostaria de encomendar um bolo em Buttercream personalizado.')}`}
               target="_blank" rel="noopener noreferrer"
               className="inline-block bg-rose-500 text-white font-medium px-8 py-3 rounded-full hover:bg-rose-600 transition-colors"
             >
@@ -264,7 +259,7 @@ export default function BolosPage() {
             <p className="text-stone-600 leading-relaxed mb-4">{docesEventos.descricao}</p>
             <p className="text-stone-400 text-sm italic mb-8">{docesEventos.observacao}</p>
             <a
-              href={`${wppBase}Olá!+Gostaria+de+informações+sobre+doces+para+eventos.`}
+              href={`${wppBase}${encodeURIComponent('Olá! Gostaria de informações sobre doces para eventos.')}`}
               target="_blank" rel="noopener noreferrer"
               className="self-start bg-rose-500 text-white font-medium px-8 py-3 rounded-full hover:bg-rose-600 transition-colors"
             >
