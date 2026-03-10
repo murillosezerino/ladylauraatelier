@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: "Aceitam Vale / Ticket refeição?",
-    a: "Não aceitamos. Com exceção do Caju, que passa normalmente na modalidade "crédito".",
+    a: "Não aceitamos. Com exceção do Caju, que passa normalmente na modalidade 'crédito'.",
   },
   {
     q: "Quais as formas de pagamento aceitas?",
