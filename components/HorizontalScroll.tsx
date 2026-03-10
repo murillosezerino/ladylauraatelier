@@ -28,6 +28,24 @@ export default function HorizontalScroll({ children, className = '' }: Props) {
     setCanRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 2)
   }
 
+  // Listener nativo com capture:true — intercepta cliques ANTES do React
+  useEffect(() => {
+    const el = trackRef.current
+    if (!el) return
+
+    const blockClick = (e: MouseEvent) => {
+      if (didDrag.current) {
+        e.preventDefault()
+        e.stopPropagation()
+        e.stopImmediatePropagation()
+        didDrag.current = false
+      }
+    }
+
+    el.addEventListener('click', blockClick, true)
+    return () => el.removeEventListener('click', blockClick, true)
+  }, [])
+
   useEffect(() => {
     sync()
     const el = trackRef.current
@@ -56,7 +74,7 @@ export default function HorizontalScroll({ children, className = '' }: Props) {
     const el = trackRef.current
     if (!el) return
     const dx = e.clientX - startX.current
-    if (Math.abs(dx) > 5) didDrag.current = true
+    if (Math.abs(dx) > 8) didDrag.current = true
     el.scrollLeft = startScroll.current - dx
 
     const now = Date.now()
@@ -82,15 +100,6 @@ export default function HorizontalScroll({ children, className = '' }: Props) {
       raf.current = requestAnimationFrame(coast)
     }
     raf.current = requestAnimationFrame(coast)
-  }
-
-  // Bloqueia cliques em links/botões se o usuário arrastou
-  const onClickCapture = (e: React.MouseEvent) => {
-    if (didDrag.current) {
-      e.preventDefault()
-      e.stopPropagation()
-      didDrag.current = false
-    }
   }
 
   const scrollBy = (dir: 'left' | 'right') => {
@@ -128,7 +137,6 @@ export default function HorizontalScroll({ children, className = '' }: Props) {
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
         onScroll={sync}
-        onClickCapture={onClickCapture}
         className={`flex gap-5 overflow-x-auto pb-4 ${className}`}
         style={{
           scrollbarWidth: 'none',
