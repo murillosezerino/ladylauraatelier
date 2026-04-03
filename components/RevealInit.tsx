@@ -13,16 +13,19 @@ export default function RevealInit() {
           }
         })
       },
-      { threshold: 0.1 }
+      { threshold: 0.08, rootMargin: '0px 0px -60px 0px' }
     )
 
-    const elements = document.querySelectorAll('.reveal')
+    const selectors = '.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger'
+    const elements = document.querySelectorAll(selectors)
     elements.forEach((el, i) => {
-      const siblings = el.parentElement?.querySelectorAll('.reveal')
-      if (siblings) {
+      // Stagger siblings within same parent
+      const parent = el.parentElement
+      if (parent) {
+        const siblings = parent.querySelectorAll(selectors)
         const idx = Array.from(siblings).indexOf(el as Element)
-        if (idx > 0) {
-          ;(el as HTMLElement).style.transitionDelay = `${idx * 0.1}s`
+        if (idx > 0 && !el.classList.contains('reveal-stagger')) {
+          ;(el as HTMLElement).style.transitionDelay = `${idx * 0.08}s`
         }
       }
       observer.observe(el)

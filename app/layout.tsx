@@ -13,13 +13,16 @@ export const metadata: Metadata = {
     'bolos personalizados SJC',
     'confeitaria Jacareí',
     'bolo de casamento SJC',
-    'flores de açúcar',
-    'kits de presentes',
+    'macarons artesanais',
+    'doces finos SJC',
+    'brigadeiros gourmet',
+    'eventos SJC',
     'Le Cordon Bleu',
     'pâtisserie artesanal',
     'Lady Laura Atelier',
-    'bolo personalizado',
-    'confeitaria artesanal',
+    'confeitaria francesa',
+    'mesa de doces casamento',
+    'flores SJC',
   ],
   authors: [{ name: 'Lady Laura Atelier' }],
   creator: 'Lady Laura Atelier',
@@ -63,14 +66,16 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Josefin+Sans:wght@300;400;600&family=Cinzel:wght@400;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Schoolbell&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body className="font-sans bg-base text-primary antialiased">{children}</body>
     </html>
   )
 }

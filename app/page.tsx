@@ -1,25 +1,37 @@
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
-import Products from '@/components/Products'
+import Categories from '@/components/Categories'
+import Editorial from '@/components/Editorial'
+import FeaturedProducts from '@/components/FeaturedProducts'
+import Events from '@/components/Events'
+import Catalogs from '@/components/Catalogs'
+import Marquee from '@/components/Marquee'
 import About from '@/components/About'
 import Testimonials from '@/components/Testimonials'
-import FAQ from '@/components/FAQ'
-import Contact from '@/components/Contact'
+import InstagramFeed from '@/components/InstagramFeed'
+import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 import RevealInit from '@/components/RevealInit'
+import SmoothScroll from '@/components/SmoothScroll'
 
 export default function Home() {
   return (
     <>
       <RevealInit />
+      <SmoothScroll />
       <Nav />
-      <main>
+      <main className="bg-base text-primary">
         <Hero />
-        <Products />
+        <Categories />
+        <Marquee />
+        <Editorial />
+        <FeaturedProducts />
+        <Events />
+        <Catalogs />
         <About />
         <Testimonials />
-        <FAQ />
-        <Contact />
+        <InstagramFeed />
+        <CTASection />
       </main>
       <Footer />
     </>

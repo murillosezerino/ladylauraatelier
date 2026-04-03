@@ -9,13 +9,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        base: '#FBF6F0',
+        primary: '#2A2A2A',
         rose: {
-          DEFAULT: '#C8728A',
+          DEFAULT: '#E8CFCF',
+          dark: '#C8728A',
           deep: '#A05070',
           mid: '#D4899F',
           soft: '#EEBECE',
           pale: '#FAF0F4',
           bg: '#FDF5F7',
+          blush: '#F5DDE5',
+          muted: '#D9B3BC',
+        },
+        olive: {
+          DEFAULT: '#6F7D6B',
+          light: '#8A9A85',
+          dark: '#5A6A56',
+        },
+        nude: {
+          DEFAULT: '#DCC5B2',
+          light: '#E8D5C4',
+          dark: '#C4A896',
         },
         gold: {
           DEFAULT: '#B8966A',
@@ -27,44 +42,58 @@ const config: Config = {
           DEFAULT: '#FAF0E8',
           2: '#F2E8DC',
         },
+        chocolate: {
+          DEFAULT: '#5C3D2E',
+          light: '#8B6F5E',
+          dark: '#3E2723',
+        },
         paper: '#FBF6F0',
         ink: {
-          DEFAULT: '#2A1E28',
-          2: '#5C3E50',
-          3: '#9A7080',
-          4: '#C4A0B0',
+          DEFAULT: '#2A2A2A',
+          2: '#555555',
+          3: '#888888',
+          4: '#AAAAAA',
         },
       },
       fontFamily: {
-        // Títulos principais — Cormorant Garamond (editorial francês)
-        cinzel: ['Cormorant Garamond', 'serif'],
-        // Script / acentos cursivos
-        sacramento: ['Great Vibes', 'cursive'],
-        // Corpo de texto
-        nunito: ['Cormorant Garamond', 'serif'],
-        // Labels e small caps
-        josefin: ['Josefin Sans', 'sans-serif'],
-        // Aliases diretos para uso no código
-        cormorant: ['Cormorant Garamond', 'serif'],
-        'great-vibes': ['Great Vibes', 'cursive'],
+        serif: ['Cormorant Garamond', 'Playfair Display', 'Georgia', 'serif'],
+        display: ['Bobby Jones', 'Playfair Display', 'Georgia', 'serif'],
+        sans: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+        script: ['Beautifully Delicious', 'Georgia', 'serif'],
+        hand: ['Schoolbell', 'cursive'],
+        poppins: ['Poppins', 'system-ui', 'sans-serif'],
+        cormorant: ['Cormorant Garamond', 'Georgia', 'serif'],
       },
       fontSize: {
-        // Cormorant precisa de tamanhos ligeiramente maiores para boa leitura
-        'body': ['1.0625rem', { lineHeight: '1.75' }],
+        'body': ['1rem', { lineHeight: '1.75' }],
         'body-lg': ['1.125rem', { lineHeight: '1.75' }],
       },
       animation: {
-        'fade-up': 'fadeUp 0.7s ease forwards',
-        'fade-in': 'fadeIn 1s ease forwards',
+        'fade-up': 'fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+        'fade-in': 'fadeIn 1.2s ease forwards',
+        'slide-in': 'slideIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+        'float': 'float 6s ease-in-out infinite',
       },
       keyframes: {
         fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '0%': { opacity: '0', transform: 'translateY(40px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
+        },
+        slideIn: {
+          '0%': { opacity: '0', transform: 'translateX(-20px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        scrollDot: {
+          '0%, 100%': { opacity: '0.3', transform: 'translateY(0)' },
+          '50%': { opacity: '1', transform: 'translateY(6px)' },
         },
       },
     },

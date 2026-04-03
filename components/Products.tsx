@@ -5,17 +5,17 @@ import ProductImage from "@/components/ProductImage";
 
 const categorias = [
   {
-    titulo: "Bolos & Doces",
-    foto: "/images/bolos/capa-bolos.jpg",
+    titulo: "Confeitaria & Doces",
+    foto: "/images/eventos/mesa-doces-1.webp",
     emoji: "🎂",
-    descricao: "Bolos festivos e artísticos sob encomenda — naked cake, buttercream, drip cake, e muito mais. 12 sabores da casa para escolher.",
-    destaques: ["Baby Cake · Aro 15 · Aro 20 · Aro 25", "Seleção fixa + Buttercream personalizado", "Doces para eventos"],
+    descricao: "Bolos festivos, profiteroles, éclairs, mille-feuille, brigadeiros gourmet e muito mais. Técnica Le Cordon Bleu Paris.",
+    destaques: ["Baby Cake · Aro 15 · Aro 20 · Aro 25", "Seleção fixa + Buttercream personalizado", "Doces finos para eventos"],
     href: "/catalogo/bolos",
-    wpp: "https://wa.me/5512982910000?text=Olá!%20Gostaria%20de%20encomendar%20um%20bolo%20personalizado.",
+    wpp: "https://wa.me/5512982910000?text=Olá!%20Gostaria%20de%20encomendar%20doces.",
   },
   {
     titulo: "Flores & Arranjos",
-    foto: "/images/flores/capa-flores.jpg",
+    foto: "/images/flores/copo-de-leite.webp",
     emoji: "🌸",
     descricao: "Arranjos frescos montados diariamente, rosas nobres, flores secas, vasos de cristal e peças especiais assinadas por Renata Chagas.",
     destaques: ["Arranjos frescos (6 tamanhos)", "Rosas · Flores secas · Vasos", "Galocha de Cerâmica · Aquário de Orquídea"],
@@ -24,7 +24,7 @@ const categorias = [
   },
   {
     titulo: "Kits & Presentes",
-    foto: "/images/kits/capa-presentes.jpg",
+    foto: "/images/macarons/macarons-caixa-rosa.webp",
     emoji: "🎁",
     descricao: "Kits especiais para datas comemorativas, casamentos, empresas e momentos que merecem ser lembrados — com flores, chocolates e espumantes.",
     destaques: ["Box Café da Manhã · Breakfast at Tiffany's", "15+ kits com flores nomeados", "Latinhas · Chocolates · Linha Home"],
@@ -33,7 +33,7 @@ const categorias = [
   },
   {
     titulo: "Eventos & Reservas",
-    foto: "/images/eventos/capa-eventos.jpg",
+    foto: "/images/eventos/mesa-casamento.webp",
     emoji: "🥂",
     descricao: "Projetos especiais para celebrar momentos únicos — do brunch íntimo ao casamento dos sonhos, com decoração floral, menu e exclusividade.",
     destaques: ["Sunday Brunch · Petit Comité", "Petit Jardin · Grand Royale", "Até 55 pessoas · Casa exclusiva"],
@@ -61,7 +61,6 @@ export default function Products() {
               key={cat.titulo}
               className="bg-white border border-rose-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
             >
-              {/* Imagem de capa — usa emoji como fallback enquanto foto não existir */}
               <Link href={cat.href}>
   <ProductImage
     src={cat.foto}
