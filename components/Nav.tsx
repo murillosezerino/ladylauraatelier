@@ -79,7 +79,7 @@ export default function Nav() {
 
   // Color classes based on background
   const textCls = isDark ? 'text-white/75 hover:text-white' : 'text-ink-2 hover:text-rose-dark'
-  const burgerBg = isDark ? 'bg-white' : 'bg-primary'
+  const burgerBg = isDark ? 'bg-white' : 'bg-rose-dark'
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${scrolled ? 'backdrop-blur-md bg-black/5' : ''}`}>
