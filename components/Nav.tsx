@@ -2,17 +2,20 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { siteConfig } from '@/lib/data'
 
-const links = [
+const links: { label: string; href: string; anchor?: string }[] = [
   { label: 'Confeitaria', href: '/catalogo/bolos' },
   { label: 'Flores', href: '/catalogo/flores' },
   { label: 'Eventos', href: '/catalogo/eventos' },
-  { label: 'Sobre', href: '/#sobre' },
-  { label: 'Contato', href: '/#contato' },
+  { label: 'Sobre', href: '/#sobre', anchor: '#sobre' },
+  { label: 'Contato', href: '/#contato', anchor: '#contato' },
 ]
 
 export default function Nav() {
+  const pathname = usePathname()
+  const isHome = pathname === '/'
   const [scrolled, setScrolled] = useState(false)
   const [isDark, setIsDark] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -87,8 +90,10 @@ export default function Nav() {
       <div className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-rose-dark to-rose transition-all duration-150 ease-out" style={{ width: `${scrollProgress}%` }} />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="block transition-all duration-500 opacity-100 translate-y-0">
+        {/* Logo — on home: appears on scroll; on subpages: always visible */}
+        <Link href="/" className={`block transition-all duration-500 ${
+          isHome && !scrolled ? 'opacity-0 -translate-y-3 pointer-events-none' : 'opacity-100 translate-y-0'
+        }`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={isDark ? '/images/logo-ladylaura-white.svg' : '/images/logo-ladylaura-rose.svg'}
@@ -102,7 +107,7 @@ export default function Nav() {
           {links.map((l) => (
             <Link
               key={l.href}
-              href={l.href}
+              href={isHome && l.anchor ? l.anchor : l.href}
               className={`text-[0.68rem] tracking-[0.18em] uppercase font-sans font-medium transition-all duration-300 link-underline ${textCls}`}
             >
               {l.label}
@@ -153,7 +158,7 @@ export default function Nav() {
             return (
               <Link
                 key={l.href}
-                href={l.href}
+                href={isHome && l.anchor ? l.anchor : l.href}
                 onClick={() => setMenuOpen(false)}
                 className="text-[0.7rem] tracking-[0.18em] uppercase text-ink-2 hover:text-rose-dark transition-all py-3.5 border-b border-rose/8 font-sans font-medium"
                 style={style}
