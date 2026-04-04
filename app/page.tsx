@@ -3,7 +3,6 @@ import Hero from '@/components/Hero'
 import Categories from '@/components/Categories'
 import Editorial from '@/components/Editorial'
 import FeaturedProducts from '@/components/FeaturedProducts'
-import Events from '@/components/Events'
 import Marquee from '@/components/Marquee'
 import About from '@/components/About'
 import Testimonials from '@/components/Testimonials'
@@ -25,7 +24,6 @@ export default function Home() {
         <Marquee />
         <Editorial />
         <FeaturedProducts />
-        <Events />
         <About />
         <Testimonials />
         <InstagramFeed />
