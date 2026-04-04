@@ -19,7 +19,7 @@ export default function Footer() {
               className="h-16 w-auto mb-5 opacity-90"
             />
             <p className="text-white/35 text-sm font-sans leading-relaxed max-w-xs">
-              Confeitaria artesanal francesa, doces finos, macarons e flores — experiências que adoçam memórias.
+              Pâtisserie & Bistrô • Flores & Presentes • Eventos — experiências que adoçam memórias.
             </p>
           </div>
 
