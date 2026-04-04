@@ -44,10 +44,6 @@ export default function CTASection() {
             <div className="w-12 h-px bg-white/20" />
           </div>
 
-          <p className="reveal text-white/65 text-lg font-sans font-light max-w-md mx-auto mb-14 leading-relaxed">
-            Macarons, brigadeiros, mesas de doces e experiências completas — tudo feito com amor e técnica Le Cordon Bleu.
-          </p>
-
           {/* CTA */}
           <div className="reveal">
             <a
