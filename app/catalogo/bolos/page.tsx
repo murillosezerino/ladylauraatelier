@@ -54,7 +54,7 @@ export default function BolosPage() {
         <section data-nav-dark className="relative pt-44 pb-32 px-6 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute inset-0 bg-drift">
-              <Image src="/images/bolos/capa-bolos.jpg" alt="Confeitaria" fill className="object-cover" priority sizes="100vw" />
+              <Image src="/images/bolos/capa-bolos.jpg.jpg" alt="Confeitaria" fill className="object-cover" priority sizes="100vw" />
             </div>
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
             <div className="absolute inset-0 bg-gradient-to-r from-rose-deep/15 via-transparent to-rose-deep/10" />

@@ -104,7 +104,7 @@ export default function FloresPage() {
           <div className="absolute inset-0 overflow-hidden">
             <div className="bg-drift absolute inset-0">
               <Image
-                src="/images/flores/copo-de-leite.webp"
+                src="/images/flores/rosas-pink.jpg"
                 alt="Flores Lady Laura Atelier"
                 fill
                 className="object-cover"
