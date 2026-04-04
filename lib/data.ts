@@ -54,12 +54,12 @@ export const categories = [
     href: '/catalogo/bolos',
   },
   {
-    id: 'macarons',
-    title: 'Macarons',
-    subtitle: 'Les Macarons',
-    description: 'Macarons artesanais em dezenas de sabores — da massa à montagem, tudo feito à mão.',
-    image: '/images/macarons/macarons-coloridos.webp',
-    href: '/catalogo/bolos',
+    id: 'flores',
+    title: 'Flores',
+    subtitle: 'Fleurs du Jour',
+    description: 'Arranjos frescos compostos diariamente com as flores mais belas da estação — buquês, vasos e composições exclusivas.',
+    image: '/images/flores/capa-flores.jpg',
+    href: '/catalogo/flores',
   },
   {
     id: 'eventos',
@@ -105,7 +105,6 @@ export const events = {
   image: '/images/eventos/mesa-casamento.webp',
   ctaLabel: 'Solicitar orçamento',
   formats: [
-    { name: 'Sunday Brunch', capacity: 'Até 8 pessoas', description: 'Mimosas, croissants, quiches e pâtisseries em uma manhã especial.' },
     { name: 'Petit Comité', capacity: 'Até 10 pessoas', description: 'Bolo, flores, espumante e mesa decorada para momentos íntimos.' },
     { name: 'Petit Jardin', capacity: 'Até 30 pessoas', description: 'Menu completo de brunch, valet e decoração exclusiva.' },
     { name: 'Grand Royale', capacity: 'Até 55 pessoas', description: 'Casa exclusiva, menu premium e experiência completa.' },
@@ -197,8 +196,8 @@ export const about = {
       'Há 12 anos, Renata Chagas cuida de cada pétala com a mesma dedicação de sempre. Especialista em arranjos florais, ela desenvolve composições exclusivas pensadas para transformar qualquer momento em uma memória bonita.',
       'Todas as composições florais são montadas diariamente com as flores mais frescas e lindas do dia — respeitando a estação, a natureza e o gosto de cada cliente.',
     ],
-    image: '/images/eventos/fundo-3.webp',
-    imageAlt: 'Arranjos florais Lady Laura Atelier',
+    image: '/images/renata-chagas.jpg',
+    imageAlt: 'Renata Chagas — Designer Floral Lady Laura Atelier',
     credentials: [
       { label: 'Designer Floral', detail: '12 anos de curadoria', href: null },
       { label: 'Flores frescas diárias', detail: 'Seleção do dia', href: null },
