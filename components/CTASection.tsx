@@ -1,8 +1,12 @@
+'use client'
+
 import { siteConfig } from '@/lib/data'
 import Image from 'next/image'
+import { useState } from 'react'
 
 export default function CTASection() {
   const waLink = `https://wa.me/${siteConfig.whatsapp}?text=Ol%C3%A1!+Vim+pelo+site+e+gostaria+de+fazer+uma+encomenda.`
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
   return (
     <>
@@ -63,6 +67,24 @@ export default function CTASection() {
 
       {/* ── Locations Section ── */}
       <section className="py-24 px-6 bg-white relative overflow-hidden">
+        {/* Background images that appear on card hover */}
+        {siteConfig.addresses.map((addr, i) => (
+          <div
+            key={i}
+            className="absolute inset-0 transition-opacity duration-700 pointer-events-none"
+            style={{ opacity: hoveredCard === i ? 1 : 0 }}
+          >
+            <Image
+              src={addr.photo}
+              alt={addr.city}
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-white/82" />
+          </div>
+        ))}
+
         <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-rose-pale/15 rounded-full blur-[120px] pointer-events-none blob-pulse" />
 
         <div className="max-w-5xl mx-auto relative">
@@ -88,6 +110,8 @@ export default function CTASection() {
                 key={i}
                 className="reveal card-lift bg-base rounded-[1.75rem] overflow-hidden border border-rose/10 hover:border-rose/25 transition-all duration-500"
                 style={{ transitionDelay: `${i * 0.1}s` }}
+                onMouseEnter={() => setHoveredCard(i)}
+                onMouseLeave={() => setHoveredCard(null)}
               >
                 {/* Map */}
                 <div className="relative h-52 sm:h-60 w-full overflow-hidden">
