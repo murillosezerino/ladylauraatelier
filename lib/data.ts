@@ -68,7 +68,7 @@ export const categories = [
     title: 'Eventos',
     subtitle: 'Célébrations',
     description: 'Mesas completas de doces, bolos e experiências para casamentos e celebrações.',
-    image: '/images/eventos/mesa-casamento.webp',
+    image: '/images/eventos/capa-eventos.jpg',
     href: '/catalogo/eventos',
   },
 ]
