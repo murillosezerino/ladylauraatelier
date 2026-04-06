@@ -4,6 +4,7 @@ import Categories from '@/components/Categories'
 import Editorial from '@/components/Editorial'
 import FeaturedProducts from '@/components/FeaturedProducts'
 import Marquee from '@/components/Marquee'
+import NossasCasas from '@/components/NossasCasas'
 import About from '@/components/About'
 import Testimonials from '@/components/Testimonials'
 import InstagramFeed from '@/components/InstagramFeed'
@@ -24,10 +25,11 @@ export default function Home() {
         <Marquee />
         <Editorial />
         <FeaturedProducts />
-        <CTASection />
+        <NossasCasas />
         <About />
         <Testimonials />
         <InstagramFeed />
+        <CTASection />
       </main>
       <Footer />
     </>

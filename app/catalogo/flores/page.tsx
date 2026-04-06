@@ -29,7 +29,7 @@ function FlowerCard({ nome, sub, descricao, observacao, wppMsg, image }: {
   observacao?: string | null; wppMsg: string; image?: string;
 }) {
   return (
-    <div className="card-lift flex-none w-48 sm:w-52 bg-white border border-rose/10 rounded-[1.5rem] overflow-hidden shadow-sm shadow-rose/5 flex flex-col group">
+    <div className="card-lift flex-none w-64 sm:w-72 bg-white border border-rose/10 rounded-[1.5rem] overflow-hidden shadow-sm shadow-rose/5 flex flex-col group">
       {/* Image */}
       <div className="relative aspect-[3/4] overflow-hidden bg-rose-pale img-hover">
         {image ? (
