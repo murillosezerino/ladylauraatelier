@@ -45,16 +45,26 @@ function AutoCarousel({ images, alt }: { images: string[]; alt: string }) {
   )
 }
 
+type PersonType = {
+  role: string
+  name: string
+  bio: string[]
+  images?: string[]
+  image: string
+  imageAlt: string
+  credentials: { label: string; detail: string; href: string | null }[]
+}
+
 function PersonCard({
   person,
   reverse = false,
   useCarousel = false,
 }: {
-  person: typeof about.thay
+  person: PersonType
   reverse?: boolean
   useCarousel?: boolean
 }) {
-  const images = 'images' in person && Array.isArray((person as any).images) ? (person as any).images as string[] : [person.image]
+  const images = person.images && person.images.length > 1 ? person.images : [person.image]
 
   return (
     <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${reverse ? 'lg:[&>*:first-child]:order-2' : ''}`}>
