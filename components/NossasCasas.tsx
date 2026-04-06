@@ -23,13 +23,13 @@ export default function NossasCasas() {
             className="object-cover"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-white/82" />
+          <div className="absolute inset-0 bg-white/90" />
         </div>
       ))}
 
       <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-rose-pale/15 rounded-full blur-[120px] pointer-events-none blob-pulse" />
 
-      <div className="max-w-5xl mx-auto relative">
+      <div className="max-w-5xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-14 reveal">
           <p className="text-[0.6rem] tracking-[0.5em] uppercase text-rose-dark font-sans font-medium mb-4">
