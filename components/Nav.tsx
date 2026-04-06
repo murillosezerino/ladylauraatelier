@@ -7,9 +7,10 @@ import { siteConfig } from '@/lib/data'
 
 const links: { label: string; href: string; anchor?: string }[] = [
   { label: 'Confeitaria', href: '/catalogo/bolos' },
-  { label: 'Flores', href: '/catalogo/flores' },
-  { label: 'Eventos', href: '/catalogo/eventos' },
-  { label: 'Sobre', href: '/#sobre', anchor: '#sobre' },
+  { label: 'Flores & Presentes', href: '/catalogo/flores' },
+  { label: 'Eventos & Casamentos', href: '/catalogo/eventos' },
+  { label: 'Nossas Casas', href: '/#nossas-casas', anchor: '#nossas-casas' },
+  { label: 'Sobre Nós', href: '/#sobre', anchor: '#sobre' },
   { label: 'Contato', href: '/#contato', anchor: '#contato' },
 ]
 

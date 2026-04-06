@@ -180,7 +180,7 @@ export const about = {
     name: 'Thay Chagas',
     bio: [
       'Começou aos 15 anos atendendo encomendas na casa dos pais — e nunca mais parou. Há 13 anos, Thay Chagas transforma ingredientes em memórias afetivas com as mesmas receitas de sempre.',
-      'Em 2018 se formou em Pâtisserie pela Le Cordon Bleu Paris, percorrendo mais de 15 cidades europeias em busca das receitas perfeitas. Em 2023 se especializou em Pasticceria Italiana em Firenze.',
+      'Em 2018 se formou em Pâtisserie pela Le Cordon Bleu Paris, percorrendo 29 cidades europeias em 13 países em busca das receitas perfeitas. Em 2023 se especializou em Pasticceria Italiana em Firenze.',
     ],
     image: '/images/chef/thay-le-cordon-bleu.webp',
     imageAlt: 'Thay Chagas — Le Cordon Bleu Paris',
@@ -218,7 +218,7 @@ export const about = {
 
   bio: [
     'Começou aos 15 anos atendendo encomendas na casa dos pais — e nunca mais parou. Há 13 anos, Thay Chagas transforma ingredientes em memórias afetivas com as mesmas receitas de sempre.',
-    'Em 2018 se formou em Pâtisserie pela Le Cordon Bleu Paris, percorrendo mais de 15 cidades europeias em busca das receitas perfeitas. Em 2023 se especializou em Pasticceria Italiana em Firenze.',
+    'Em 2018 se formou em Pâtisserie pela Le Cordon Bleu Paris, percorrendo 29 cidades europeias em 13 países em busca das receitas perfeitas. Em 2023 se especializou em Pasticceria Italiana em Firenze.',
   ],
   image: '/images/chef/thay-le-cordon-bleu.webp',
   imageAlt: 'Thay Chagas — Lady Laura Atelier',

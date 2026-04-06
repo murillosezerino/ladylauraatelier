@@ -31,10 +31,10 @@ export default function Footer() {
             <div className="grid grid-cols-2 gap-y-3">
               {[
                 { label: 'Confeitaria', href: '/catalogo/bolos' },
-                { label: 'Flores', href: '/catalogo/flores' },
-                { label: 'Eventos', href: '/catalogo/eventos' },
-                { label: 'Presentes', href: '/catalogo/kits' },
-                { label: 'Sobre', href: '#sobre' },
+                { label: 'Flores & Presentes', href: '/catalogo/flores' },
+                { label: 'Eventos & Casamentos', href: '/catalogo/eventos' },
+                { label: 'Nossas Casas', href: '/#nossas-casas' },
+                { label: 'Sobre Nós', href: '#sobre' },
                 { label: 'Contato', href: '#contato' },
                 { label: 'Dúvidas Frequentes', href: '/faq' },
               ].map((item) => (

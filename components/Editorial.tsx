@@ -112,8 +112,8 @@ export default function Editorial() {
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           <AnimatedNumber target={13} label="anos" />
           <AnimatedNumber target={44} label="mil seguidores" />
-          <AnimatedNumber target={15} label="cidades europeias" />
-          <AnimatedNumber target={2} label="unidades" />
+          <AnimatedNumber target={29} label="cidades europeias" />
+          <AnimatedNumber target={13} label="países" />
         </div>
       </div>
     </section>

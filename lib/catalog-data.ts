@@ -11,7 +11,6 @@ export const bolosData = {
   },
 
   tamanhos: [
-    { nome: "Baby Cake", diametro: "11 cm", altura: "12 cm", porcoes: "~8 porções" },
     { nome: "Aro 15",    diametro: "15 cm", altura: "12 cm", porcoes: "~15 porções" },
     { nome: "Aro 20",    diametro: "20 cm", altura: "12 cm", porcoes: "~30 porções" },
     { nome: "Aro 25",    diametro: "25 cm", altura: "12 cm", porcoes: "~45 porções" },
@@ -19,7 +18,7 @@ export const bolosData = {
 
   bolosFestivos: {
     descricao: "Seleção fixa da casa — bolos recheados prontos para personalizar com o tamanho ideal para o seu evento.",
-    precos: { babyCake: 211, aro15: 299, aro20: 396, aro25: 498 },
+    precos: { aro15: 299, aro20: 396, aro25: 498 },
     sabores: [
       {
         nome: "Praliné",
@@ -98,7 +97,7 @@ export const bolosData = {
 
   bolosButtercream: {
     descricao: "Bolos artísticos personalizados em Buttercream Suíço. Adequamos a sua ideia à nossa personalidade e food styling.",
-    precos: { babyCake: 239, aro15: 312, aro20: 416, aro25: 523 },
+    precos: { aro15: 312, aro20: 416, aro25: 523 },
     nota: "Para um orçamento completo de decoração, envie uma foto do modelo desejado. Os valores podem variar de acordo com o tipo de arranjo floral e quantidade de macarons.",
     saboresDisponiveis: ["Trovão", "Dois Amores", "Praliné", "Dulce Nut", "Pistache com Framboesa"],
     estilosDecoracao: [
@@ -150,6 +149,11 @@ export const floresData = {
     { nome: "Garrafinha de Flores Secas", tamanho: null,  descricao: null, preco: 99.90, foto: "/images/flores/garrafinha.jpg" },
     { nome: "Galocha de Cerâmica",     tamanho: null, descricao: "1 pé com flores — disponível com flores secas ou frescas", preco: 179, foto: "/images/flores/galocha.jpg" },
   ],
+
+  floresPlantadas: {
+    descricao: "Flores e folhagens que florescem com o tempo. Espécies selecionadas, plantadas com cuidado em vasos especiais, trazendo frescor, charme e longevidade para qualquer ambiente.",
+    observacao: "*Consulte espécies disponíveis na estação",
+  },
 
   vasos: [
     { nome: "Vaso Floral Queen",       descricao: "Arranjo floral médio montado em vaso de vidro",                                           preco: 299, foto: "/images/flores/vaso-queen.jpg",       observacao: null },

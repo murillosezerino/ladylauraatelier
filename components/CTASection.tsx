@@ -39,8 +39,12 @@ export default function CTASection() {
             className="reveal h-14 sm:h-16 w-auto mx-auto mb-8 opacity-70"
           />
           <h2 className="reveal font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-8 leading-tight">
-            Pronto para adoçar seu evento?
+            Pronta para adoçar e florir seu evento?
           </h2>
+
+          <p className="reveal text-white/60 font-sans text-base sm:text-lg mb-2 italic">
+            *Fale conosco via WhatsApp
+          </p>
 
           <div className="reveal flex items-center justify-center gap-6 mb-10">
             <div className="w-12 h-px bg-white/20" />
@@ -66,7 +70,7 @@ export default function CTASection() {
       </section>
 
       {/* ── Locations Section ── */}
-      <section className="py-24 px-6 bg-white relative overflow-hidden">
+      <section id="nossas-casas" className="py-24 px-6 bg-white relative overflow-hidden">
         {/* Background images that appear on card hover */}
         {siteConfig.addresses.map((addr, i) => (
           <div
@@ -96,10 +100,16 @@ export default function CTASection() {
             <h2 className="font-serif text-3xl md:text-5xl text-primary mb-6">
               Nossas Casas
             </h2>
-            <div className="ornament">
+            <div className="ornament mb-6">
               <svg className="w-3 h-3 text-rose-dark/50" viewBox="0 0 12 12" fill="currentColor">
                 <path d="M6 0L7.5 4.5L12 6L7.5 7.5L6 12L4.5 7.5L0 6L4.5 4.5Z" />
               </svg>
+            </div>
+            <div className="max-w-2xl mx-auto space-y-4 text-ink-2 font-sans text-[0.95rem] leading-relaxed">
+              <p>Nossos bistrôs são extensões daquilo que acreditamos: boa comida, tempo de qualidade e experiências que ficam na memória.</p>
+              <p>Em cada unidade, você encontra um ambiente acolhedor, com um menu cuidadosamente elaborado que reúne diversas opções para o seu brunch, doces autorais e carta de vinhos especiais.</p>
+              <p>Um convite para desfrutar com calma, seja em encontros, celebrações ou momentos só seus.</p>
+              <p className="text-rose-dark font-medium text-sm italic">Consulte horários de funcionamento</p>
             </div>
           </div>
 

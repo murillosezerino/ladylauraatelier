@@ -90,7 +90,7 @@ function FlowerCard({ nome, sub, descricao, observacao, wppMsg, image }: {
 }
 
 export default function FloresPage() {
-  const { arranjosFrescos, rosasVermelhas, floresSecas, vasos, intro } = floresData
+  const { arranjosFrescos, rosasVermelhas, floresSecas, floresPlantadas, vasos, intro } = floresData
 
   return (
     <>
@@ -226,8 +226,35 @@ export default function FloresPage() {
           </div>
         </section>
 
-        {/* ── Vasos ── */}
+        {/* ── Flores Plantadas ── */}
         <section className="relative bg-white py-28 overflow-hidden">
+          <div className="absolute -top-32 right-0 w-80 h-80 bg-olive-light/10 rounded-full blur-[100px] pointer-events-none" />
+
+          <div className="max-w-5xl mx-auto px-6">
+            <SectionHeader
+              label="Naturelles & vivantes"
+              title="Flores Plantadas"
+              desc={floresPlantadas.descricao}
+            />
+            <div className="reveal text-center">
+              <p className="text-ink-4 text-sm italic font-sans mb-8">{floresPlantadas.observacao}</p>
+              <a
+                href={`${wppBase}${encodeURIComponent('Olá! Gostaria de saber sobre flores plantadas disponíveis.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-shine inline-flex items-center gap-3 bg-rose-dark text-white font-sans font-medium text-[0.7rem] tracking-[0.15em] uppercase px-10 py-4 rounded-full hover:bg-rose-deep hover:scale-[1.03] transition-all duration-300 shadow-lg shadow-rose-dark/20"
+              >
+                Consultar disponibilidade
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Vasos ── */}
+        <section className="relative py-28 overflow-hidden">
           {/* Decorative blobs */}
           <div className="absolute -top-24 right-0 w-80 h-80 bg-rose/15 rounded-full blur-[100px] pointer-events-none" />
           <div className="absolute -bottom-20 -left-32 w-72 h-72 bg-rose-pale/40 rounded-full blur-[100px] pointer-events-none blob-pulse" />

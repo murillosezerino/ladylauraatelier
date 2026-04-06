@@ -9,6 +9,8 @@ const items = [
   'Pavlovas',
   'Le Cordon Bleu',
   'Flores',
+  'Buquê de Noiva',
+  'Kits para Presente',
   'Eventos',
   'Casamentos',
 ]
@@ -16,10 +18,10 @@ const items = [
 export default function Marquee() {
   const content = items.map((item, i) => (
     <span key={i} className="flex items-center gap-8 px-4">
-      <span className="font-serif text-3xl md:text-4xl lg:text-5xl text-rose-dark/35 whitespace-nowrap tracking-wide">
+      <span className="font-serif text-3xl md:text-4xl lg:text-5xl text-rose-deep/50 whitespace-nowrap tracking-wide">
         {item}
       </span>
-      <span className="w-1.5 h-1.5 rounded-full bg-rose-dark/25 shrink-0" />
+      <span className="w-1.5 h-1.5 rounded-full bg-rose-deep/35 shrink-0" />
     </span>
   ))
 
