@@ -24,10 +24,10 @@ export default function Home() {
         <Marquee />
         <Editorial />
         <FeaturedProducts />
+        <CTASection />
         <About />
         <Testimonials />
         <InstagramFeed />
-        <CTASection />
       </main>
       <Footer />
     </>

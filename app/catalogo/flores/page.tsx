@@ -29,7 +29,7 @@ function FlowerCard({ nome, sub, descricao, observacao, wppMsg, image }: {
   observacao?: string | null; wppMsg: string; image?: string;
 }) {
   return (
-    <div className="card-lift flex-none w-64 sm:w-72 bg-white border border-rose/10 rounded-[1.5rem] overflow-hidden shadow-sm shadow-rose/5 flex flex-col group">
+    <div className="card-lift flex-none w-48 sm:w-52 bg-white border border-rose/10 rounded-[1.5rem] overflow-hidden shadow-sm shadow-rose/5 flex flex-col group">
       {/* Image */}
       <div className="relative aspect-[3/4] overflow-hidden bg-rose-pale img-hover">
         {image ? (
@@ -230,12 +230,29 @@ export default function FloresPage() {
         <section className="relative bg-white py-28 overflow-hidden">
           <div className="absolute -top-32 right-0 w-80 h-80 bg-olive-light/10 rounded-full blur-[100px] pointer-events-none" />
 
-          <div className="max-w-5xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-6">
             <SectionHeader
               label="Naturelles & vivantes"
               title="Flores Plantadas"
               desc={floresPlantadas.descricao}
             />
+
+            {/* Photo grid */}
+            <div className="reveal grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+              {floresPlantadas.fotos.map((foto, i) => (
+                <div key={i} className="relative aspect-[3/4] rounded-[1.5rem] overflow-hidden img-hover shadow-sm shadow-rose/10 group">
+                  <Image
+                    src={foto}
+                    alt={`Flor plantada ${i + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-rose-deep/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+              ))}
+            </div>
+
             <div className="reveal text-center">
               <p className="text-ink-4 text-sm italic font-sans mb-8">{floresPlantadas.observacao}</p>
               <a

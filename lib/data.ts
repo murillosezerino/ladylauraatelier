@@ -96,7 +96,7 @@ export const featuredProducts = [
   {
     name: 'Mesa de Doces',
     description: 'Montagem completa para casamentos e eventos: profiteroles, éclairs, mille-feuille, pavlovas e mais.',
-    image: '/images/confeitaria/mesa-doces-evento.webp',
+    image: '/images/confeitaria/mesa-doces-evento.jpg',
     whatsappMsg: 'Olá! Gostaria de solicitar orçamento para mesa de doces.',
   },
 ]
@@ -182,6 +182,11 @@ export const about = {
       'Começou aos 15 anos atendendo encomendas na casa dos pais — e nunca mais parou. Há 13 anos, Thay Chagas transforma ingredientes em memórias afetivas com as mesmas receitas de sempre.',
       'Em 2018 se formou em Pâtisserie pela Le Cordon Bleu Paris, percorrendo 29 cidades europeias em 13 países em busca das receitas perfeitas. Em 2023 se especializou em Pasticceria Italiana em Firenze.',
     ],
+    images: [
+      '/images/chef/thay-le-cordon-bleu.webp',
+      '/images/chef/thay-montando-prato.webp',
+      '/images/chef/thay-pratos.webp',
+    ],
     image: '/images/chef/thay-le-cordon-bleu.webp',
     imageAlt: 'Thay Chagas — Le Cordon Bleu Paris',
     credentials: [
@@ -202,8 +207,9 @@ export const about = {
     imageAlt: 'Renata Chagas — Designer Floral Lady Laura Atelier',
     credentials: [
       { label: 'Designer Floral', detail: '12 anos de curadoria', href: null },
+      { label: 'Eventos minimalistas externos', detail: 'Especialista em montagem e decoração em restaurantes e bistrôs', href: null },
+      { label: 'Curadoria floral corporativa', detail: 'Arranjos e ambientação para empresas', href: null },
       { label: 'Flores frescas diárias', detail: 'Seleção do dia', href: null },
-      { label: 'Flores & Presentes', detail: 'Know-how principal', href: null },
     ],
   },
 

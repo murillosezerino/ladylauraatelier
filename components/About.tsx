@@ -1,25 +1,77 @@
+'use client'
+
 import { about } from '@/lib/data'
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
+
+function AutoCarousel({ images, alt }: { images: string[]; alt: string }) {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    if (images.length <= 1) return
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length)
+    }, 2500)
+    return () => clearInterval(timer)
+  }, [images.length])
+
+  return (
+    <div className="relative w-full h-full">
+      {images.map((src, i) => (
+        <Image
+          key={src}
+          src={src}
+          alt={`${alt} ${i + 1}`}
+          fill
+          className={`object-cover object-top transition-opacity duration-700 ${i === current ? 'opacity-100' : 'opacity-0'}`}
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          priority={i === 0}
+        />
+      ))}
+      {/* Dots */}
+      {images.length > 1 && (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${i === current ? 'bg-white scale-110' : 'bg-white/40'}`}
+              aria-label={`Foto ${i + 1}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
 
 function PersonCard({
   person,
   reverse = false,
+  useCarousel = false,
 }: {
   person: typeof about.thay
   reverse?: boolean
+  useCarousel?: boolean
 }) {
+  const images = 'images' in person && Array.isArray((person as any).images) ? (person as any).images as string[] : [person.image]
+
   return (
     <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${reverse ? 'lg:[&>*:first-child]:order-2' : ''}`}>
       {/* Photo */}
       <div className={reverse ? 'reveal-right' : 'reveal-left'}>
         <div className="relative rounded-3xl overflow-hidden aspect-[3/4] max-w-md mx-auto lg:mx-0 img-hover shadow-xl shadow-rose/15">
-          <Image
-            src={person.image}
-            alt={person.imageAlt}
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
+          {useCarousel && images.length > 1 ? (
+            <AutoCarousel images={images} alt={person.imageAlt} />
+          ) : (
+            <Image
+              src={person.image}
+              alt={person.imageAlt}
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          )}
         </div>
       </div>
 
@@ -88,7 +140,7 @@ export default function About() {
           </div>
         </div>
 
-        <PersonCard person={about.thay} />
+        <PersonCard person={about.thay} useCarousel />
 
         {/* Divider */}
         <div className="my-20 ornament">

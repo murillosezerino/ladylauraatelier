@@ -90,9 +90,9 @@ export default function Nav() {
       {/* Scroll progress bar */}
       <div className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-rose-dark to-rose transition-all duration-150 ease-out" style={{ width: `${scrollProgress}%` }} />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+      <div className="max-w-[90rem] w-full mx-auto px-4 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo — on home: appears on scroll; on subpages: always visible */}
-        <Link href="/" className={`block transition-all duration-500 ${
+        <Link href="/" className={`block shrink-0 transition-all duration-500 ${
           isHome && !scrolled ? 'opacity-0 -translate-y-3 pointer-events-none' : 'opacity-100 translate-y-0'
         }`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -104,12 +104,12 @@ export default function Nav() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-7">
           {links.map((l) => (
             <Link
               key={l.href}
               href={isHome && l.anchor ? l.anchor : l.href}
-              className={`text-[0.68rem] tracking-[0.18em] uppercase font-sans font-medium transition-all duration-300 link-underline ${textCls}`}
+              className={`text-[0.62rem] tracking-[0.14em] uppercase font-sans font-medium transition-all duration-300 link-underline whitespace-nowrap ${textCls}`}
             >
               {l.label}
             </Link>

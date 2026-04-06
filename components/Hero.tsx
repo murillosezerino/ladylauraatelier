@@ -39,7 +39,7 @@ export default function Hero() {
       <div className="absolute inset-0 overflow-hidden will-change-transform" style={{ transform: `translateY(${parallaxOffset}px)` }}>
         <div className={`absolute inset-0 ${isMobile ? '' : 'bg-drift'}`}>
           <Image
-            src="/images/eventos/mesa-doces-completa.webp"
+            src="/images/eventos/mesa-doces-completa.jpg"
             alt="Mesa de doces Lady Laura Atelier"
             fill
             className="object-cover"

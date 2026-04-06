@@ -153,6 +153,12 @@ export const floresData = {
   floresPlantadas: {
     descricao: "Flores e folhagens que florescem com o tempo. Espécies selecionadas, plantadas com cuidado em vasos especiais, trazendo frescor, charme e longevidade para qualquer ambiente.",
     observacao: "*Consulte espécies disponíveis na estação",
+    fotos: [
+      "/images/flores/plantada-1.jpg",
+      "/images/flores/plantada-2.jpg",
+      "/images/flores/plantada-3.jpg",
+      "/images/flores/plantada-4.jpg",
+    ],
   },
 
   vasos: [
