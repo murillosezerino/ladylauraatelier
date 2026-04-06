@@ -67,7 +67,7 @@ export default function NossasCasas() {
               onMouseLeave={() => setHoveredCard(null)}
             >
               {/* Map */}
-              <div className="relative h-52 sm:h-60 w-full overflow-hidden">
+              <div className="relative h-52 sm:h-60 w-full overflow-hidden bg-white">
                 <iframe
                   src={addr.embedUrl}
                   className="absolute inset-0 w-full h-full border-0"
