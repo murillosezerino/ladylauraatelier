@@ -57,10 +57,10 @@ export default function NossasCasas() {
           {siteConfig.addresses.map((addr, i) => (
             <div
               key={i}
-              className={`reveal card-lift rounded-[1.75rem] overflow-hidden border transition-all duration-500 ${
+              className={`reveal card-lift rounded-[1.75rem] overflow-hidden border transition-all duration-500 bg-base ${
                 hasHover
-                  ? 'bg-white/10 backdrop-blur-sm border-white/20 hover:border-white/40'
-                  : 'bg-base border-rose/10 hover:border-rose/25'
+                  ? 'border-white/30 hover:border-white/50 shadow-xl shadow-black/15'
+                  : 'border-rose/10 hover:border-rose/25'
               }`}
               style={{ transitionDelay: `${i * 0.1}s` }}
               onMouseEnter={() => setHoveredCard(i)}
