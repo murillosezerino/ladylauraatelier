@@ -34,8 +34,8 @@ export default function Footer() {
                 { label: 'Flores & Presentes', href: '/catalogo/flores' },
                 { label: 'Eventos & Casamentos', href: '/catalogo/eventos' },
                 { label: 'Nossas Casas', href: '/#nossas-casas' },
-                { label: 'Sobre Nós', href: '#sobre' },
-                { label: 'Contato', href: '#contato' },
+                { label: 'Sobre Nós', href: '/#sobre' },
+                { label: 'Contato', href: '/#contato' },
                 { label: 'Dúvidas Frequentes', href: '/faq' },
               ].map((item) => (
                 <a

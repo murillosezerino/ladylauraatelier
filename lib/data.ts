@@ -88,10 +88,10 @@ export const featuredProducts = [
     whatsappMsg: 'Olá! Gostaria de saber mais sobre os macarons artesanais.',
   },
   {
-    name: 'Brigadeiros Gourmet',
-    description: 'Brigadeiros clássicos e especiais: pistache, café, frutas vermelhas, Oreo e muito mais.',
-    image: '/images/doces/doces-12.webp',
-    whatsappMsg: 'Olá! Gostaria de saber mais sobre os brigadeiros gourmet.',
+    name: 'Flores & Kits para Presentes',
+    description: 'Arranjos florais, buquês e kits presenteáveis com doces, vinhos e flores — perfeitos para surpreender.',
+    image: '/images/eventos/kits-presentes.jpg',
+    whatsappMsg: 'Olá! Gostaria de saber mais sobre flores e kits para presentes.',
   },
   {
     name: 'Mesa de Doces',

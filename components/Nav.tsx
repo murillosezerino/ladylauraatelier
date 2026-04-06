@@ -5,14 +5,22 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { siteConfig } from '@/lib/data'
 
-const links: { label: string; href: string; anchor?: string }[] = [
+const links: { label: string; href: string; sectionId?: string }[] = [
   { label: 'Confeitaria', href: '/catalogo/bolos' },
   { label: 'Flores & Presentes', href: '/catalogo/flores' },
   { label: 'Eventos & Casamentos', href: '/catalogo/eventos' },
-  { label: 'Nossas Casas', href: '/#nossas-casas', anchor: '#nossas-casas' },
-  { label: 'Sobre Nós', href: '/#sobre', anchor: '#sobre' },
-  { label: 'Contato', href: '/#contato', anchor: '#contato' },
+  { label: 'Nossas Casas', href: '/nossas-casas', sectionId: 'nossas-casas' },
+  { label: 'Sobre Nós', href: '/sobre', sectionId: 'sobre' },
+  { label: 'Contato', href: '/contato', sectionId: 'contato' },
 ]
+
+function scrollToSection(id: string) {
+  const el = document.getElementById(id)
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' })
+    window.history.replaceState(null, '', '/')
+  }
+}
 
 export default function Nav() {
   const pathname = usePathname()
@@ -106,13 +114,23 @@ export default function Nav() {
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-7">
           {links.map((l) => (
-            <Link
-              key={l.href}
-              href={isHome && l.anchor ? l.anchor : l.href}
-              className={`text-[0.62rem] tracking-[0.14em] uppercase font-sans font-medium transition-all duration-300 link-underline whitespace-nowrap ${textCls}`}
-            >
-              {l.label}
-            </Link>
+            l.sectionId && isHome ? (
+              <button
+                key={l.href}
+                onClick={() => scrollToSection(l.sectionId!)}
+                className={`text-[0.62rem] tracking-[0.14em] uppercase font-sans font-medium transition-all duration-300 link-underline whitespace-nowrap ${textCls}`}
+              >
+                {l.label}
+              </button>
+            ) : (
+              <Link
+                key={l.href}
+                href={l.sectionId ? `/#${l.sectionId}` : l.href}
+                className={`text-[0.62rem] tracking-[0.14em] uppercase font-sans font-medium transition-all duration-300 link-underline whitespace-nowrap ${textCls}`}
+              >
+                {l.label}
+              </Link>
+            )
           ))}
           <a
             href={waLink}
@@ -156,10 +174,22 @@ export default function Nav() {
         <div className="bg-base backdrop-blur-xl px-6 py-8 flex flex-col gap-1 border-t border-rose/15">
           {links.map((l, i) => {
             const style = { transitionDelay: `${i * 50}ms`, opacity: menuOpen ? 1 : 0, transform: menuOpen ? 'translateX(0)' : 'translateX(-10px)' }
+            if (l.sectionId && isHome) {
+              return (
+                <button
+                  key={l.href}
+                  onClick={() => { scrollToSection(l.sectionId!); setMenuOpen(false) }}
+                  className="text-left text-[0.7rem] tracking-[0.18em] uppercase text-ink-2 hover:text-rose-dark transition-all py-3.5 border-b border-rose/8 font-sans font-medium"
+                  style={style}
+                >
+                  {l.label}
+                </button>
+              )
+            }
             return (
               <Link
                 key={l.href}
-                href={isHome && l.anchor ? l.anchor : l.href}
+                href={l.sectionId ? `/#${l.sectionId}` : l.href}
                 onClick={() => setMenuOpen(false)}
                 className="text-[0.7rem] tracking-[0.18em] uppercase text-ink-2 hover:text-rose-dark transition-all py-3.5 border-b border-rose/8 font-sans font-medium"
                 style={style}
