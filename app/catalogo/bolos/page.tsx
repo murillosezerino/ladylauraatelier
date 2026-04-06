@@ -11,12 +11,12 @@ import HorizontalScroll from "@/components/HorizontalScroll"
 const wppBase = "https://wa.me/5512982910000?text="
 
 const FOTOS: Record<string, string> = {
-  "Praliné":                "/images/bolos/praline.jpg",
-  "Red Velvet":             "/images/bolos/red-velvet.jpg",
-  "Matilda":                "/images/bolos/matilda.jpg",
-  "Pistache com Framboesa": "/images/bolos/pistache-framboesa.jpg",
-  "Dulce Nut":              "/images/bolos/dulce-nut.jpg",
-  "Strawberry Fields":      "/images/bolos/strawberry-fields.jpg",
+  "Praliné":                "/images/bolos/praline.webp",
+  "Red Velvet":             "/images/bolos/red-velvet.webp",
+  "Matilda":                "/images/bolos/matilda.webp",
+  "Pistache com Framboesa": "/images/bolos/pistache-framboesa.webp",
+  "Dulce Nut":              "/images/bolos/dulce-nut.webp",
+  "Strawberry Fields":      "/images/bolos/strawberry-fields.webp",
   "Dois Amores":            "/images/bolos/dois-amores.jpg",
   "Trovão":                 "/images/bolos/trovao.jpg",
   "Yellow Submarine":       "/images/bolos/yellow-submarine.jpg",
