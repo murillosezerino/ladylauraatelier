@@ -5,7 +5,7 @@ import { catalogs } from '@/lib/data'
 const catalogImages: Record<string, string> = {
   cake: '/images/confeitaria/tartlets-piped.webp',
   sweet: '/images/eventos/doces-chocolate.webp',
-  flower: '/images/flores/copo-de-leite.jpg',
+  flower: '/images/flores/arranjo-cherie.webp',
   event: '/images/eventos/casal-comendo.webp',
 }
 
