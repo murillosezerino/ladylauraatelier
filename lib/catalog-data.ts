@@ -129,25 +129,25 @@ export const floresData = {
   intro: "Composições florais montadas diariamente com as flores mais frescas e lindas do dia. As fotos fazem referência ao tamanho e não às cores/modelos. Caso tenha alguma preferência ou especificação, informe previamente.",
 
   arranjosFrescos: [
-    { nome: "Arranjo Floral Cora",    tamanho: "Extra Grande", hastes: "35 hastes + flores nobres + folhagens", preco: 389.90, foto: "/images/flores/cora.jpg" },
-    { nome: "Arranjo Floral Chérie",  tamanho: "Grande",       hastes: "25 hastes + flores nobres + folhagens", preco: 259.90, foto: "/images/flores/cherie.jpg" },
-    { nome: "Arranjo Floral Diamond", tamanho: "Médio-Grande", hastes: "20 hastes + flores nobres + folhagens", preco: 199.90, foto: "/images/flores/diamond.jpg" },
-    { nome: "Arranjo Floral Amor",    tamanho: "Médio",        hastes: "15 hastes + folhagens",                preco: 169.90, foto: "/images/flores/amor.jpg" },
-    { nome: "Arranjo Floral Paixão",  tamanho: "Pequeno",      hastes: "10 hastes + folhagens",                preco: 128.90, foto: "/images/flores/paixao.jpg" },
-    { nome: "Box Floral",             tamanho: "XG",           hastes: "Flores nobres + folhagens em box cartonada com alças", preco: 429, foto: "/images/flores/box-floral.jpg" },
+    { nome: "Arranjo Floral Cora",    tamanho: "Extra Grande", hastes: "35 hastes + flores nobres + folhagens", preco: 389.90, foto: "/images/flores/arranjo-cora.webp" },
+    { nome: "Arranjo Floral Chérie",  tamanho: "Grande",       hastes: "25 hastes + flores nobres + folhagens", preco: 259.90, foto: "/images/flores/arranjo-cherie.webp" },
+    { nome: "Arranjo Floral Diamond", tamanho: "Médio-Grande", hastes: "20 hastes + flores nobres + folhagens", preco: 199.90, foto: "/images/flores/arranjo-diamond.webp" },
+    { nome: "Arranjo Floral Amor",    tamanho: "Médio",        hastes: "15 hastes + folhagens",                preco: 169.90, foto: "/images/flores/arranjo-amor.webp" },
+    { nome: "Arranjo Floral Paixão",  tamanho: "Pequeno",      hastes: "10 hastes + folhagens",                preco: 128.90, foto: "/images/flores/arranjo-paixao.jpg" },
+    { nome: "Box Floral",             tamanho: "XG",           hastes: "Flores nobres + folhagens em box cartonada com alças", preco: 429, foto: "/images/flores/arranjo-box.jpg" },
   ],
 
   rosasVermelhas: [
     { nome: "Arranjo de Rosas Vermelhas", tamanho: "Grande", hastes: "20 rosas + folhagens", preco: 399.90, foto: "/images/flores/rosas-grande.png", observacao: "*consulte disponibilidade" },
-    { nome: "Arranjo de Rosas Vermelhas", tamanho: "Médio",  hastes: "14 rosas + folhagens", preco: 289.90, foto: "/images/flores/rosas-medio.jpg",  observacao: "*consulte disponibilidade" },
-    { nome: "Arranjo de Rosas Personalizado", tamanho: "Vários", hastes: "Monte seu arranjo — escolha o tamanho e a cor", preco: null, foto: "/images/flores/rosas-personalizado.jpg", observacao: "Consulte via WhatsApp" },
+    { nome: "Arranjo de Rosas Vermelhas", tamanho: "Médio",  hastes: "14 rosas + folhagens", preco: 289.90, foto: "/images/flores/rosas-medio.webp",  observacao: "*consulte disponibilidade" },
+    { nome: "Arranjo de Rosas Personalizado", tamanho: "Vários", hastes: "Monte seu arranjo — escolha o tamanho e a cor", preco: null, foto: "/images/flores/rosas-personalizado.webp", observacao: "Consulte via WhatsApp" },
   ],
 
   floresSecas: [
-    { nome: "Arranjo de Flores Secas", tamanho: "Médio", descricao: null, preco: 99.90,  foto: "/images/flores/secas-medio.jpg" },
-    { nome: "Arranjo de Flores Secas", tamanho: "Grande", descricao: null, preco: 198,   foto: "/images/flores/secas-grande.jpg" },
-    { nome: "Garrafinha de Flores Secas", tamanho: null,  descricao: null, preco: 99.90, foto: "/images/flores/garrafinha.jpg" },
-    { nome: "Galocha de Cerâmica",     tamanho: null, descricao: "1 pé com flores — disponível com flores secas ou frescas", preco: 179, foto: "/images/flores/galocha.jpg" },
+    { nome: "Arranjo de Flores Secas", tamanho: "Médio", descricao: null, preco: 99.90,  foto: "/images/flores/secas-medio.webp" },
+    { nome: "Arranjo de Flores Secas", tamanho: "Grande", descricao: null, preco: 198,   foto: "/images/flores/secas-grande.webp" },
+    { nome: "Garrafinha de Flores Secas", tamanho: null,  descricao: null, preco: 99.90, foto: "/images/flores/garrafinha.webp" },
+    { nome: "Galocha de Cerâmica",     tamanho: null, descricao: "1 pé com flores — disponível com flores secas ou frescas", preco: 179, foto: "/images/flores/galocha.webp" },
   ],
 
   floresPlantadas: {
@@ -163,11 +163,11 @@ export const floresData = {
 
   vasos: [
     { nome: "Vaso Floral Queen",       descricao: "Arranjo floral médio montado em vaso de vidro",                                           preco: 299, foto: "/images/flores/vaso-queen.jpg",       observacao: null },
-    { nome: "Vaso Floral Diamond",     descricao: "Arranjo floral grande montado em vaso de cristal",                                        preco: 349, foto: "/images/flores/vaso-diamond.jpg",     observacao: null },
-    { nome: "Vaso Floral La Rochelle", descricao: "Arranjo floral GG com flores e rosas nobres em vaso de cristal transparente",             preco: 479, foto: "/images/flores/vaso-larochelle.jpg", observacao: null },
-    { nome: "Vaso Floral Italy",       descricao: "Arranjo de rosas vermelhas e folhagens em vaso de vidro Premium tipo murano",             preco: 549, foto: "/images/flores/vaso-italy.jpg",       observacao: "*consulte disponibilidade" },
-    { nome: "Vaso Floral Deli",        descricao: "Arranjo de girassóis montado em vaso longo de cristal transparente",                     preco: 479, foto: "/images/flores/vaso-deli.jpg",        observacao: "*consulte disponibilidade" },
-    { nome: "Aquário de Orquídea",     descricao: "Orquídea plantada em vaso de vidro transparente com folhas secas de sálvia",             preco: null, foto: "/images/flores/orquidea.jpg",        observacao: "*consulte disponibilidade" },
+    { nome: "Vaso Floral Diamond",     descricao: "Arranjo floral grande montado em vaso de cristal",                                        preco: 349, foto: "/images/flores/vaso-diamond.webp",     observacao: null },
+    { nome: "Vaso Floral La Rochelle", descricao: "Arranjo floral GG com flores e rosas nobres em vaso de cristal transparente",             preco: 479, foto: "/images/flores/vaso-larochelle.webp", observacao: null },
+    { nome: "Vaso Floral Italy",       descricao: "Arranjo de rosas vermelhas e folhagens em vaso de vidro Premium tipo murano",             preco: 549, foto: "/images/flores/vaso-italy.webp",       observacao: "*consulte disponibilidade" },
+    { nome: "Vaso Floral Deli",        descricao: "Arranjo de girassóis montado em vaso longo de cristal transparente",                     preco: 479, foto: "/images/flores/vaso-deli.webp",        observacao: "*consulte disponibilidade" },
+    { nome: "Aquário de Orquídea",     descricao: "Orquídea plantada em vaso de vidro transparente com folhas secas de sálvia",             preco: null, foto: "/images/flores/orquidea.webp",        observacao: "*consulte disponibilidade" },
   ],
 };
 

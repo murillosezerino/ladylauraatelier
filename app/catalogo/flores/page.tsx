@@ -164,7 +164,7 @@ export default function FloresPage() {
                   nome={a.nome}
                   sub={`Tamanho ${a.tamanho}`}
                   descricao={a.hastes}
-                  image="/images/flores/copo-de-leite.webp"
+                  image={a.foto}
                   wppMsg={`Olá! Gostaria de encomendar o ${a.nome} (${a.tamanho}).`}
                 />
               ))}
@@ -193,6 +193,7 @@ export default function FloresPage() {
                     sub={`Tamanho ${a.tamanho}`}
                     descricao={a.hastes}
                     observacao={a.observacao}
+                    image={a.foto}
                     wppMsg={`Olá! Gostaria de encomendar o ${a.nome} (${a.tamanho}).`}
                   />
                 ))}
@@ -219,6 +220,7 @@ export default function FloresPage() {
                   nome={a.nome}
                   sub={a.tamanho ? `Tamanho ${a.tamanho}` : undefined}
                   descricao={a.descricao}
+                  image={a.foto}
                   wppMsg={`Olá! Gostaria de encomendar: ${a.nome}${a.tamanho ? ` (${a.tamanho})` : ""}.`}
                 />
               ))}
@@ -290,6 +292,7 @@ export default function FloresPage() {
                     nome={v.nome}
                     descricao={v.descricao}
                     observacao={v.observacao}
+                    image={v.foto}
                     wppMsg={`Olá! Gostaria de encomendar o ${v.nome}.`}
                   />
                 ))}
