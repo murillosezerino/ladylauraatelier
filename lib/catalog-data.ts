@@ -138,7 +138,7 @@ export const floresData = {
   ],
 
   rosasVermelhas: [
-    { nome: "Arranjo de Rosas Vermelhas", tamanho: "Grande", hastes: "20 rosas + folhagens", preco: 399.90, foto: "/images/flores/rosas-grande.jpg", observacao: "*consulte disponibilidade" },
+    { nome: "Arranjo de Rosas Vermelhas", tamanho: "Grande", hastes: "20 rosas + folhagens", preco: 399.90, foto: "/images/flores/rosas-grande.png", observacao: "*consulte disponibilidade" },
     { nome: "Arranjo de Rosas Vermelhas", tamanho: "Médio",  hastes: "14 rosas + folhagens", preco: 289.90, foto: "/images/flores/rosas-medio.jpg",  observacao: "*consulte disponibilidade" },
     { nome: "Arranjo de Rosas Personalizado", tamanho: "Vários", hastes: "Monte seu arranjo — escolha o tamanho e a cor", preco: null, foto: "/images/flores/rosas-personalizado.jpg", observacao: "Consulte via WhatsApp" },
   ],
