@@ -16,7 +16,7 @@ const categorias = [
   },
   {
     titulo: "Flores & Arranjos",
-    foto: "/images/flores/copo-de-leite.webp",
+    foto: "/images/flores/copo-de-leite.jpg",
     emoji: "🌸",
     descricao: "Arranjos frescos montados diariamente, rosas nobres, flores secas, vasos de cristal e peças especiais assinadas por Renata Chagas.",
     destaques: ["Arranjos frescos (6 tamanhos)", "Rosas · Flores secas · Vasos", "Galocha de Cerâmica · Aquário de Orquídea"],

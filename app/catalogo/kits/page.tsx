@@ -30,7 +30,7 @@ function KitCard({ kit }: { kit: { nome: string; itens: string[]; observacao?: s
   return (
     <div className="card-lift flex-none w-[18rem] bg-white border border-rose/15 rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl hover:shadow-rose/12 transition-all duration-500 flex flex-col group">
       <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-rose-pale to-rose-bg">
-        <Image src="/images/kits/capa-presentes.jpg" alt={kit.nome} fill className="object-cover group-hover:scale-[1.08] transition-transform duration-700" sizes="300px" />
+        <Image src="/images/kits/capa-presentes.webp" alt={kit.nome} fill className="object-cover group-hover:scale-[1.08] transition-transform duration-700" sizes="300px" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
           <a href={`${wppBase}${encodeURIComponent(`Ola! Gostaria de encomendar o ${kit.nome}.`)}`}

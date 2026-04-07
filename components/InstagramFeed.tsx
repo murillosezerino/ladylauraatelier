@@ -17,7 +17,7 @@ const posts = [
   { src: '/images/confeitaria/pavlovas-frutas.webp', span: 'col-span-1 row-span-1' },
   { src: '/images/doces/doces-5.webp', span: 'col-span-1 row-span-1' },
   { src: '/images/chef/thay-montando-prato.webp', span: 'col-span-1 row-span-1' },
-  { src: '/images/flores/copo-de-leite.webp', span: 'col-span-1 row-span-2' },
+  { src: '/images/flores/copo-de-leite.jpg', span: 'col-span-1 row-span-2' },
   { src: '/images/confeitaria/tarte-chocolate-frutas.webp', span: 'col-span-1 row-span-1' },
   { src: '/images/macarons/macarons-caixa-rosa.webp', span: 'col-span-1 row-span-1' },
 ]
