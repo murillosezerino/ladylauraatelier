@@ -342,43 +342,6 @@ export default function EventosPage() {
           </div>
         </section>
 
-        {/* ───────────────── DOCES PARA EVENTOS ───────────────── */}
-        <section className="max-w-6xl mx-auto px-6 py-28">
-          <div className="reveal text-center mb-14">
-            <p className="text-[0.65rem] tracking-[0.4em] uppercase text-rose-dark font-sans font-medium mb-3">Événements sur mesure</p>
-            <h2 className="font-serif text-3xl md:text-5xl text-primary mb-5">Doces para Eventos</h2>
-            <div className="flex items-center justify-center gap-4 mb-5">
-              <div className="w-12 h-px bg-gradient-to-r from-transparent to-rose-dark/40" />
-              <svg className="w-2.5 h-2.5 text-rose-dark/40" viewBox="0 0 12 12" fill="currentColor">
-                <path d="M6 0L7.5 4.5L12 6L7.5 7.5L6 12L4.5 7.5L0 6L4.5 4.5Z" />
-              </svg>
-              <div className="w-12 h-px bg-gradient-to-l from-transparent to-rose-dark/40" />
-            </div>
-          </div>
-
-          <div className="reveal bg-white border border-rose/8 rounded-[2rem] overflow-hidden grid md:grid-cols-2 hover:shadow-2xl hover:shadow-rose/12 transition-all duration-700">
-            <div className="relative min-h-[300px] md:min-h-[360px] overflow-hidden img-hover">
-              <Image src="/images/eventos/doces-eventos.jpg" alt="Doces para eventos" fill className="object-cover" sizes="50vw" />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 pointer-events-none md:block hidden" />
-            </div>
-            <div className="p-10 md:p-14 flex flex-col justify-center">
-              <p className="text-[0.6rem] tracking-[0.3em] uppercase text-rose-dark font-sans font-medium mb-6">Mesa completa</p>
-              <p className="text-ink-2 font-sans leading-[1.9] mb-5 text-[0.95rem]">
-                Curadoria de doces especiais para o seu evento ou casamento. São doces em miniatura das opções que você já encontra nas vitrines de nossas casas. Tem algum pedido especial? Fale conosco!
-              </p>
-              <p className="text-ink-4 text-sm italic font-sans mb-10">Consulte disponibilidade e orçamento via WhatsApp.</p>
-              <a href={`${wppBase}${encodeURIComponent('Olá! Gostaria de informações sobre doces para eventos.')}`}
-                target="_blank" rel="noopener noreferrer"
-                className="self-start inline-flex items-center gap-3 bg-rose-dark text-white font-sans font-medium text-[0.7rem] tracking-[0.15em] uppercase px-10 py-4 rounded-full hover:bg-rose-deep hover:scale-[1.03] transition-all duration-300 shadow-lg shadow-rose-dark/20">
-                Falar com a equipe
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </section>
-
         {/* ───────────────── CONDIÇÕES GERAIS ───────────────── */}
         <section className="relative py-24 bg-white overflow-hidden">
           <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-rose/15 via-rose-pale/20 to-transparent blur-3xl pointer-events-none blob-pulse opacity-40" />
