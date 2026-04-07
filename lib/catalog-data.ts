@@ -115,7 +115,7 @@ export const bolosData = {
   },
 
   docesEventos: {
-    descricao: "Curadoria de doces especiais para o seu evento ou casamento. São doces em miniatura das opções que você já encontra nas vitrines de nossas casas. Tem algum pedido especial? Fale conosco!",
+    descricao: "Curadoria de doces especiais para o seu evento ou casamento. São doces em miniatura das opções que você já encontra nas vitrines de nossas casas. Montagem de mesa de doces para casamentos, aniversários e festas de 15 anos. Tem algum pedido especial? Fale conosco!",
     foto: "/images/bolos/doces-eventos.jpg",
     observacao: "Consulte disponibilidade e orçamento via WhatsApp.",
   },
