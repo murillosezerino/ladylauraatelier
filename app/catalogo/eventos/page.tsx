@@ -1,10 +1,11 @@
 import Link from "next/link"
 import Image from "next/image"
+import { siteConfig } from "@/lib/data"
 import Nav from "@/components/Nav"
 import Footer from "@/components/Footer"
 import RevealInit from "@/components/RevealInit"
 
-const wppBase = "https://wa.me/5512982910000?text="
+const wppBase = `https://wa.me/${siteConfig.whatsapp}?text=`
 
 function DiamondBullet({ gold }: { gold?: boolean }) {
   return (

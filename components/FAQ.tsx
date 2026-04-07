@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { siteConfig } from '@/lib/data'
 
 const faqs = [
   {
@@ -113,7 +114,7 @@ export default function FAQ() {
         <p className="text-center text-ink-3 text-sm mt-12 font-sans">
           Não encontrou sua resposta?{' '}
           <a
-            href="https://wa.me/5512982910000?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida!"
+            href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent('Olá, tenho uma dúvida!')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-rose-dark hover:text-rose-deep underline underline-offset-4 decoration-rose/40 transition-colors"

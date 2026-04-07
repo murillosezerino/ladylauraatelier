@@ -24,37 +24,37 @@ export const bolosData = {
         nome: "Praliné",
         badge: "best-seller",
         descricao: "Massa intensa de chocolate 55%, camadas de creme três leites e brigadeiro belga com praliné. Coberto com brigadeiro belga cremoso e praliné de castanhas caramelizadas.",
-        foto: "/images/bolos/praline.jpg",
+        foto: "/images/bolos/praline.webp",
       },
       {
         nome: "Red Velvet",
         badge: null,
         descricao: "Massa tradicional americana, camadas de buttercream cream cheese e geleia artesanal de morango. Decorado com frutas vermelhas e farofinha de bolo red velvet. Feito para comer bem gelado!",
-        foto: "/images/bolos/red-velvet.jpg",
+        foto: "/images/bolos/red-velvet.webp",
       },
       {
         nome: "Matilda",
         badge: null,
         descricao: "Bolo em múltiplas camadas inspirado no filme 'Matilda' com massa de chocolate úmida e fofinha intercalada com ganache de chocolate Belga meio amargo. Decorado com trufas de chocolate.",
-        foto: "/images/bolos/matilda.jpg",
+        foto: "/images/bolos/matilda.webp",
       },
       {
         nome: "Pistache com Framboesa",
         badge: "best-seller",
         descricao: "Massa de baunilha, camadas de brigadeiro de pistache, geleia de framboesa e creme três leites. Coberto com brigadeiro cremoso três leites e praliné de pistache.",
-        foto: "/images/bolos/pistache-framboesa.jpg",
+        foto: "/images/bolos/pistache-framboesa.webp",
       },
       {
         nome: "Dulce Nut",
         badge: null,
         descricao: "Massa de nozes, camadas de brigadeiro de nozes e doce de leite artesanal. Coberto com creme três leites, praliné de nozes e brigous enroladinhos de nozes.",
-        foto: "/images/bolos/dulce-nut.jpg",
+        foto: "/images/bolos/dulce-nut.webp",
       },
       {
         nome: "Strawberry Fields",
         badge: null,
         descricao: "Massa intensa de chocolate 55%, camadas de brigadeiro Belga ao leite e creme três leites com geleia artesanal de morangos. Coberto com brigadeiro belga cremoso e decorado com morangos frescos e brigous boleados.",
-        foto: "/images/bolos/strawberry-fields.jpg",
+        foto: "/images/bolos/strawberry-fields.webp",
       },
       {
         nome: "Dois Amores",
@@ -104,7 +104,7 @@ export const bolosData = {
       {
         nome: "Macarons & Flores",
         descricao: "Bolo espatulado em buttercream suíço decorado com arranjo de flores naturais e/ou macarons. A composição mais clássica e perfeita para casamentos, bodas e noivados.",
-        foto: "/images/bolos/buttercream-flores.jpg",
+        foto: "/images/bolos/buttercream-card-1.webp",
       },
       {
         nome: "Drip Cake & Macarons",

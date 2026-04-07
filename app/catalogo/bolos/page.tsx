@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { bolosData } from "@/lib/catalog-data"
+import { siteConfig } from "@/lib/data"
 import Nav from "@/components/Nav"
 import Footer from "@/components/Footer"
 import RevealInit from "@/components/RevealInit"
@@ -10,22 +11,7 @@ import SmoothScroll from "@/components/SmoothScroll"
 import HorizontalScroll from "@/components/HorizontalScroll"
 import { useState } from "react"
 
-const wppBase = "https://wa.me/5512982910000?text="
-
-const FOTOS: Record<string, string> = {
-  "Praliné":                "/images/bolos/praline.webp",
-  "Red Velvet":             "/images/bolos/red-velvet.webp",
-  "Matilda":                "/images/bolos/matilda.webp",
-  "Pistache com Framboesa": "/images/bolos/pistache-framboesa.webp",
-  "Dulce Nut":              "/images/bolos/dulce-nut.webp",
-  "Strawberry Fields":      "/images/bolos/strawberry-fields.webp",
-  "Dois Amores":            "/images/bolos/dois-amores.jpg",
-  "Trovão":                 "/images/bolos/trovao.jpg",
-  "Yellow Submarine":       "/images/bolos/yellow-submarine.jpg",
-  "Pink Limonade":          "/images/bolos/pink-lemonade.jpg",
-  "Fraisier":               "/images/bolos/fraisier.jpg",
-  "Tiramisù":               "/images/bolos/tiramisu.jpg",
-}
+const wppBase = `https://wa.me/${siteConfig.whatsapp}?text=`
 
 const SABOR_DESC: Record<string, string> = {
   "Trovão": "Massa intensa de chocolate 55% e camadas de brigadeiro Belga ao leite.",
@@ -105,7 +91,7 @@ export default function BolosPage() {
         <section data-nav-dark className="relative pt-44 pb-32 px-6 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute inset-0 bg-drift">
-              <Image src="/images/bolos/capa-bolos.jpg.jpg" alt="Confeitaria" fill className="object-cover" priority sizes="100vw" />
+              <Image src="/images/bolos/capa-bolos.jpg" alt="Confeitaria" fill className="object-cover" priority sizes="100vw" />
             </div>
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
             <div className="absolute inset-0 bg-gradient-to-r from-rose-deep/15 via-transparent to-rose-deep/10" />
@@ -183,8 +169,8 @@ export default function BolosPage() {
                 style={{ transitionDelay: `${i * 0.04}s` }}
               >
                 <div className="relative aspect-square overflow-hidden img-hover">
-                  {FOTOS[s.nome] ? (
-                    <Image src={FOTOS[s.nome]} alt={s.nome} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
+                  {s.foto ? (
+                    <Image src={s.foto} alt={s.nome} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-rose-pale to-rose-bg" />
                   )}

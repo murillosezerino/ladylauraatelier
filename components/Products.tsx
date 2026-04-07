@@ -2,6 +2,7 @@
 "use client";
 import Link from "next/link";
 import ProductImage from "@/components/ProductImage";
+import { siteConfig } from "@/lib/data";
 
 const categorias = [
   {
@@ -11,7 +12,7 @@ const categorias = [
     descricao: "Bolos festivos, profiteroles, éclairs, mille-feuille, brigadeiros gourmet e muito mais. Técnica Le Cordon Bleu Paris.",
     destaques: ["Baby Cake · Aro 15 · Aro 20 · Aro 25", "Seleção fixa + Buttercream personalizado", "Doces finos para eventos"],
     href: "/catalogo/bolos",
-    wpp: "https://wa.me/5512982910000?text=Olá!%20Gostaria%20de%20encomendar%20doces.",
+    wpp: `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent('Olá! Gostaria de encomendar doces.')}`,
   },
   {
     titulo: "Flores & Arranjos",
@@ -20,7 +21,7 @@ const categorias = [
     descricao: "Arranjos frescos montados diariamente, rosas nobres, flores secas, vasos de cristal e peças especiais assinadas por Renata Chagas.",
     destaques: ["Arranjos frescos (6 tamanhos)", "Rosas · Flores secas · Vasos", "Galocha de Cerâmica · Aquário de Orquídea"],
     href: "/catalogo/flores",
-    wpp: "https://wa.me/5512982910000?text=Olá!%20Tenho%20interesse%20nas%20flores%20e%20arranjos.",
+    wpp: `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent('Olá! Tenho interesse nas flores e arranjos.')}`,
   },
   {
     titulo: "Kits & Presentes",
@@ -29,7 +30,7 @@ const categorias = [
     descricao: "Kits especiais para datas comemorativas, casamentos, empresas e momentos que merecem ser lembrados — com flores, chocolates e espumantes.",
     destaques: ["Box Café da Manhã · Breakfast at Tiffany's", "15+ kits com flores nomeados", "Latinhas · Chocolates · Linha Home"],
     href: "/catalogo/kits",
-    wpp: "https://wa.me/5512982910000?text=Olá!%20Gostaria%20de%20montar%20um%20kit%20especial.",
+    wpp: `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent('Olá! Gostaria de montar um kit especial.')}`,
   },
   {
     titulo: "Eventos & Reservas",
@@ -38,7 +39,7 @@ const categorias = [
     descricao: "Projetos especiais para celebrar momentos únicos — do brunch íntimo ao casamento dos sonhos, com decoração floral, menu e exclusividade.",
     destaques: ["Sunday Brunch · Petit Comité", "Petit Jardin · Grand Royale", "Até 55 pessoas · Casa exclusiva"],
     href: "/catalogo/eventos",
-    wpp: "https://wa.me/5512982910000?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20projetos%20de%20eventos.",
+    wpp: `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre os projetos de eventos.')}`,
   },
 ];
 

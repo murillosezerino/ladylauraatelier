@@ -90,7 +90,7 @@ export const featuredProducts = [
   {
     name: 'Flores & Kits para Presentes',
     description: 'Arranjos florais, buquês e kits presenteáveis com doces, vinhos e flores — perfeitos para surpreender.',
-    image: '/images/eventos/kits-presentes.jpg',
+    image: '/images/kits/capa-presentes.jpg',
     whatsappMsg: 'Olá! Gostaria de saber mais sobre flores e kits para presentes.',
   },
   {
