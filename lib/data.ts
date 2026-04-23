@@ -33,8 +33,8 @@ export const siteConfig = {
 
 export const hero = {
   headline: 'Doçura feita com alma',
-  subheadline: 'Bonjour, raio de sol! Feliz em te receber por aqui. Conheça nossos menus clicando nos links abaixo e faça o seu pedido :)',
-  ctaLabel: 'Conheça',
+  subheadline: '',
+  ctaLabel: 'Conheça nosso trabalho',
   ctaSecondary: 'Falar no WhatsApp',
 }
 
@@ -51,7 +51,7 @@ export const categories = [
     id: 'doces',
     title: 'Doces Finos',
     subtitle: 'Douceurs',
-    description: 'Brigadeiros gourmet, trufas artesanais e bombons para sua mesa de doces.',
+    description: 'Curadoria de doces incríveis para a mesa de doces do seu casamento ou evento.',
     image: '/images/macarons/macarons-coloridos.webp',
     href: '/catalogo/bolos',
   },
@@ -108,7 +108,7 @@ export const events = {
   ctaLabel: 'Solicitar orçamento',
   formats: [
     { name: 'Petit Comité', capacity: 'Até 10 pessoas', description: 'Bolo, flores, espumante e mesa decorada para momentos íntimos.' },
-    { name: 'Petit Jardin', capacity: 'Até 30 pessoas', description: 'Menu completo de brunch, valet e decoração exclusiva.' },
+    { name: 'Petit Jardin', capacity: 'Até 40 pessoas', description: 'Menu completo de brunch, valet e decoração exclusiva.' },
     { name: 'Grand Royale', capacity: 'Até 55 pessoas', description: 'Casa exclusiva, menu premium e experiência completa.' },
   ],
 }

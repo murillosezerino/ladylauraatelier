@@ -82,9 +82,11 @@ export default function Hero() {
         </div>
 
         {/* Subtitle */}
-        <p className="text-sm sm:text-lg text-white/70 max-w-xl mx-auto mb-10 sm:mb-16 font-sans font-light leading-relaxed opacity-0 animate-[fadeUp_0.8s_0.8s_ease_forwards]">
-          {hero.subheadline}
-        </p>
+        {hero.subheadline && (
+          <p className="text-sm sm:text-lg text-white/70 max-w-xl mx-auto mb-10 sm:mb-16 font-sans font-light leading-relaxed opacity-0 animate-[fadeUp_0.8s_0.8s_ease_forwards]">
+            {hero.subheadline}
+          </p>
+        )}
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 opacity-0 animate-[fadeUp_0.8s_1s_ease_forwards]">

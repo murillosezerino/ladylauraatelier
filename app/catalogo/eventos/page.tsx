@@ -37,7 +37,7 @@ const eventos = [
   {
     nome: 'Petit Jardin',
     subtitulo: 'Jardim exclusivo',
-    capacidade: 'Até 30 pessoas',
+    capacidade: 'Até 40 pessoas',
     itens: [
       'Menu de brunch completo',
       'Valet',
@@ -122,7 +122,7 @@ export default function EventosPage() {
           </div>
         </section>
 
-        {/* ───────────────── NOSSOS SERVIÇOS ───────────────── */}
+        {/* ───────────────── O QUE FAZEMOS ───────────────── */}
         <section className="relative py-28 overflow-hidden">
           <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-rose-pale/15 rounded-full blur-[120px] pointer-events-none blob-pulse" />
 
@@ -130,65 +130,84 @@ export default function EventosPage() {
             <div className="reveal text-center mb-16">
               <p className="text-[0.65rem] tracking-[0.4em] uppercase text-rose-dark font-sans font-medium mb-3">Nos Services</p>
               <h2 className="font-serif text-3xl md:text-5xl text-primary mb-5">O que fazemos</h2>
-              <div className="flex items-center justify-center gap-4 mb-5">
+              <div className="flex items-center justify-center gap-4 mb-6">
                 <div className="w-12 h-px bg-gradient-to-r from-transparent to-rose-dark/40" />
                 <svg className="w-2.5 h-2.5 text-rose-dark/40" viewBox="0 0 12 12" fill="currentColor">
                   <path d="M6 0L7.5 4.5L12 6L7.5 7.5L6 12L4.5 7.5L0 6L4.5 4.5Z" />
                 </svg>
                 <div className="w-12 h-px bg-gradient-to-l from-transparent to-rose-dark/40" />
               </div>
+              <p className="font-serif text-xl md:text-2xl text-primary mb-2">Eventos Internos e Externos</p>
+              <p className="text-ink-2 font-sans text-base">Casamentos, corporativos &amp; eventos sociais</p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {[
-                {
-                  titulo: 'Eventos no Esplanada',
-                  descricao: 'Celebrações e reservas realizadas em nossa casa no Jd. Esplanada — mesas de doces, brunches e experiências completas.',
-                  icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" /></svg>,
-                },
-                {
-                  titulo: 'Projetos Eventos LL',
-                  descricao: 'Projetos completos de eventos assinados Lady Laura — do conceito à execução, com curadoria de doces, flores e decoração.',
-                  icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" /></svg>,
-                },
-                {
-                  titulo: 'Eventos Externos',
-                  descricao: 'Levamos a experiência Lady Laura para o local de sua escolha — restaurantes, espaços de eventos, fazendas e residências.',
-                  icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>,
-                },
-                {
-                  titulo: 'Mesa de Doces',
-                  descricao: 'Montagem completa de mesas de doces para casamentos, aniversários e eventos corporativos com curadoria artesanal.',
-                  icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.87c1.355 0 2.697.055 4.024.165C17.155 8.51 18 9.473 18 10.608v2.513m-3-4.87v-1.5m-6 1.5v-1.5m12 9.75l-1.5.75a3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0L3 16.5m18-4.5a9 9 0 00-18 0" /></svg>,
-                },
-                {
-                  titulo: 'Decoração em Restaurantes',
-                  descricao: 'Decoração floral e mesas de doces especiais para eventos realizados em restaurantes parceiros.',
-                  icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>,
-                },
-                {
-                  titulo: 'Mini Wedding & Casamentos',
-                  descricao: 'Decoração floral completa e mesa de doces para mini weddings e casamentos — internos e externos.',
-                  icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>,
-                },
-                {
-                  titulo: 'Decoração Floral para Eventos',
-                  descricao: 'Arranjos e composições florais exclusivas para decorar qualquer tipo de evento ou celebração.',
-                  icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>,
-                },
-              ].map((s, i) => (
-                <div
-                  key={s.titulo}
-                  className="reveal card-glow bg-white border border-rose/15 rounded-[1.5rem] p-7 group text-center hover:border-rose-dark/20 transition-all duration-500"
-                  style={{ transitionDelay: `${i * 0.06}s` }}
-                >
-                  <div className="w-12 h-12 rounded-full bg-rose-pale/50 flex items-center justify-center mx-auto mb-5 text-rose-dark/60 group-hover:text-rose-dark group-hover:bg-rose-pale transition-all">
-                    {s.icon}
-                  </div>
-                  <h3 className="font-serif text-lg text-primary mb-2">{s.titulo}</h3>
-                  <p className="text-ink-2 text-sm font-sans leading-relaxed">{s.descricao}</p>
+            {/* Eventos em nossa casa do Jd. Esplanada */}
+            <div className="reveal mb-20 grid md:grid-cols-2 gap-10 items-center">
+              <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl shadow-rose/15 img-hover order-last md:order-first">
+                <Image
+                  src="/images/eventos/mesa-doces-completa.jpg"
+                  alt="Eventos em nossa casa do Jd. Esplanada"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div>
+                <p className="text-[0.6rem] tracking-[0.4em] uppercase text-rose-dark font-sans font-medium mb-3">Nossa casa</p>
+                <h3 className="font-serif text-2xl md:text-4xl text-primary mb-6 leading-tight">Eventos em nossa casa do Jd. Esplanada</h3>
+                <div className="w-12 h-px bg-rose-dark/40 mb-6" />
+                <div className="space-y-4 text-ink-2 font-sans leading-[1.9] text-[0.95rem]">
+                  <p>Na nossa casa do Jardim Esplanada, cada celebração é pensada como uma experiência completa e memorável. Recebemos desde brunches corporativos até casamentos, batizados e eventos sociais, sempre com um cuidado especial em cada detalhe.</p>
+                  <p>Oferecemos uma estrutura completa, que inclui o espaço, decoração personalizada, menu cuidadosamente elaborado, além de bolo e doces — tudo harmonizado para traduzir o estilo e o momento de cada cliente.</p>
+                  <p>Nossa equipe cuida de toda a organização para que você tenha apenas uma preocupação: viver e aproveitar intensamente o seu momento feliz.</p>
                 </div>
-              ))}
+              </div>
+            </div>
+
+            {/* Mesa de Doces para Casamentos & Aniversários de 15 anos */}
+            <div className="reveal mb-20 grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <p className="text-[0.6rem] tracking-[0.4em] uppercase text-rose-dark font-sans font-medium mb-3">Curadoria artesanal</p>
+                <h3 className="font-serif text-2xl md:text-4xl text-primary mb-6 leading-tight">Mesa de Doces para Casamentos &amp; Aniversários de 15 anos</h3>
+                <div className="w-12 h-px bg-rose-dark/40 mb-6" />
+                <div className="space-y-4 text-ink-2 font-sans leading-[1.9] text-[0.95rem]">
+                  <p>Desenvolvemos mesas de doces completas para casamentos, aniversários de 15 anos e eventos corporativos, com curadoria artesanal e atenção minuciosa a cada detalhe.</p>
+                  <p>Cada projeto é pensado de forma personalizada, unindo estética, equilíbrio e sabor, para compor uma mesa elegante e alinhada ao estilo da celebração.</p>
+                  <p>Atendemos todo o estado de São Paulo e Rio de Janeiro, levando nossa identidade e cuidado a eventos que pedem excelência e encantamento.</p>
+                </div>
+              </div>
+              <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl shadow-rose/15 img-hover">
+                <Image
+                  src="/images/macarons/macarons-torre-evento.jpg"
+                  alt="Torre de macarons rosa — mesa de doces para eventos"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+
+            {/* Decoração & Mesa de Doces em Restaurantes */}
+            <div className="reveal mb-12 grid md:grid-cols-2 gap-10 items-center">
+              <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl shadow-rose/15 img-hover order-last md:order-first">
+                <Image
+                  src="/images/eventos/casal-comendo.webp"
+                  alt="Decoração e mesa de doces em restaurantes"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div>
+                <p className="text-[0.6rem] tracking-[0.4em] uppercase text-rose-dark font-sans font-medium mb-3">Eventos intimistas</p>
+                <h3 className="font-serif text-2xl md:text-4xl text-primary mb-6 leading-tight">Decoração &amp; Mesa de Doces em Restaurantes</h3>
+                <div className="w-12 h-px bg-rose-dark/40 mb-6" />
+                <div className="space-y-4 text-ink-2 font-sans leading-[1.9] text-[0.95rem]">
+                  <p>Desenvolvemos projetos de decoração floral e mesas de doces especiais para eventos realizados em restaurantes parceiros, ideais para celebrações intimistas, pequenos eventos e mini weddings.</p>
+                  <p>Cada composição é pensada de forma personalizada, respeitando o estilo do ambiente e a proposta da ocasião, criando uma atmosfera harmoniosa, acolhedora e sofisticada.</p>
+                  <p>Cuidamos de todos os detalhes para transformar o espaço do restaurante em um cenário único e memorável para o seu evento.</p>
+                </div>
+              </div>
             </div>
 
             <div className="reveal text-center mt-12">
@@ -266,6 +285,7 @@ export default function EventosPage() {
                 </svg>
                 <div className="w-12 h-px bg-gradient-to-l from-transparent to-rose-dark/40" />
               </div>
+              <p className="text-ink-2 font-sans italic text-base max-w-xl mx-auto">Para realização do seu evento em nossa casa do Jd. Esplanada.</p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

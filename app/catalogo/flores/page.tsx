@@ -131,7 +131,7 @@ export default function FloresPage() {
               Catalogue de
             </p>
             <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white mb-7 opacity-0 animate-[fadeUp_1s_0.4s_ease_forwards]">
-              Flores &amp; Arranjos
+              Flores &amp; Presentes
             </h1>
 
             {/* Ornament */}
@@ -182,7 +182,7 @@ export default function FloresPage() {
           <div className="max-w-7xl mx-auto px-6">
             <SectionHeader
               label="Nobres & spéciales"
-              title="Rosas"
+              title="Rosas & Suas Variedades"
               desc="Também disponível na cor de sua escolha — consulte disponibilidade."
             />
             <div className="reveal">

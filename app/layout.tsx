@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'pt_BR',
     url: 'https://ladylaura.com.br',
-    title: `${siteConfig.name} · ${siteConfig.tagline}`,
+    title: 'Lady Laura Atelier • Pâtisserie & Flores',
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${siteConfig.name} · ${siteConfig.tagline}`,
+    title: 'Lady Laura Atelier • Pâtisserie & Flores',
     description: siteConfig.description,
   },
   robots: {

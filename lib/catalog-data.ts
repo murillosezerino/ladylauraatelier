@@ -83,7 +83,7 @@ export const bolosData = {
       {
         nome: "Fraisier",
         badge: null,
-        descricao: "Massa de baunilha, camadas de crème patissier feito com fava baunilha, coulis de morango, morangos frescos e nata fresca baunilhada.",
+        descricao: "Clássico francês com massa leve de baunilha, recheado com crème pâtissière de fava de baunilha, coulis artesanal de morango e morangos frescos. Finalizado com nata fresca baunilhada.",
         foto: "/images/bolos/fraisier.jpg",
       },
       {
@@ -100,18 +100,7 @@ export const bolosData = {
     precos: { aro15: 312, aro20: 416, aro25: 523 },
     nota: "Para um orçamento completo de decoração, envie uma foto do modelo desejado. Os valores podem variar de acordo com o tipo de arranjo floral e quantidade de macarons.",
     saboresDisponiveis: ["Trovão", "Dois Amores", "Praliné", "Dulce Nut", "Pistache com Framboesa"],
-    estilosDecoracao: [
-      {
-        nome: "Macarons & Flores",
-        descricao: "Bolo espatulado em buttercream suíço decorado com arranjo de flores naturais e/ou macarons. A composição mais clássica e perfeita para casamentos, bodas e noivados.",
-        foto: "/images/bolos/buttercream-card-1.webp",
-      },
-      {
-        nome: "Drip Cake & Macarons",
-        descricao: "Bolo espatulado em buttercream suíço decorado com calda fluida de chocolate. A decoração pode ser feita com macarons, flores e/ou frutas frescas.",
-        foto: "/images/bolos/drip-cake.jpg",
-      },
-    ],
+    estilosDecoracao: [],
   },
 
   docesEventos: {

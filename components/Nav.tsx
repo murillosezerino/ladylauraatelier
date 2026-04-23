@@ -8,6 +8,7 @@ import { siteConfig } from '@/lib/data'
 const links: { label: string; href: string; sectionId?: string }[] = [
   { label: 'Confeitaria', href: '/catalogo/bolos' },
   { label: 'Flores & Presentes', href: '/catalogo/flores' },
+  { label: 'Buquês de Noiva', href: '/buques-noiva' },
   { label: 'Eventos & Casamentos', href: '/catalogo/eventos' },
   { label: 'Nossas Casas', href: '/nossas-casas', sectionId: 'nossas-casas' },
   { label: 'Sobre Nós', href: '/sobre', sectionId: 'sobre' },
