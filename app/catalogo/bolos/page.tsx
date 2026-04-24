@@ -127,7 +127,7 @@ export default function BolosPage() {
               {tamanhos.map((t, i) => (
                 <div
                   key={t.nome}
-                  className="card-glow bg-white/80 backdrop-blur-sm border border-rose/15 rounded-2xl px-5 py-4 text-center hover:border-rose-dark/25 transition-all duration-500 min-w-[130px]"
+                  className="card-glow bg-rose-pale/90 backdrop-blur-sm border border-rose/25 rounded-2xl px-5 py-4 text-center hover:border-rose-dark/40 hover:bg-rose-pale transition-all duration-500 min-w-[130px]"
                   style={{ transitionDelay: `${i * 0.05}s` }}
                 >
                   <h4 className="font-serif text-base text-primary mb-1.5">{t.nome}</h4>

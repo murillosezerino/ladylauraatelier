@@ -215,7 +215,7 @@ export default function FloresPage() {
 
           <div className="max-w-7xl mx-auto px-6">
             <SectionHeader
-              label="Nobres & spéciales"
+              label="Nobres & Especiais"
               title="Rosas & Suas Variedades"
               desc="Também disponível na cor de sua escolha — consulte disponibilidade."
             />
