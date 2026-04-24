@@ -13,62 +13,62 @@ const estilos = [
     nome: "Buquê Clássico",
     sub: "Redondo & atemporal",
     descricao: "Formato redondo simétrico com rosas nobres e folhagens delicadas — a elegância tradicional que nunca sai de moda.",
-    foto: "/images/flores/arranjo-cora.webp",
+    foto: "/images/buques/classico.jpg",
   },
   {
     nome: "Buquê Cascata",
     sub: "Movimento & romance",
     descricao: "Flores que desenham uma cascata suave a partir das mãos da noiva — um gesto romântico para vestidos longos e celebrações imponentes.",
-    foto: "/images/flores/arranjo-cherie.webp",
+    foto: "/images/buques/cascata.jpg",
   },
   {
     nome: "Buquê Campestre",
     sub: "Natural & orgânico",
     descricao: "Flores do campo em composição livre e despojada, com folhagens e ramos — ideal para casamentos ao ar livre e mini weddings.",
-    foto: "/images/flores/arranjo-diamond.webp",
+    foto: "/images/buques/campestre.jpg",
   },
   {
     nome: "Buquê Rosas Nobres",
     sub: "Monocromático & sofisticado",
     descricao: "Composição só com rosas nobres — brancas, pêssego, rosé ou vermelhas — para um resultado clean e sofisticado.",
-    foto: "/images/flores/rosas-grande.webp",
+    foto: "/images/buques/rosas-nobres.jpg",
   },
   {
     nome: "Buquê Pastel",
     sub: "Tons suaves & delicados",
     descricao: "Paleta em tons pastel — rosé, champagne, branco e lavanda — para noivas que buscam delicadeza e romantismo na fotografia.",
-    foto: "/images/flores/arranjo-amor.webp",
+    foto: "/images/buques/pastel.jpg",
   },
   {
     nome: "Buquê Petit",
     sub: "Minimalista & moderno",
     descricao: "Formato compacto e minimalista — ideal para noivas contemporâneas, civil ou damas de honra.",
-    foto: "/images/flores/arranjo-paixao.jpg",
+    foto: "/images/buques/petit.jpg",
   },
   {
     nome: "Buquê de Noiva Box",
     sub: "Presenteável",
     descricao: "Montado em caixa cartonada com alça — perfeito para deslocamentos e cerimônias que precisam do buquê intacto até o altar.",
-    foto: "/images/flores/arranjo-box.jpg",
+    foto: "/images/buques/box.jpg",
   },
   {
     nome: "Buquê Personalizado",
     sub: "Sob medida",
     descricao: "Criado a partir do seu mood board, cores do vestido e estilo da cerimônia — desenhado a quatro mãos com a noiva.",
-    foto: "/images/flores/rosas-personalizado.webp",
+    foto: "/images/buques/personalizado.jpg",
   },
 ]
 
 const galeria = [
-  "/images/flores/arranjo-cora.webp",
-  "/images/flores/arranjo-cherie.webp",
-  "/images/flores/arranjo-diamond.webp",
-  "/images/flores/arranjo-amor.webp",
-  "/images/flores/arranjo-paixao.jpg",
-  "/images/flores/arranjo-box.jpg",
-  "/images/flores/rosas-grande.webp",
-  "/images/flores/rosas-medio.webp",
-  "/images/flores/rosas-personalizado.webp",
+  "/images/buques/galeria-1.jpg",
+  "/images/buques/galeria-2.jpg",
+  "/images/buques/galeria-3.jpg",
+  "/images/buques/galeria-4.jpg",
+  "/images/buques/galeria-5.jpg",
+  "/images/buques/galeria-6.jpg",
+  "/images/buques/galeria-7.jpg",
+  "/images/buques/galeria-8.jpg",
+  "/images/buques/galeria-9.jpg",
 ]
 
 const comoEncomendar = [
@@ -102,7 +102,7 @@ export default function BuquesNoivaPage() {
           <div className="absolute inset-0 overflow-hidden">
             <div className="bg-drift absolute inset-0">
               <Image
-                src="/images/renata-chagas.jpg"
+                src="/images/buques/hero-buques.jpg"
                 alt="Buquês de noiva Lady Laura Atelier"
                 fill
                 className="object-cover"
