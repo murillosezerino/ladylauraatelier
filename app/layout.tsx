@@ -4,7 +4,7 @@ import { siteConfig } from '@/lib/data'
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.name} · ${siteConfig.tagline}`,
+    default: `${siteConfig.name} • Pâtisserie & Flores`,
     template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.description,

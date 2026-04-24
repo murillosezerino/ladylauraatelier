@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from 'react'
 
 const carouselImages = [
   '/images/loja-sjc.jpg',
-  '/images/eventos/mesa-casamento.jpg',
   '/images/eventos/evento-2.jpg',
   '/images/eventos/evento-3.jpg',
   '/images/eventos/evento-4.jpg',
