@@ -70,7 +70,10 @@ export default function Hero() {
         />
 
         {/* Tagline */}
-        <p className="text-[0.6rem] sm:text-[0.65rem] tracking-[0.35em] sm:tracking-[0.5em] uppercase text-white/50 font-sans mb-6 sm:mb-10 opacity-0 animate-[fadeUp_1s_0.4s_ease_forwards]">
+        <p
+          className="text-[0.7rem] sm:text-[0.8rem] tracking-[0.35em] sm:tracking-[0.5em] uppercase text-white font-sans font-medium mb-6 sm:mb-10 opacity-0 animate-[fadeUp_1s_0.4s_ease_forwards]"
+          style={{ textShadow: '0 1px 12px rgba(0,0,0,0.55), 0 0 24px rgba(0,0,0,0.35)' }}
+        >
           Pâtisserie &amp; Bistrô &bull; Flores &amp; Presentes &bull; Eventos
         </p>
 

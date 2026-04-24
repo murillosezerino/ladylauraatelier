@@ -3,35 +3,31 @@ import Image from 'next/image'
 
 const igUrl = 'https://www.instagram.com/ladylauraatelier/'
 
-const posts: { src: string; span: string }[] = [
-  { src: '/images/confeitaria/tartlets-piped.webp', span: 'row-span-1' },
-  { src: '/images/doces/trufas-chocolate.webp', span: 'row-span-2' },
-  { src: '/images/macarons/macarons-rosa-evento.webp', span: 'row-span-1' },
-  { src: '/images/confeitaria/profiteroles-pistache.webp', span: 'row-span-1' },
-  { src: '/images/doces/brigadeiros-gourmet.webp', span: 'row-span-2' },
-  { src: '/images/confeitaria/eclairs-rosa.webp', span: 'row-span-1' },
-  { src: '/images/bolos/red-velvet.webp', span: 'row-span-1' },
-  { src: '/images/macarons/macarons-caixa-rosa.webp', span: 'row-span-1' },
-  { src: '/images/chef/thay-montando-prato.webp', span: 'row-span-1' },
-  { src: '/images/flores/arranjo-cora.webp', span: 'row-span-2' },
-  { src: '/images/macarons/galeria-1.webp', span: 'row-span-2' },
-  { src: '/images/confeitaria/milefeuille.webp', span: 'row-span-1' },
-  { src: '/images/doces/brigadeiros-pistache.webp', span: 'row-span-1' },
-  { src: '/images/macarons/macarons-coloridos.webp', span: 'row-span-1' },
-  { src: '/images/flores/rosas-personalizado.webp', span: 'row-span-2' },
-  { src: '/images/bolos/buttercream-3.webp', span: 'row-span-2' },
-  { src: '/images/macarons/macaron-caramelo.webp', span: 'row-span-1' },
-  { src: '/images/bolos/pistache-framboesa.webp', span: 'row-span-1' },
-  { src: '/images/confeitaria/pavlovas-frutas.webp', span: 'row-span-1' },
-  { src: '/images/doces/doces-5.webp', span: 'row-span-1' },
-  { src: '/images/flores/arranjo-cherie.webp', span: 'row-span-2' },
-  { src: '/images/bolos/praline.webp', span: 'row-span-1' },
-  { src: '/images/macarons/galeria-4.webp', span: 'row-span-1' },
-  { src: '/images/eventos/mesa-casamento.webp', span: 'row-span-1' },
-  { src: '/images/confeitaria/tarte-chocolate-frutas.webp', span: 'row-span-1' },
-  { src: '/images/doces/brigadeiros-variados.webp', span: 'row-span-1' },
-  { src: '/images/bolos/matilda.webp', span: 'row-span-1' },
-  { src: '/images/macarons/galeria-6.webp', span: 'row-span-1' },
+const posts: string[] = [
+  '/images/confeitaria/tartlets-piped.webp',
+  '/images/doces/trufas-chocolate.webp',
+  '/images/macarons/macarons-rosa-evento.webp',
+  '/images/confeitaria/profiteroles-pistache.webp',
+  '/images/doces/brigadeiros-gourmet.webp',
+  '/images/confeitaria/eclairs-rosa.webp',
+  '/images/bolos/red-velvet.webp',
+  '/images/macarons/macarons-caixa-rosa.webp',
+  '/images/chef/thay-montando-prato.webp',
+  '/images/flores/arranjo-cora.webp',
+  '/images/macarons/galeria-1.webp',
+  '/images/confeitaria/milefeuille.webp',
+  '/images/doces/brigadeiros-pistache.webp',
+  '/images/macarons/macarons-coloridos.webp',
+  '/images/flores/rosas-personalizado.webp',
+  '/images/bolos/buttercream-3.webp',
+  '/images/macarons/macaron-caramelo.webp',
+  '/images/bolos/pistache-framboesa.webp',
+  '/images/confeitaria/pavlovas-frutas.webp',
+  '/images/doces/doces-5.webp',
+  '/images/flores/arranjo-cherie.webp',
+  '/images/bolos/praline.webp',
+  '/images/macarons/galeria-4.webp',
+  '/images/eventos/mesa-casamento.webp',
 ]
 
 export default function InstagramFeed() {
@@ -52,24 +48,21 @@ export default function InstagramFeed() {
           </p>
         </div>
 
-        <div
-          className="reveal-scale grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3 auto-rows-[160px] sm:auto-rows-[180px] md:auto-rows-[190px] lg:auto-rows-[200px]"
-          style={{ gridAutoFlow: 'dense' }}
-        >
-          {posts.map((post, i) => (
+        <div className="reveal-scale grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+          {posts.map((src, i) => (
             <a
               key={i}
               href={igUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={`relative rounded-2xl overflow-hidden group img-hover ${post.span}`}
+              className="relative aspect-square rounded-2xl overflow-hidden group img-hover"
             >
               <Image
-                src={post.src}
+                src={src}
                 alt={`@ladylauraatelier ${i + 1}`}
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 12.5vw"
+                sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
               />
               <div className="absolute inset-0 bg-rose-deep/0 group-hover:bg-rose-deep/50 transition-all duration-500 flex items-center justify-center backdrop-blur-0 group-hover:backdrop-blur-[2px]">
                 <div className="opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-400 text-center">
