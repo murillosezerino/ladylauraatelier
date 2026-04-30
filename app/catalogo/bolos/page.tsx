@@ -122,22 +122,52 @@ export default function BolosPage() {
           <div className="max-w-7xl mx-auto relative">
             <SectionHeader label="Sélection de la maison" title="Bolos Festivos" desc={bolosFestivos.descricao} />
 
-            {/* Tamanhos — compactos */}
-            <div className="reveal mb-14 flex flex-wrap justify-center gap-3 sm:gap-4">
-              {tamanhos.map((t, i) => (
-                <div
-                  key={t.nome}
-                  className="card-glow bg-rose-pale/90 backdrop-blur-sm border border-rose/25 rounded-2xl px-5 py-4 text-center hover:border-rose-dark/40 hover:bg-rose-pale transition-all duration-500 min-w-[130px]"
-                  style={{ transitionDelay: `${i * 0.05}s` }}
-                >
-                  <h4 className="font-serif text-base text-primary mb-1.5">{t.nome}</h4>
-                  <div className="w-6 h-px bg-rose-dark/30 mx-auto mb-2" />
-                  <p className="text-[0.7rem] text-ink-3 font-sans leading-tight">
-                    <span className="block">{t.diametro} · {t.altura}</span>
-                  </p>
-                  <p className="text-xs text-rose-dark font-sans font-medium mt-1">{t.porcoes}</p>
-                </div>
-              ))}
+            {/* Tamanhos — cards maiores, rosa, mais informativos */}
+            <div className="reveal mb-16 grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
+              {tamanhos.map((t, i) => {
+                const diametro = t.diametro.replace(' cm', '')
+                const altura = t.altura.replace(' cm', '')
+                return (
+                  <div
+                    key={t.nome}
+                    className="reveal card-lift relative bg-gradient-to-br from-rose-pale via-rose-bg to-rose-pale/70 border border-rose/30 rounded-[1.5rem] p-6 text-center hover:border-rose-dark/40 hover:shadow-xl hover:shadow-rose/15 transition-all duration-500 overflow-hidden group"
+                    style={{ transitionDelay: `${i * 0.08}s` }}
+                  >
+                    {/* Decorative blob */}
+                    <div className="absolute -top-12 -right-12 w-28 h-28 bg-rose/15 rounded-full blur-2xl group-hover:bg-rose/25 transition-all duration-700" />
+
+                    {/* Cake icon */}
+                    <div className="relative w-12 h-12 mx-auto mb-4 rounded-full bg-white/70 backdrop-blur-sm flex items-center justify-center shadow-sm shadow-rose/15 group-hover:scale-110 transition-transform duration-500">
+                      <svg className="w-6 h-6 text-rose-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                      </svg>
+                    </div>
+
+                    <h4 className="relative font-serif text-2xl text-primary mb-1">{t.nome}</h4>
+                    <div className="relative w-10 h-px bg-rose-dark/30 mx-auto mb-4" />
+
+                    {/* Stats */}
+                    <div className="relative grid grid-cols-2 gap-2 mb-5">
+                      <div className="bg-white/70 backdrop-blur-sm rounded-xl py-2.5 border border-rose/15">
+                        <p className="text-[0.55rem] tracking-[0.2em] uppercase text-ink-3 font-sans mb-0.5">Diâmetro</p>
+                        <p className="font-serif text-xl text-rose-dark leading-none">{diametro}<span className="text-xs text-ink-3 ml-0.5 font-sans">cm</span></p>
+                      </div>
+                      <div className="bg-white/70 backdrop-blur-sm rounded-xl py-2.5 border border-rose/15">
+                        <p className="text-[0.55rem] tracking-[0.2em] uppercase text-ink-3 font-sans mb-0.5">Altura</p>
+                        <p className="font-serif text-xl text-rose-dark leading-none">{altura}<span className="text-xs text-ink-3 ml-0.5 font-sans">cm</span></p>
+                      </div>
+                    </div>
+
+                    {/* Porções */}
+                    <div className="relative inline-flex items-center gap-2 bg-rose-dark text-white px-4 py-2 rounded-full text-[0.7rem] tracking-[0.1em] font-sans font-medium shadow-md shadow-rose-dark/20">
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                      </svg>
+                      {t.porcoes}
+                    </div>
+                  </div>
+                )
+              })}
             </div>
 
             {/* Sabores */}
@@ -195,27 +225,87 @@ export default function BolosPage() {
         </section>
 
         {/* ─── Informações (Prazo, Como pedir, Pagamento, Retirada) ─── */}
-        <section className="bg-rose-bg py-20 px-6 relative overflow-hidden">
+        <section className="bg-rose-bg py-24 px-6 relative overflow-hidden">
           <div className="absolute -top-32 left-1/4 w-[400px] h-[400px] bg-rose-pale/50 rounded-full blur-[120px] pointer-events-none blob-pulse" />
-          <div className="max-w-5xl mx-auto relative">
-            <div className="reveal text-center mb-10">
-              <p className="text-[0.6rem] tracking-[0.4em] uppercase text-rose-dark font-sans font-medium mb-3">Informations</p>
-              <h2 className="font-serif text-2xl md:text-3xl text-primary">Como encomendar</h2>
+          <div className="absolute -bottom-32 right-1/4 w-[400px] h-[400px] bg-rose/10 rounded-full blur-[120px] pointer-events-none blob-pulse" />
+
+          <div className="max-w-6xl mx-auto relative">
+            <div className="reveal text-center mb-14">
+              <p className="text-[0.65rem] tracking-[0.4em] uppercase text-rose-dark font-sans font-medium mb-3">Informations</p>
+              <h2 className="font-serif text-3xl md:text-5xl text-primary mb-5">Como encomendar</h2>
+              <div className="flex items-center justify-center gap-4 mb-5">
+                <div className="w-12 h-px bg-gradient-to-r from-transparent to-rose-dark/40" />
+                <svg className="w-2.5 h-2.5 text-rose-dark/40" viewBox="0 0 12 12" fill="currentColor">
+                  <path d="M6 0L7.5 4.5L12 6L7.5 7.5L6 12L4.5 7.5L0 6L4.5 4.5Z" />
+                </svg>
+                <div className="w-12 h-px bg-gradient-to-l from-transparent to-rose-dark/40" />
+              </div>
+              <p className="text-ink-2 font-sans text-sm max-w-xl mx-auto leading-relaxed">
+                Quatro passos simples para garantir o seu pedido com tranquilidade.
+              </p>
             </div>
-            <div className="grid md:grid-cols-2 gap-5">
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
-                { label: "Prazo", texto: intro.antecedencia },
-                { label: "Como pedir", texto: intro.pedido },
-                { label: "Pagamento", texto: intro.pagamento },
-                { label: "Retirada", texto: intro.retirada },
+                {
+                  label: "Prazo",
+                  texto: intro.antecedencia,
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                },
+                {
+                  label: "Como pedir",
+                  texto: intro.pedido,
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                    </svg>
+                  ),
+                },
+                {
+                  label: "Pagamento",
+                  texto: intro.pagamento,
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                    </svg>
+                  ),
+                },
+                {
+                  label: "Retirada",
+                  texto: intro.retirada,
+                  icon: (
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                    </svg>
+                  ),
+                },
               ].map((item, i) => (
                 <div
                   key={item.label}
-                  className="reveal card-lift bg-white/85 backdrop-blur-sm border border-rose/15 rounded-[1.25rem] p-7 hover:border-rose-dark/20 transition-all duration-500"
+                  className="reveal card-lift relative bg-gradient-to-br from-rose-pale via-rose-bg to-rose-pale/60 border border-rose/25 rounded-[1.5rem] p-6 hover:border-rose-dark/30 hover:shadow-xl hover:shadow-rose/15 transition-all duration-500 overflow-hidden group"
                   style={{ transitionDelay: `${i * 0.08}s` }}
                 >
-                  <p className="text-[0.6rem] tracking-[0.3em] uppercase text-rose-dark font-sans font-medium mb-3">{item.label}</p>
-                  <p className="text-ink-2 font-sans text-sm leading-relaxed">{item.texto}</p>
+                  {/* Decorative blob */}
+                  <div className="absolute -top-12 -right-12 w-28 h-28 bg-rose/15 rounded-full blur-2xl group-hover:bg-rose/25 transition-all duration-700" />
+
+                  {/* Step number */}
+                  <span className="absolute top-4 right-5 font-serif text-4xl text-rose-dark/15 leading-none select-none">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+
+                  {/* Icon */}
+                  <div className="relative w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-sm shadow-rose/15 text-rose-dark mb-4 group-hover:scale-110 transition-transform duration-500">
+                    {item.icon}
+                  </div>
+
+                  <p className="relative text-[0.6rem] tracking-[0.3em] uppercase text-rose-dark font-sans font-semibold mb-2">{item.label}</p>
+                  <div className="relative w-8 h-px bg-rose-dark/30 mb-3" />
+                  <p className="relative text-ink-2 font-sans text-sm leading-relaxed">{item.texto}</p>
                 </div>
               ))}
             </div>

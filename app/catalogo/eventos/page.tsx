@@ -145,7 +145,7 @@ export default function EventosPage() {
             <div className="reveal mb-20 grid md:grid-cols-2 gap-10 items-center">
               <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl shadow-rose/15 img-hover order-last md:order-first">
                 <Image
-                  src="/images/eventos/mesa-doces-completa.jpg"
+                  src="/images/eventos/eventos-casa-esplanada.jpg"
                   alt="Eventos em nossa casa do Jd. Esplanada"
                   fill
                   className="object-cover"
@@ -178,8 +178,8 @@ export default function EventosPage() {
               </div>
               <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl shadow-rose/15 img-hover">
                 <Image
-                  src="/images/macarons/macarons-torre-evento.jpg"
-                  alt="Torre de macarons rosa — mesa de doces para eventos"
+                  src="/images/eventos/casal-doce.jpg"
+                  alt="Casal comendo doce — mesa de doces para casamentos"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -191,7 +191,7 @@ export default function EventosPage() {
             <div className="reveal mb-12 grid md:grid-cols-2 gap-10 items-center">
               <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl shadow-rose/15 img-hover order-last md:order-first">
                 <Image
-                  src="/images/eventos/casal-comendo.webp"
+                  src="/images/eventos/decoracao-restaurante.jpg"
                   alt="Decoração e mesa de doces em restaurantes"
                   fill
                   className="object-cover"
