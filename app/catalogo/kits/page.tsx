@@ -26,11 +26,11 @@ function SectionHeader({ label, title, desc }: { label: string; title: string; d
   )
 }
 
-function KitCard({ kit }: { kit: { nome: string; itens: string[]; observacao?: string } }) {
+function KitCard({ kit }: { kit: { nome: string; itens: string[]; foto: string; observacao?: string } }) {
   return (
     <div className="card-lift flex-none w-[18rem] bg-white border border-rose/15 rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl hover:shadow-rose/12 transition-all duration-500 flex flex-col group">
       <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-rose-pale to-rose-bg">
-        <Image src="/images/kits/capa-presentes.webp" alt={kit.nome} fill className="object-cover group-hover:scale-[1.08] transition-transform duration-700" sizes="300px" />
+        <Image src={kit.foto} alt={kit.nome} fill className="object-cover group-hover:scale-[1.08] transition-transform duration-700" sizes="300px" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
           <a href={`${wppBase}${encodeURIComponent(`Ola! Gostaria de encomendar o ${kit.nome}.`)}`}
@@ -138,7 +138,7 @@ export default function KitsPage() {
               {latinhasEChocolates.map((p) => (
                 <div key={p.nome} className="card-lift flex-none w-64 bg-base border border-rose/15 rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl hover:shadow-rose/12 transition-all duration-500 flex flex-col group">
                   <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-rose-pale to-rose-bg">
-                    <Image src="/images/macarons/macarons-caixa-rosa.webp" alt={p.nome} fill className="object-cover group-hover:scale-[1.08] transition-transform duration-700" sizes="260px" />
+                    <Image src={p.foto} alt={p.nome} fill className="object-cover group-hover:scale-[1.08] transition-transform duration-700" sizes="260px" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                   <div className="p-5 flex flex-col flex-1">
@@ -178,13 +178,8 @@ export default function KitsPage() {
             {linhaHome.produtos.map((p) => (
               <div key={p.nome + p.descricao} className="card-lift flex-none w-64 bg-white border border-rose/15 rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl hover:shadow-rose/12 transition-all duration-500 flex flex-col group">
                 <div className="relative w-full aspect-[4/3] overflow-hidden bg-gradient-to-br from-rose-pale via-nude-light to-gold-pale">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-white/60 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                      <svg className="w-7 h-7 text-rose-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
-                      </svg>
-                    </div>
-                  </div>
+                  <Image src={p.foto} alt={p.nome} fill className="object-cover group-hover:scale-[1.08] transition-transform duration-700" sizes="260px" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 <div className="p-5 flex flex-col flex-1">
                   <h4 className="font-serif text-base text-primary mb-1">{p.nome}</h4>

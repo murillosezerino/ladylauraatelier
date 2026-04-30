@@ -122,18 +122,22 @@ export const floresData = {
     { nome: "Arranjo Floral Chérie",  tamanho: "Grande",       hastes: "25 hastes + flores nobres + folhagens", preco: 259.90, foto: "/images/flores/arranjo-cherie.webp" },
     { nome: "Arranjo Floral Diamond", tamanho: "Médio-Grande", hastes: "20 hastes + flores nobres + folhagens", preco: 199.90, foto: "/images/flores/arranjo-diamond.webp" },
     { nome: "Arranjo Floral Amor",    tamanho: "Médio",        hastes: "15 hastes + folhagens",                preco: 169.90, foto: "/images/flores/arranjo-amor.webp" },
-    { nome: "Arranjo Floral Paixão",  tamanho: "Pequeno",      hastes: "10 hastes + folhagens",                preco: 128.90, foto: "/images/flores/arranjo-paixao.jpg" },
-    { nome: "Box Floral",             tamanho: "XG",           hastes: "Flores nobres + folhagens em box cartonada com alças", preco: 429, foto: "/images/flores/arranjo-box.jpg" },
+    { nome: "Arranjo Floral Paixão",  tamanho: "Pequeno",      hastes: "10 hastes + folhagens",                preco: 128.90, foto: "/images/flores/arranjo-paixao.webp" },
+    { nome: "Box Floral",             tamanho: "XG",           hastes: "Arranjo de flores tamanho XG com hastes nobres e folhagens em nossa box cartonada com alças", preco: 499, foto: "/images/flores/box-floral.jpg" },
+    { nome: "Box Coralina",           tamanho: "Grande",       hastes: "Arranjo de flores frescas e nobres composto por rosas gardens, mix de flores naturais e hortênsias em nossa box cartonada redonda", preco: 599, foto: "/images/flores/box-coralina.jpg" },
   ],
 
   rosasVermelhas: [
+    { nome: "Arranjo de Rosas Vermelhas", tamanho: "Extra Grande", hastes: "40 rosas + folhagens", preco: 799.90, foto: "/images/flores/rosas-extra-grande.webp", observacao: "*consulte disponibilidade" },
     { nome: "Arranjo de Rosas Vermelhas", tamanho: "Grande", hastes: "20 rosas + folhagens", preco: 399.90, foto: "/images/flores/rosas-grande.webp", observacao: "*consulte disponibilidade" },
     { nome: "Arranjo de Rosas Vermelhas", tamanho: "Médio",  hastes: "14 rosas + folhagens", preco: 289.90, foto: "/images/flores/rosas-medio.webp",  observacao: "*consulte disponibilidade" },
+    { nome: "Arranjo Floral La Vie en Rose", tamanho: "Grande", hastes: "14 rosas + hortênsias & folhagens", preco: 389.90, foto: "/images/flores/rosas-la-vie-en-rose.webp", observacao: "*consulte disponibilidade" },
+    { nome: "Arranjo Floral Dueto de Rosas", tamanho: "Grande", hastes: "20 rosas + folhagens", preco: 399.90, foto: "/images/flores/rosas-dueto.jpg", observacao: "*consulte disponibilidade" },
     { nome: "Arranjo de Rosas Personalizado", tamanho: "Vários", hastes: "Monte seu arranjo — escolha o tamanho e a cor", preco: null, foto: "/images/flores/rosas-personalizado.webp", observacao: "Consulte via WhatsApp" },
   ],
 
   floresSecas: [
-    { nome: "Arranjo de Flores Secas", tamanho: "Médio", descricao: null, preco: 99.90,  foto: "/images/flores/secas-medio.webp" },
+    { nome: "Arranjo de Flores Secas", tamanho: "Pequeno", descricao: null, preco: 99.90,  foto: "/images/flores/secas-pequeno.webp" },
     { nome: "Arranjo de Flores Secas", tamanho: "Grande", descricao: null, preco: 198,   foto: "/images/flores/secas-grande.webp" },
     { nome: "Garrafinha de Flores Secas", tamanho: null,  descricao: null, preco: 99.90, foto: "/images/flores/garrafinha.webp" },
     { nome: "Galocha de Cerâmica",     tamanho: null, descricao: "1 pé com flores — disponível com flores secas ou frescas", preco: 179, foto: "/images/flores/galocha.webp" },
@@ -151,12 +155,26 @@ export const floresData = {
   },
 
   vasos: [
-    { nome: "Vaso Floral Queen",       descricao: "Arranjo floral médio montado em vaso de vidro",                                           preco: 299, foto: "/images/flores/vaso-queen.jpg",       observacao: null },
+    { nome: "Vaso Floral Italy",       descricao: "Arranjo floral com mix de rosas e folhagens montados em vaso de vidro Premium com design tipo murano", preco: 749, foto: "/images/flores/vaso-italy.webp",       observacao: "*consulte disponibilidade" },
+    { nome: "Vaso Floral Magnólia",    descricao: "Arranjo floral com mix de flores tropicais montado em vaso de vidro tipo Murano",          preco: 679, foto: "/images/flores/vaso-magnolia.jpg",     observacao: "*consulte disponibilidade" },
+    { nome: "Vaso Floral La Rochelle", descricao: "Arranjo floral GG montado com flores e rosas nobres em vaso de cristal transparente",      preco: 479, foto: "/images/flores/vaso-larochelle.webp", observacao: null },
     { nome: "Vaso Floral Diamond",     descricao: "Arranjo floral grande montado em vaso de cristal",                                        preco: 349, foto: "/images/flores/vaso-diamond.webp",     observacao: null },
-    { nome: "Vaso Floral La Rochelle", descricao: "Arranjo floral GG com flores e rosas nobres em vaso de cristal transparente",             preco: 479, foto: "/images/flores/vaso-larochelle.webp", observacao: null },
-    { nome: "Vaso Floral Italy",       descricao: "Arranjo de rosas vermelhas e folhagens em vaso de vidro Premium tipo murano",             preco: 549, foto: "/images/flores/vaso-italy.webp",       observacao: "*consulte disponibilidade" },
+    { nome: "Vaso Floral Queen",       descricao: "Arranjo floral médio montado em vaso de vidro",                                           preco: 299, foto: "/images/flores/vaso-queen.jpg",       observacao: null },
     { nome: "Vaso Floral Deli",        descricao: "Arranjo de girassóis montado em vaso longo de cristal transparente",                     preco: 479, foto: "/images/flores/vaso-deli.webp",        observacao: "*consulte disponibilidade" },
-    { nome: "Aquário de Orquídea",     descricao: "Orquídea plantada em vaso de vidro transparente com folhas secas de sálvia",             preco: null, foto: "/images/flores/orquidea.webp",        observacao: "*consulte disponibilidade" },
+  ],
+
+  plantas: [
+    { nome: "Vaso de Orquídea",            descricao: "Orquídea plantada em vaso de cerâmica.",                                        preco: 189.90, foto: "/images/flores/orquidea.webp",                  observacao: null },
+    { nome: "Vaso Ouro de Begônias",       descricao: "Begônia maculata plantada em vaso dourado.",                                    preco: 399,    foto: "/images/flores/vaso-begonias-ouro.webp",        observacao: null },
+    { nome: "Vaso Conceito de Begônias",   descricao: "Begônia maculata plantada em vaso estilo concreto.",                            preco: 229,    foto: "/images/flores/vaso-begonias-conceito.jpg",     observacao: null },
+    { nome: "Vaso La Rochelle Botânica",   descricao: "Variedade botânica plantada em vaso de cerâmica artesanal.",                    preco: 269,    foto: "/images/flores/vaso-larochelle-pequeno.jpg",    observacao: null },
+    { nome: "Vaso de Ficcus Lyrata",       descricao: "Ficcus lyrata plantado em vaso de fibra com pintura artística feita à mão.",    preco: 269,    foto: "/images/flores/ficcus-lyrata.jpg",              observacao: null },
+    { nome: "Terrário de Botânicos",       descricao: "Variedades de botânicos plantados em vaso de vidro (preço por unidade).",       preco: 135,    foto: "/images/flores/terrario-botanicos.jpg",         observacao: null },
+    { nome: "Bambu da Sorte Torcido",      descricao: "Bambu da sorte torcido tamanho XG em vaso de fibra.",                            preco: 229.90, foto: "/images/flores/bambu-torcido.webp",             observacao: null },
+    { nome: "Bambu da Sorte Trançado",     descricao: "Bambu da sorte trançado pequeno em suporte com pedrinhas.",                      preco: 159.90, foto: "/images/flores/bambu-trancado.jpg",             observacao: null },
+    { nome: "Bambu da Sorte Médio",        descricao: "Bambu da sorte pequeno em suporte de vidro e madeira com pedrinhas (preço por unidade).", preco: 89.90, foto: "/images/flores/bambu-medio.jpg", observacao: null },
+    { nome: "Bambu da Sorte Solitário",    descricao: "Bambu solitário em suporte tipo \"béquer\" com madeira (preço por unidade).",   preco: 45,     foto: "/images/flores/bambu-solitario.webp",           observacao: null },
+    { nome: "Kokedama",                    descricao: "Variedade botânica plantada em kokedama de fibra com suporte (preço por unidade).", preco: 65,  foto: "/images/flores/kokedamas.jpg",                  observacao: null },
   ],
 };
 
@@ -170,7 +188,7 @@ export const kitsData = {
   cafeDaManha: [
     {
       nome: "Box Breakfast at Tiffany's",
-      preco: 598.90,
+      preco: 698.90,
       foto: "/images/kits/breakfast-tiffanys.jpg",
       itens: [
         "1 Arranjo Floral Grande (em caixa cartonada presenteável)",
@@ -183,7 +201,7 @@ export const kitsData = {
         "1 Apple Pie",
         "4 Brigous",
         "5 Macarons",
-        "1 Suco Natural de Laranja",
+        "1 Suco ou Chá 300ml",
         "2 Sachês de chá francês Dammann",
         "1 Mendiants de Chocolate Belga",
         "1 Granola doce artesanal",
@@ -195,10 +213,10 @@ export const kitsData = {
     },
     {
       nome: "Box Café da Manhã",
-      preco: 499,
-      foto: "/images/kits/cafe-da-manha.jpg",
+      preco: 599,
+      foto: "/images/kits/cafe-da-manha-1.jpg",
       itens: [
-        "1 Arranjo Floral Médio (em caixa de papel)",
+        "1 Arranjo Floral com flores frescas (em caixa de papel)",
         "2 Quiches salgadas",
         "2 Croissants assados na hora",
         "1 Geleia artesanal de frutas vermelhas",
@@ -210,7 +228,7 @@ export const kitsData = {
         "4 Brigous",
         "5 Macarons",
         "1 Porção de Pão de Queijo",
-        "1 Suco Natural de Laranja",
+        "1 Suco 300ml",
         "2 Sachês de chá francês Dammann",
         "1 Granola artesanal",
       ],
@@ -219,7 +237,19 @@ export const kitsData = {
 
   kitsComFlores: [
     {
-      nome: "Kit Ma Cherie",     preco: 584.80, foto: "/images/kits/ma-cherie.jpg",
+      nome: "Box Paris",         preco: 978.80, foto: "/images/kits/box-paris.webp",
+      itens: ["1 Arranjo floral XG personalizado (flores frescas)", "1 Caixa cartonada XG retangular", "2 Croissants (assados na hora)", "1 Chá Casa Madeira 500ml", "1 Geleia Casa Madeira 240gr", "1 Lata de Café em pó Illy", "1 Caixa com 8 macarons", "1 Barra recheada de chocolate Belga", "1 Caixa com 4 Brigous", "1 Latinha Presenteável de Mendiants", "1 Tablete de Chocolate Belga", "1 Caixa de Profiteroles", "2 Éclairs"],
+    },
+    {
+      nome: "Kit Gatsby",        preco: 674.80, foto: "/images/kits/kit-gatsby.webp",
+      itens: ["Arranjo Floral Amor", "Caixa Cartonada Presenteável Grande", "1 Vela aromática", "1 Difusor de ambientes", "1 Home Spray"],
+    },
+    {
+      nome: "Kit Annecy",        preco: 598.80, foto: "/images/kits/kit-annecy.webp",
+      itens: ["Caixa Cartonada Presenteável Grande", "Arranjo Floral (flores frescas ou secas)", "Latinha Presenteável de Macarons ou Mendiants", "Vela aromática", "Freixenet 750ml"],
+    },
+    {
+      nome: "Kit Ma Cherie",     preco: 584.80, foto: "/images/kits/ma-cherie.webp",
       itens: ["Caixa Cartonada Presenteável Grande", "Arranjo Floral Amor", "Latinha Presenteável de Mendiants", "Barra de Chocolate Belga recheada", "Caixa com 5 macarons", "Espumante 750ml"],
     },
     {
@@ -227,79 +257,106 @@ export const kitsData = {
       itens: ["Caixa Cartonada Presenteável Grande", "Arranjo Floral Amor", "Vinho Tinto, Branco ou Espumante 750ml", "Barra recheada de chocolate Belga", "Tablete de Chocolate Belga", "Latinha Presenteável de Macarons"],
     },
     {
+      nome: "Kit Chamonix",      preco: 583,    foto: "/images/kits/kit-chamonix.jpg",
+      itens: ["Caixa Cartonada Presenteável Grande", "Arranjo de Flores Secas", "Barra de Chocolate Belga Recheada", "Latinha Presenteável de Mendiants", "Caixa com 5 macarons", "Espumante 750ml"],
+    },
+    {
+      nome: "Kit Provence",      preco: 490.80, foto: "/images/kits/kit-provence.webp",
+      itens: ["Caixa Cartonada Presenteável Bolsa", "Arranjo Floral Paixão", "Vela Aromática", "Difusor de ambientes"],
+    },
+    {
+      nome: "Kit Bordeaux",      preco: 483,    foto: "/images/kits/kit-bordeaux.webp",
+      itens: ["Caixa Cartonada Presenteável Bolsa", "Arranjo Floral Amor", "Caixa com 8 macarons", "Espumante 750ml"],
+    },
+    {
+      nome: "Kit Jardim de Monet", preco: 458.90, foto: "/images/kits/kit-jardim-monet.webp",
+      itens: ["Caixa Cartonada Presenteável Grande", "Arranjo Floral Amor (flores frescas)", "Croissant da casa", "Geleia ZERO açúcar Casa Madeira", "Chá ZERO açúcar Casa Madeira", "Caixa com 8 Macarons", "Caixa com 4 Brigous"],
+    },
+    {
       nome: "Kit Belle Époque",  preco: 419.90, foto: "/images/kits/belle-epoque.jpg",
       itens: ["Caixa Cartonada Presenteável Bolsa", "Arranjo Floral Amor", "Espumante 750ml", "Caixa com 4 Brigous", "1 Tablete de Chocolate Belga"],
     },
     {
-      nome: "Kit Provence",      preco: 490.80, foto: "/images/kits/provence.jpg",
-      itens: ["Caixa Cartonada Presenteável Bolsa", "Arranjo Floral Paixão", "Vela Aromática", "Difusor de ambientes"],
-    },
-    {
-      nome: "Kit St Tropez",     preco: 412.80, foto: "/images/kits/st-tropez.jpg",
+      nome: "Kit St Tropez",     preco: 412.80, foto: "/images/kits/kit-st-tropez.jpg",
       itens: ["Caixa Cartonada Presenteável Bolsa", "Arranjo Floral Amor", "Barra de Chocolate Belga recheada ou Caixa com 8 macarons", "Baby Chandon 187ml", "Tablete de Chocolate Belga"],
     },
     {
-      nome: "Kit Marselha",      preco: 339.80, foto: "/images/kits/marselha.jpg",
-      itens: ["Caixa Cartonada Presenteável Bolsa", "Arranjo Floral Paixão", "Caixa com 5 macarons", "Latinha Presenteável de Mendiants"],
-    },
-    {
-      nome: "Kit Ma Belle",      preco: 383.80, foto: "/images/kits/ma-belle.jpg",
+      nome: "Kit Ma Belle",      preco: 383.80, foto: "/images/kits/kit-ma-belle.webp",
       itens: ["Caixa Cartonada Presenteável Bolsa", "Arranjo Floral Amor", "Caixa com 8 macarons", "Caixa com 4 brigous", "Tablete de Chocolate Belga"],
     },
     {
-      nome: "Kit Bordeaux",      preco: 483,    foto: "/images/kits/bordeaux.jpg",
-      itens: ["Caixa Cartonada Presenteável Bolsa", "Arranjo Floral Amor", "Caixa com 8 macarons", "Espumante 750ml"],
+      nome: "Kit Marselha",      preco: 339.80, foto: "/images/kits/kit-marselha.webp",
+      itens: ["Caixa Cartonada Presenteável Bolsa", "Arranjo Floral Paixão", "Caixa com 5 macarons", "Latinha Presenteável de Mendiants"],
     },
     {
-      nome: "Kit Gatsby",        preco: 674.80, foto: "/images/kits/gatsby.jpg",
-      itens: ["Arranjo Floral Amor", "Caixa Cartonada Presenteável Grande", "1 Vela aromática", "1 Difusor de ambientes", "1 Home Spray"],
-    },
-    {
-      nome: "Kit Annecy",        preco: 598.80, foto: "/images/kits/annecy.jpg",
-      itens: ["Caixa Cartonada Presenteável Grande", "Arranjo Floral (flores frescas ou secas)", "Latinha Presenteável de Macarons ou Mendiants", "Vela aromática", "Freixenet 750ml"],
-    },
-    {
-      nome: "Kit Chamonix",      preco: 583,    foto: "/images/kits/chamonix.jpg",
-      itens: ["Caixa Cartonada Presenteável Grande", "Arranjo de Flores Secas", "Barra de Chocolate Belga Recheada", "Latinha Presenteável de Mendiants", "Caixa com 5 macarons", "Espumante 750ml"],
-    },
-    {
-      nome: "Kit Burberry",      preco: 314.90, foto: "/images/kits/burberry.jpg",
+      nome: "Kit Burberry",      preco: 314.90, foto: "/images/kits/kit-burberry.webp",
       itens: ["Caixa de papel em estampa Burberry", "Arranjo Floral Amor", "Espumante 750ml"],
     },
     {
-      nome: "Kit Da Vinci",      preco: 289.90, foto: "/images/kits/da-vinci.jpg",
+      nome: "Kit Da Vinci",      preco: 289.90, foto: "/images/kits/kit-da-vinci.webp",
       itens: ["Caixa de Papel Presenteável", "Arranjo Floral Paixão (flores frescas ou secas)", "1 Caixa com 4 Brigous", "1 Tablete de Chocolate Belga", "1 Caixa com 8 Macarons"],
     },
     {
-      nome: "Kit Van Gogh",      preco: 243.90, foto: "/images/kits/van-gogh.jpg",
+      nome: "Kit Van Gogh",      preco: 243.90, foto: "/images/kits/kit-van-gogh.jpg",
       itens: ["Caixa de Papel Presenteável", "Arranjo Floral Médio Amor (flores frescas ou secas)", "Latinha Presenteável (mendiants ou macarons)"],
     },
     {
-      nome: "Kit Monalisa",      preco: 199.90, foto: "/images/kits/monalisa.jpg",
+      nome: "Kit Monalisa",      preco: 219.90, foto: "/images/kits/kit-monalisa.webp",
       itens: ["Caixa de Papel Presenteável", "Arranjo Floral Pequeno Paixão (flores frescas ou secas)", "Caixa com 4 Brigous", "Tablete de Chocolate Belga"],
+    },
+    {
+      nome: "Kit Matisse",       preco: 199.90, foto: "/images/kits/kit-matisse.jpg",
+      itens: ["Caixa de Papel Presenteável", "Arranjo Floral Pequeno de Flores Secas", "1 Caixa com 8 Brigous"],
     },
   ],
 
   kitsSemFlores: [
     {
-      nome: "Kit Felicidade",    preco: 189,    foto: "/images/kits/felicidade.jpg",
-      itens: ["1 Caixa de papel Presenteável", "1 Jar", "1 Barra de Chocolate recheada", "1 Caixa com 4 brigous", "1 Tablete de Chocolate", "1 Mini acrílico de mendiants"],
+      nome: "Kit Taittinger",    preco: 753.80, foto: "/images/kits/kit-taittinger.webp",
+      itens: ["2 Taças de Cristal para Champagne", "1 Garrafa de Champagne Taittinger Brut 750ml", "1 Caixa de papel presenteável com alça"],
     },
     {
-      nome: "Kit Chandon",       preco: 149.90, foto: "/images/kits/chandon.jpg",
+      nome: "Composição Marrais", preco: 498.70, foto: "/images/kits/composicao-marrais.jpg",
+      itens: ["1 Espumante Casa Madeira 130 Brut 750ml", "1 Taça de Cristal para espumante", "Caixa de papel com acetato presenteável", "1 Arranjo floral Diamond com flores frescas"],
+    },
+    {
+      nome: "Kit Origem Casa Valduga", preco: 298.80, foto: "/images/kits/kit-origem-valduga.webp",
+      itens: ["1 Vinho Origem Casa Valduga 750ml", "2 Geleias Casa Madeira", "1 Abridor de vinho", "Caixa de papel presenteável com tampa"],
+    },
+    {
+      nome: "Kit Casa Valduga com Espumante", preco: 298.80, foto: "/images/kits/kit-casa-valduga.webp",
+      itens: ["1 Espumante Casa Madeira 130 Brut 750ml", "1 Taça de Cristal para espumante", "Caixa de papel com acetato presenteável"],
+    },
+    {
+      nome: "Kit Felicidade",    preco: 189,    foto: "/images/kits/kit-felicidade.webp",
+      itens: ["1 Caixa de papel Presenteável", "1 Jar no potinho de vidro", "1 Barra de Chocolate recheada", "1 Caixa com 4 brigous", "1 Tablete de Chocolate", "1 Mini acrílico de mendiants"],
+    },
+    {
+      nome: "Kit Freixenet",     preco: 169.90, foto: "/images/kits/kit-freixenet.webp",
+      itens: ["Caixa de papel Presenteável", "6 doces sortidos", "1 Baby Freixenet 200ml"],
+    },
+    {
+      nome: "Kit Chandon",       preco: 149.90, foto: "/images/kits/kit-chandon.webp",
       itens: ["Caixa de papel Presenteável", "6 doces sortidos", "1 Baby Chandon 187ml"],
     },
     {
-      nome: "Kit Freixenet",     preco: 169.90, foto: "/images/kits/freixenet.jpg",
-      itens: ["Caixa de papel Presenteável", "6 doces sortidos", "1 Baby Freixenet 200ml"],
+      nome: "Kit Breakfest",     preco: 143.90, foto: "/images/kits/kit-breakfest.jpg",
+      itens: ["1 Chá Casa Madeira", "2 Geleias Casa Madeira", "Caixa de papel presenteável com tampa"],
+    },
+    {
+      nome: "Kit Delicatéssen",  preco: 143.90, foto: "/images/kits/kit-delicatessen.jpg",
+      itens: ["1 Suco de Uva Casa Madeira", "3 Geleias Casa Madeira", "Caixa de papel presenteável com tampa"],
     },
   ],
 
   latinhasEChocolates: [
-    { nome: "Latinha Presenteável", descricao: "Mendiants Belga ao leite (220gr) · Macarons (6 und sortidos) · Trufas (6 und sortidas)", preco: 74,   foto: "/images/kits/latinha.jpg" },
-    { nome: "Barras Recheadas",     descricao: "Feitas com chocolate Belga. Consulte os sabores do dia.",                                  preco: 69,   foto: "/images/kits/barra.jpg" },
-    { nome: "Tablete de Chocolate Belga", descricao: null,                                                                                preco: 34,   foto: "/images/kits/tablete.jpg" },
-    { nome: "Caixa Seleção com 12 Doces", descricao: "12 docinhos sortidos (mín. 4 variedades) em caixa especial com sacola presenteável", preco: 152, foto: "/images/kits/caixa-selecao.jpg" },
+    { nome: "Caixa Seleção com 12 Doces", descricao: "12 docinhos sortidos selecionados de acordo com a disponibilidade do dia, contendo pelo menos 4 variedades diferentes. Acomodados em caixa especial com sacola presenteável.", preco: 152, foto: "/images/doces/caixa-selecao-12.webp" },
+    { nome: "Latinhas Presenteáveis", descricao: "Mendiants Belga ao leite (220gr) · Macarons (6 und sortidos) · Trufas (6 und sortidas)", preco: 74, foto: "/images/doces/latinhas-presenteaveis.webp" },
+    { nome: "Barras Recheadas",     descricao: "Feitas com chocolate Belga. Consulte os sabores do dia.",                                  preco: 69,   foto: "/images/doces/barras-recheadas.jpg" },
+    { nome: "Tablete de Chocolate Belga", descricao: null,                                                                                preco: 34,   foto: "/images/doces/tablete-chocolate-belga.jpg" },
+    { nome: "Caixa de Brigadeiros", descricao: "4 und R$31 · 8 und R$62 · 15 und R$115",                                                  preco: 31,   foto: "/images/doces/caixa-brigadeiros.webp" },
+    { nome: "Caixa de Macarons",    descricao: "5 und R$47 · 8 und R$76 · 15 und R$143",                                                  preco: 47,   foto: "/images/macarons/caixa-macarons.jpg" },
+    { nome: "Caixa de Trufas",      descricao: "4 und R$38 · 8 und R$76 · 15 und R$143 · *produto sazonal, consulte disponibilidade",     preco: 38,   foto: "/images/doces/caixa-trufas.jpg" },
   ],
 
   caixasBrigous: [
@@ -313,20 +370,23 @@ export const kitsData = {
     { qtd: "15 und", preco: 143 },
   ],
   caixasTrufas: [
-    { qtd: "4 und",  preco: 35  },
-    { qtd: "8 und",  preco: 70  },
-    { qtd: "15 und", preco: 125 },
+    { qtd: "4 und",  preco: 38  },
+    { qtd: "8 und",  preco: 76  },
+    { qtd: "15 und", preco: 143 },
   ],
 
   linhaHome: {
     descricao: "Velas aromáticas & difusores de ambiente — linha exclusiva Lady Laura.",
     aromas: ["Tiramisù", "Vinho Quente", "Brigadeiro", "Apple Pie", "Provence"],
     produtos: [
-      { nome: "Vela Aromática",                      descricao: "Todos os aromas",                    preco: 129,    foto: "/images/home/vela.jpg" },
-      { nome: "Difusor de Ambientes",                descricao: "Tiramisù ou Apple Pie",              preco: 169,    foto: "/images/home/difusor-premium.jpg" },
-      { nome: "Difusor de Ambientes",                descricao: "Vinho Quente ou Brigadeiro",         preco: 143,    foto: "/images/home/difusor-classic.jpg" },
-      { nome: "Difusor + Home Spray",                descricao: "Aroma Provence",                     preco: 143,    foto: "/images/home/provence-set.jpg" },
-      { nome: "Kit Lady Laura Home",                 descricao: "1 Vela aromática · 1 Difusor · 1 Caixa decorada · 1 Sacola para presente", preco: 291, foto: "/images/home/kit-home.jpg" },
+      { nome: "Vela Aromática Tiramisù",             descricao: "Vela aromática com aroma Tiramisù",                                          preco: 129, foto: "/images/home/tiramisu.jpg" },
+      { nome: "Vela Aromática Vinho Quente",         descricao: "Vela aromática com aroma Vinho Quente",                                      preco: 129, foto: "/images/home/vinho-quente.jpg" },
+      { nome: "Vela Aromática Brigadeiro",           descricao: "Vela aromática com aroma Brigadeiro",                                        preco: 129, foto: "/images/home/brigadeiro.jpg" },
+      { nome: "Vela Aromática Apple Pie",            descricao: "Vela aromática com aroma Apple Pie",                                         preco: 129, foto: "/images/home/apple-pie.jpg" },
+      { nome: "Difusor Tiramisù ou Apple Pie",       descricao: "Difusor de ambiente — Tiramisù ou Apple Pie",                                preco: 169, foto: "/images/home/tiramisu.jpg" },
+      { nome: "Difusor Vinho Quente ou Brigadeiro",  descricao: "Difusor de ambiente — Vinho Quente ou Brigadeiro",                           preco: 143, foto: "/images/home/vinho-quente.jpg" },
+      { nome: "Difusor + Home Spray Provence",       descricao: "Difusor de ambiente e Home Spray no aroma Provence",                         preco: 143, foto: "/images/home/provence.webp" },
+      { nome: "Kit Lady Laura Home",                 descricao: "1 Vela aromática · 1 Difusor de ambientes · 1 Caixa decorada · 1 Sacola para presente", preco: 291, foto: "/images/kits/kit-lady-laura-home.webp" },
     ],
   },
 };

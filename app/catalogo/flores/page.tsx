@@ -124,7 +124,7 @@ function GiftCard({ nome, itens, image, observacao }: { nome: string; itens: str
 }
 
 export default function FloresPage() {
-  const { arranjosFrescos, rosasVermelhas, floresSecas, floresPlantadas, vasos, intro } = floresData
+  const { arranjosFrescos, rosasVermelhas, floresSecas, floresPlantadas, vasos, plantas, intro } = floresData
   const { cafeDaManha, kitsComFlores, kitsSemFlores, latinhasEChocolates, linhaHome } = kitsData
 
   return (
@@ -336,6 +336,34 @@ export default function FloresPage() {
           </div>
         </section>
 
+        {/* ── Plantas & Botânicas ── */}
+        <section className="relative bg-white py-28 overflow-hidden">
+          <div className="absolute -top-32 -right-24 w-80 h-80 bg-olive-light/15 rounded-full blur-[120px] pointer-events-none blob-pulse" />
+          <div className="absolute -bottom-20 left-0 w-72 h-72 bg-rose-pale/40 rounded-full blur-[100px] pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto px-6">
+            <SectionHeader
+              label="Naturelles & vivantes"
+              title="Plantas & Botânicas"
+              desc="Bambus da sorte, kokedamas, terrários e variedades botânicas plantadas em vasos especiais — frescor e charme duradouros."
+            />
+            <div className="reveal">
+              <HorizontalScroll>
+                {plantas.map((p) => (
+                  <FlowerCard
+                    key={p.nome}
+                    nome={p.nome}
+                    descricao={p.descricao}
+                    observacao={p.observacao}
+                    image={p.foto}
+                    wppMsg={`Olá! Gostaria de encomendar o ${p.nome}.`}
+                  />
+                ))}
+              </HorizontalScroll>
+            </div>
+          </div>
+        </section>
+
         {/* ═══════════════════════════════════════════════════════════
                                PRESENTES
             ═══════════════════════════════════════════════════════════ */}
@@ -482,13 +510,8 @@ export default function FloresPage() {
                 {linhaHome.produtos.map((p) => (
                   <div key={p.nome + p.descricao} className="card-lift flex-none w-64 bg-base border border-rose/15 rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl hover:shadow-rose/12 transition-all duration-500 flex flex-col group">
                     <div className="relative w-full aspect-[4/3] overflow-hidden bg-gradient-to-br from-rose-pale via-nude-light to-gold-pale">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-16 h-16 rounded-full bg-white/60 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                          <svg className="w-7 h-7 text-rose-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
-                          </svg>
-                        </div>
-                      </div>
+                      <Image src={p.foto} alt={p.nome} fill className="object-cover group-hover:scale-[1.08] transition-transform duration-700" sizes="260px" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
                     <div className="p-5 flex flex-col flex-1">
                       <h4 className="font-serif text-base text-primary mb-1">{p.nome}</h4>
