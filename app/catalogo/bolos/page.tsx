@@ -293,11 +293,6 @@ export default function BolosPage() {
                   {/* Decorative blob */}
                   <div className="absolute -top-12 -right-12 w-28 h-28 bg-rose/15 rounded-full blur-2xl group-hover:bg-rose/25 transition-all duration-700" />
 
-                  {/* Step number */}
-                  <span className="absolute top-4 right-5 font-serif text-4xl text-rose-dark/15 leading-none select-none">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-
                   {/* Icon */}
                   <div className="relative w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-sm shadow-rose/15 text-rose-dark mb-4 group-hover:scale-110 transition-transform duration-500">
                     {item.icon}
@@ -364,17 +359,6 @@ export default function BolosPage() {
                   </svg>
                 </a>
               </div>
-            </div>
-
-            <div className="reveal">
-              <a href={`${wppBase}${encodeURIComponent('Olá! Gostaria de encomendar um bolo em Buttercream personalizado.')}`}
-                target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-rose-dark text-white font-sans font-medium text-[0.7rem] tracking-[0.15em] uppercase px-10 py-4 rounded-full hover:bg-rose-deep hover:scale-[1.03] transition-all duration-300 shadow-lg shadow-rose-dark/20">
-                Solicitar orçamento
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
             </div>
           </div>
         </section>

@@ -402,13 +402,19 @@ export default function EventosPage() {
                   texto: 'Opções flexíveis — fale conosco.',
                   icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>,
                 },
-              ].map((c) => (
-                <div key={c.titulo} className="reveal card-glow bg-base border border-rose/15 rounded-[1.5rem] p-6 group text-center">
-                  <div className="w-10 h-10 rounded-full bg-rose-pale/50 flex items-center justify-center mx-auto mb-4 text-rose-dark/60 group-hover:text-rose-dark group-hover:bg-rose-pale transition-all">
+              ].map((c, i) => (
+                <div
+                  key={c.titulo}
+                  className="reveal card-lift relative bg-gradient-to-br from-rose-pale via-rose-bg to-rose-pale/60 border border-rose/25 rounded-[1.5rem] p-6 hover:border-rose-dark/30 hover:shadow-xl hover:shadow-rose/15 transition-all duration-500 overflow-hidden group"
+                  style={{ transitionDelay: `${i * 0.08}s` }}
+                >
+                  <div className="absolute -top-12 -right-12 w-28 h-28 bg-rose/15 rounded-full blur-2xl group-hover:bg-rose/25 transition-all duration-700" />
+                  <div className="relative w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-sm shadow-rose/15 text-rose-dark mb-4 group-hover:scale-110 transition-transform duration-500">
                     {c.icon}
                   </div>
-                  <p className="text-[0.6rem] tracking-[0.2em] uppercase text-rose-dark font-sans font-medium mb-2">{c.titulo}</p>
-                  <p className="text-ink-2 text-sm font-sans leading-relaxed">{c.texto}</p>
+                  <p className="relative text-[0.6rem] tracking-[0.3em] uppercase text-rose-dark font-sans font-semibold mb-2">{c.titulo}</p>
+                  <div className="relative w-8 h-px bg-rose-dark/30 mb-3" />
+                  <p className="relative text-ink-2 text-sm font-sans leading-relaxed">{c.texto}</p>
                 </div>
               ))}
             </div>

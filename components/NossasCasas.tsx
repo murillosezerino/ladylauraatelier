@@ -130,9 +130,11 @@ export default function NossasCasas() {
           {siteConfig.addresses.map((addr, i) => (
             <div
               key={i}
-              className="reveal card-lift rounded-[1.25rem] overflow-hidden border border-rose/10 hover:border-rose/25 transition-all duration-500 bg-base"
+              className="reveal card-lift relative overflow-hidden border border-rose/25 rounded-[1.5rem] hover:border-rose-dark/30 hover:shadow-xl hover:shadow-rose/15 transition-all duration-500 bg-gradient-to-br from-rose-pale via-rose-bg to-rose-pale/60 group"
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
+              <div className="absolute -top-16 -right-16 w-36 h-36 bg-rose/15 rounded-full blur-2xl group-hover:bg-rose/25 transition-all duration-700 pointer-events-none" />
+
               <div className="relative h-36 sm:h-40 w-full overflow-hidden bg-white">
                 <iframe
                   src={addr.embedUrl}
@@ -143,20 +145,23 @@ export default function NossasCasas() {
                 />
               </div>
 
-              <div className="p-5">
+              <div className="relative p-5">
                 <div className="flex items-start gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-full bg-rose-pale/50 flex items-center justify-center shrink-0 mt-0.5">
-                    <svg className="w-3.5 h-3.5 text-rose-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <div className="w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center shrink-0 shadow-sm shadow-rose/15 group-hover:scale-110 transition-transform duration-500">
+                    <svg className="w-4 h-4 text-rose-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
                   </div>
                   <div className="min-w-0">
+                    <p className="text-[0.55rem] tracking-[0.3em] uppercase text-rose-dark font-sans font-semibold mb-0.5">Maison</p>
                     <h3 className="font-serif text-lg text-primary mb-0.5">{addr.city}</h3>
                     <p className="text-ink-2 text-xs font-sans">{addr.street}</p>
                     <p className="text-ink-4 text-[0.7rem] font-sans mt-0.5">{addr.neighborhood}</p>
                   </div>
                 </div>
+
+                <div className="w-8 h-px bg-rose-dark/30 mb-3" />
 
                 <a
                   href={addr.mapsUrl}
