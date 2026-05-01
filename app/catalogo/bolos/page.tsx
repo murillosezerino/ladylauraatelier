@@ -130,7 +130,7 @@ export default function BolosPage() {
                 return (
                   <div
                     key={t.nome}
-                    className="reveal card-lift relative bg-gradient-to-br from-rose-pale via-rose-bg to-rose-pale/70 border border-rose/30 rounded-[1.5rem] p-6 text-center hover:border-rose-dark/40 hover:shadow-xl hover:shadow-rose/15 transition-all duration-500 overflow-hidden group"
+                    className="reveal card-lift relative bg-gradient-to-br from-rose-pale via-rose-bg to-rose-pale/70 border border-rose/20 rounded-[2rem] p-6 text-center shadow-sm shadow-rose/8 hover:border-rose-dark/30 hover:shadow-2xl hover:shadow-rose/15 transition-all duration-500 overflow-hidden group"
                     style={{ transitionDelay: `${i * 0.08}s` }}
                   >
                     {/* Decorative blob */}
@@ -175,10 +175,10 @@ export default function BolosPage() {
               {bolosFestivos.sabores.map((s, i) => (
                 <div
                   key={s.nome}
-                  className="reveal card-lift bg-white border border-rose/8 rounded-[1.75rem] overflow-hidden flex flex-col group"
+                  className="reveal card-lift bg-white border border-rose/8 rounded-[2rem] overflow-hidden shadow-sm shadow-rose/8 hover:shadow-2xl hover:shadow-rose/15 transition-all duration-500 flex flex-col group"
                   style={{ transitionDelay: `${i * 0.04}s` }}
                 >
-                  <div className="relative aspect-square overflow-hidden img-hover">
+                  <div className="relative aspect-[4/5] overflow-hidden img-hover">
                     {s.foto ? (
                       <Image src={s.foto} alt={s.nome} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
                     ) : (
@@ -287,7 +287,7 @@ export default function BolosPage() {
               ].map((item, i) => (
                 <div
                   key={item.label}
-                  className="reveal card-lift relative bg-gradient-to-br from-rose-pale via-rose-bg to-rose-pale/60 border border-rose/25 rounded-[1.5rem] p-6 hover:border-rose-dark/30 hover:shadow-xl hover:shadow-rose/15 transition-all duration-500 overflow-hidden group"
+                  className="reveal card-lift relative bg-gradient-to-br from-rose-pale via-rose-bg to-rose-pale/60 border border-rose/20 rounded-[2rem] p-6 shadow-sm shadow-rose/8 hover:border-rose-dark/30 hover:shadow-2xl hover:shadow-rose/15 transition-all duration-500 overflow-hidden group"
                   style={{ transitionDelay: `${i * 0.08}s` }}
                 >
                   {/* Decorative blob */}
@@ -316,7 +316,7 @@ export default function BolosPage() {
             <SectionHeader label="Créations personnalisées" title="Bolos em Buttercream" desc={bolosButtercream.descricao} />
 
             {/* Sabores com tooltip */}
-            <div className="reveal bg-base border border-rose/10 rounded-[1.5rem] p-8 mb-12">
+            <div className="reveal bg-base border border-rose/10 rounded-[2rem] p-8 mb-12 shadow-sm shadow-rose/8">
               <p className="text-[0.6rem] tracking-[0.3em] uppercase text-ink-3 font-sans mb-4">Sabores disponíveis</p>
               <div className="flex flex-wrap gap-2.5">
                 {bolosButtercream.saboresDisponiveis.map((s) => (
@@ -340,7 +340,7 @@ export default function BolosPage() {
             </div>
 
             {/* Bolos especiais e personalizados */}
-            <div className="reveal bg-base border border-rose/10 rounded-[1.75rem] overflow-hidden grid md:grid-cols-2 mb-12">
+            <div className="reveal bg-base border border-rose/10 rounded-[2rem] overflow-hidden grid md:grid-cols-2 mb-12 shadow-sm shadow-rose/8 hover:shadow-2xl hover:shadow-rose/15 transition-all duration-500">
               <div className="relative min-h-[280px] overflow-hidden img-hover bg-rose-pale">
                 <Image src="/images/bolos/cha-revelacao.webp" alt="Bolos especiais e personalizados" fill className="object-cover" sizes="50vw" />
               </div>
