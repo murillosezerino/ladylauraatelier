@@ -4,91 +4,119 @@ import { siteConfig } from "@/lib/data"
 import Nav from "@/components/Nav"
 import Footer from "@/components/Footer"
 import RevealInit from "@/components/RevealInit"
-import HorizontalScroll from "@/components/HorizontalScroll"
 
 const wppBase = `https://wa.me/${siteConfig.whatsapp}?text=`
 
-const estilos = [
+const buques = [
   {
-    nome: "Buquê Clássico",
-    sub: "Redondo & atemporal",
-    descricao: "Formato redondo simétrico com rosas nobres e folhagens delicadas — a elegância tradicional que nunca sai de moda.",
-    foto: "/images/buques/classico.jpg",
+    nome: "Renoir",
+    tipo: "Buquê Pequeno",
+    preco: 487,
+    composicao: "Mix de Flores",
+    detalhes: "10 hastes + folhagens",
+    paleta: "Paleta de cores à escolha",
+    fotoPrincipal: "/images/buques-noiva/renoir-1.webp",
+    galeria: [
+      "/images/buques-noiva/renoir-2.webp",
+      "/images/buques-noiva/renoir-3.webp",
+      "/images/buques-noiva/renoir-4.webp",
+    ],
+    descricao: "Composição delicada e clean — perfeita para civis, mini weddings e damas de honra.",
   },
   {
-    nome: "Buquê Cascata",
-    sub: "Movimento & romance",
-    descricao: "Flores que desenham uma cascata suave a partir das mãos da noiva — um gesto romântico para vestidos longos e celebrações imponentes.",
-    foto: "/images/buques/cascata.jpg",
+    nome: "Rousseau",
+    tipo: "Buquê Pequeno",
+    preco: 598,
+    composicao: "Mix de Flores",
+    detalhes: "15 hastes incluindo flores nobres + folhagens",
+    paleta: "Paleta de cores à escolha",
+    fotoPrincipal: "/images/buques-noiva/rousseau-1.webp",
+    galeria: [
+      "/images/buques-noiva/rousseau-2.jpg",
+      "/images/buques-noiva/rousseau-3.jpg",
+      "/images/buques-noiva/rousseau-4.webp",
+    ],
+    descricao: "Volume e personalidade com flores nobres — composição clássica e cheia de movimento.",
   },
   {
-    nome: "Buquê Campestre",
-    sub: "Natural & orgânico",
-    descricao: "Flores do campo em composição livre e despojada, com folhagens e ramos — ideal para casamentos ao ar livre e mini weddings.",
-    foto: "/images/buques/campestre.jpg",
+    nome: "Matisse",
+    tipo: "Buquê Médio",
+    preco: 920,
+    composicao: "Mix de Flores Nobres",
+    detalhes: "25 hastes de flores nobres + folhagens",
+    paleta: "Paleta de cores à escolha",
+    fotoPrincipal: "/images/buques-noiva/matisse-1.webp",
+    galeria: [
+      "/images/buques-noiva/matisse-2.jpg",
+      "/images/buques-noiva/matisse-3.jpg",
+    ],
+    descricao: "Composição ampla, sofisticada — flores nobres em arranjo de impacto para o altar.",
   },
   {
-    nome: "Buquê Rosas Nobres",
-    sub: "Monocromático & sofisticado",
-    descricao: "Composição só com rosas nobres — brancas, pêssego, rosé ou vermelhas — para um resultado clean e sofisticado.",
-    foto: "/images/buques/rosas-nobres.jpg",
-  },
-  {
-    nome: "Buquê Pastel",
-    sub: "Tons suaves & delicados",
-    descricao: "Paleta em tons pastel — rosé, champagne, branco e lavanda — para noivas que buscam delicadeza e romantismo na fotografia.",
-    foto: "/images/buques/pastel.jpg",
-  },
-  {
-    nome: "Buquê Petit",
-    sub: "Minimalista & moderno",
-    descricao: "Formato compacto e minimalista — ideal para noivas contemporâneas, civil ou damas de honra.",
-    foto: "/images/buques/petit.jpg",
-  },
-  {
-    nome: "Buquê de Noiva Box",
-    sub: "Presenteável",
-    descricao: "Montado em caixa cartonada com alça — perfeito para deslocamentos e cerimônias que precisam do buquê intacto até o altar.",
-    foto: "/images/buques/box.jpg",
-  },
-  {
-    nome: "Buquê Personalizado",
-    sub: "Sob medida",
-    descricao: "Criado a partir do seu mood board, cores do vestido e estilo da cerimônia — desenhado a quatro mãos com a noiva.",
-    foto: "/images/buques/personalizado.jpg",
+    nome: "Monet",
+    tipo: "Buquê Grande",
+    preco: 1490,
+    composicao: "Mix de Flores Nobres",
+    detalhes: "38 hastes de flores nobres + folhagens",
+    paleta: "Paleta de cores à escolha",
+    fotoPrincipal: "/images/buques-noiva/monet-1.webp",
+    galeria: [
+      "/images/buques-noiva/monet-2.webp",
+      "/images/buques-noiva/monet-3.webp",
+    ],
+    descricao: "O statement piece — composição imponente para grandes celebrações e cerimônias formais.",
   },
 ]
 
-const galeria = [
-  "/images/buques/galeria-1.jpg",
-  "/images/buques/galeria-2.jpg",
-  "/images/buques/galeria-3.jpg",
-  "/images/buques/galeria-4.jpg",
-  "/images/buques/galeria-5.jpg",
-  "/images/buques/galeria-6.jpg",
-  "/images/buques/galeria-7.jpg",
-  "/images/buques/galeria-8.jpg",
-  "/images/buques/galeria-9.jpg",
+const galeriaGeral = [
+  "/images/buques-noiva/renoir-2.webp",
+  "/images/buques-noiva/rousseau-2.jpg",
+  "/images/buques-noiva/matisse-2.jpg",
+  "/images/buques-noiva/monet-2.webp",
+  "/images/buques-noiva/renoir-3.webp",
+  "/images/buques-noiva/rousseau-3.jpg",
+  "/images/buques-noiva/matisse-3.jpg",
+  "/images/buques-noiva/monet-3.webp",
+  "/images/buques-noiva/rousseau-4.webp",
+]
+
+const cuidados = [
+  {
+    titulo: "Cuidados",
+    texto: "Ao receber, remova a embalagem e corte os caules em diagonal (~2cm). Coloque ~10cm de água fresca no vaso e troque a cada 2 dias.",
+  },
+  {
+    titulo: "Paleta",
+    texto: "Trabalhamos para entregar a paleta e espécies definidas, mas como flores são sazonais podem ser necessárias substituições dentro do nosso padrão.",
+  },
+  {
+    titulo: "Sazonalidade",
+    texto: "Variações naturais e regionais podem alterar o produto. As fotos são referência de tamanho — não das espécies exatas.",
+  },
 ]
 
 const comoEncomendar = [
   {
     titulo: "Consulta",
-    texto: "Fale conosco pelo WhatsApp compartilhando a data, estilo do casamento, cores do vestido e referências.",
+    texto: "Compartilhe data, estilo do casamento, cores do vestido e referências pelo WhatsApp.",
   },
   {
     titulo: "Projeto sob medida",
-    texto: "Desenhamos juntas a composição, espécies florais, paleta de cores e acabamento do buquê.",
+    texto: "Desenhamos juntas a composição, espécies, paleta e acabamento do buquê.",
   },
   {
     titulo: "Antecedência",
-    texto: "Recomendamos agendamento com pelo menos 30 dias de antecedência para garantir a disponibilidade das flores escolhidas.",
+    texto: "Recomendamos no mínimo 30 dias para garantir disponibilidade das flores escolhidas.",
   },
   {
     titulo: "Entrega & retirada",
-    texto: "Buquê preparado no dia da cerimônia com flores frescas selecionadas — entregamos no local ou em nossa casa do Jd. Esplanada.",
+    texto: "Buquê preparado no dia da cerimônia — entregamos no local ou em nossa casa do Jd. Esplanada.",
   },
 ]
+
+function formatPrice(p: number) {
+  return p.toLocaleString("pt-BR", { minimumFractionDigits: 0, maximumFractionDigits: 0 })
+}
 
 export default function BuquesNoivaPage() {
   return (
@@ -102,7 +130,7 @@ export default function BuquesNoivaPage() {
           <div className="absolute inset-0 overflow-hidden">
             <div className="bg-drift absolute inset-0">
               <Image
-                src="/images/buques/hero-buques.jpg"
+                src="/images/buques-noiva/hero-buques.webp"
                 alt="Buquês de noiva Lady Laura Atelier"
                 fill
                 className="object-cover"
@@ -159,84 +187,133 @@ export default function BuquesNoivaPage() {
                 Os buquês de noiva Lady Laura são criados sob medida, alinhando a estética do vestido, o estilo do casamento e a personalidade de cada noiva.
               </p>
               <p>
-                Trabalhamos com flores nobres, selecionadas a cada estação, sempre com o cuidado e a delicadeza que o seu dia merece — do civil à grande cerimônia.
+                Quatro composições principais, todas com paleta de cores à escolha — do civil ao grande casamento.
               </p>
             </div>
           </div>
         </section>
 
-        {/* ── Estilos ── */}
+        {/* ── Buquês (4 sizes) ── */}
         <section className="relative bg-white py-28 overflow-hidden">
           <div className="absolute -top-40 -left-40 w-80 h-80 bg-rose-pale/60 rounded-full blur-[100px] pointer-events-none" />
           <div className="absolute -bottom-32 -right-24 w-72 h-72 bg-rose/15 rounded-full blur-[100px] pointer-events-none blob-pulse" />
 
           <div className="max-w-7xl mx-auto px-6">
-            <div className="reveal mb-14 text-center">
-              <p className="text-[0.65rem] tracking-[0.4em] uppercase text-rose-dark font-sans font-medium mb-3">Nos Styles</p>
-              <h2 className="font-serif text-2xl md:text-4xl text-primary mb-5">Estilos de Buquê</h2>
+            <div className="reveal mb-16 text-center">
+              <p className="text-[0.65rem] tracking-[0.4em] uppercase text-rose-dark font-sans font-medium mb-3">Nos Compositions</p>
+              <h2 className="font-serif text-3xl md:text-5xl text-primary mb-5">Quatro tamanhos, infinitas possibilidades</h2>
               <div className="ornament mb-5">
                 <svg className="w-2.5 h-2.5 text-rose-dark/40" viewBox="0 0 12 12" fill="currentColor">
                   <path d="M6 0L7.5 4.5L12 6L7.5 7.5L6 12L4.5 7.5L0 6L4.5 4.5Z" />
                 </svg>
               </div>
               <p className="text-ink-2 font-sans leading-relaxed max-w-xl mx-auto">
-                Formatos e composições para cada estilo de noiva — todos personalizáveis com a sua paleta preferida.
+                Do clássico ao imponente — composições pensadas para cada estilo de cerimônia.
               </p>
             </div>
 
-            <div className="reveal">
-              <HorizontalScroll>
-                {estilos.map((e) => (
+            <div className="space-y-24">
+              {buques.map((b, i) => {
+                const reverse = i % 2 === 1
+                return (
                   <div
-                    key={e.nome}
-                    className="card-lift flex-none w-64 sm:w-72 bg-white border border-rose/10 rounded-[1.5rem] overflow-hidden shadow-sm shadow-rose/5 flex flex-col group"
+                    key={b.nome}
+                    className="reveal grid lg:grid-cols-12 gap-8 lg:gap-12 items-center"
                   >
-                    <div className="relative aspect-[3/4] overflow-hidden bg-rose-pale img-hover">
-                      <Image
-                        src={e.foto}
-                        alt={e.nome}
-                        fill
-                        className="object-cover"
-                        sizes="400px"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-rose-deep/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <div className="absolute bottom-0 inset-x-0 p-5 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                        <a
-                          href={`${wppBase}${encodeURIComponent(`Olá! Gostaria de saber mais sobre o ${e.nome}.`)}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-shine block text-center text-[0.65rem] tracking-[0.15em] uppercase text-white bg-rose-dark/90 backdrop-blur-sm rounded-full px-5 py-3 hover:bg-rose-deep transition-colors duration-300 font-sans font-medium shadow-lg"
-                        >
-                          Consultar via WhatsApp
-                        </a>
+                    {/* Galeria de fotos */}
+                    <div className={`lg:col-span-7 ${reverse ? 'lg:order-2' : ''}`}>
+                      <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
+                        {/* Foto principal */}
+                        <div className="md:col-span-12 relative aspect-[4/5] sm:aspect-[16/11] rounded-[2rem] overflow-hidden shadow-xl shadow-rose/15 img-hover group">
+                          <Image
+                            src={b.fotoPrincipal}
+                            alt={`${b.tipo} ${b.nome}`}
+                            fill
+                            priority={i === 0}
+                            className="object-cover"
+                            sizes="(max-width: 1024px) 100vw, 60vw"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                          {/* Price pill */}
+                          <div className="absolute top-5 right-5 backdrop-blur-md bg-white/80 border border-white/40 rounded-full px-5 py-2.5 shadow-lg shadow-black/10">
+                            <p className="text-[0.55rem] tracking-[0.3em] uppercase text-rose-dark/70 font-sans font-medium">A partir de</p>
+                            <p className="font-serif text-xl text-primary leading-tight">R$ {formatPrice(b.preco)}</p>
+                          </div>
+                        </div>
+
+                        {/* Thumbnails */}
+                        {b.galeria.map((foto, j) => (
+                          <div
+                            key={j}
+                            className={`relative aspect-square md:aspect-[4/5] rounded-[1.25rem] overflow-hidden shadow-md shadow-rose/10 img-hover group ${
+                              b.galeria.length === 3
+                                ? 'md:col-span-4'
+                                : 'md:col-span-6'
+                            }`}
+                          >
+                            <Image
+                              src={foto}
+                              alt={`${b.nome} detalhe ${j + 1}`}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 768px) 100vw, 30vw"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                          </div>
+                        ))}
                       </div>
                     </div>
-                    <div className="p-5 flex flex-col flex-1">
-                      <h4 className="font-serif text-lg text-primary mb-1">{e.nome}</h4>
-                      <p className="text-[0.6rem] tracking-[0.2em] uppercase text-rose-dark font-sans mb-3">{e.sub}</p>
-                      <p className="text-ink-3 text-sm font-sans leading-relaxed mb-2">{e.descricao}</p>
-                      <div className="mt-auto pt-5 border-t border-rose/10">
-                        <a
-                          href={`${wppBase}${encodeURIComponent(`Olá! Gostaria de saber mais sobre o ${e.nome}.`)}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-[0.65rem] tracking-[0.15em] uppercase text-rose-dark font-sans font-medium group-hover:gap-3 transition-all duration-400"
-                        >
-                          Consultar
-                          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                          </svg>
-                        </a>
+
+                    {/* Info */}
+                    <div className={`lg:col-span-5 ${reverse ? 'lg:order-1' : ''}`}>
+                      <p className="text-[0.6rem] tracking-[0.4em] uppercase text-rose-dark font-sans font-medium mb-3">{b.tipo}</p>
+                      <h3 className="font-serif text-4xl md:text-5xl text-primary mb-4 italic">{b.nome}</h3>
+                      <div className="w-12 h-px bg-rose-dark/40 mb-6" />
+
+                      <p className="text-ink-2 font-sans text-[0.95rem] leading-[1.8] mb-7">
+                        {b.descricao}
+                      </p>
+
+                      <div className="space-y-4 mb-8 pb-8 border-b border-rose/10">
+                        <div className="flex items-baseline justify-between gap-4">
+                          <span className="text-[0.6rem] tracking-[0.25em] uppercase text-ink-3 font-sans">Composição</span>
+                          <span className="text-sm text-primary font-sans font-medium text-right">{b.composicao}</span>
+                        </div>
+                        <div className="flex items-baseline justify-between gap-4">
+                          <span className="text-[0.6rem] tracking-[0.25em] uppercase text-ink-3 font-sans">Hastes</span>
+                          <span className="text-sm text-primary font-sans font-medium text-right">{b.detalhes}</span>
+                        </div>
+                        <div className="flex items-baseline justify-between gap-4">
+                          <span className="text-[0.6rem] tracking-[0.25em] uppercase text-ink-3 font-sans">Paleta</span>
+                          <span className="text-sm text-primary font-sans font-medium text-right">{b.paleta}</span>
+                        </div>
+                        <div className="flex items-baseline justify-between gap-4">
+                          <span className="text-[0.6rem] tracking-[0.25em] uppercase text-ink-3 font-sans">Valor</span>
+                          <span className="text-2xl font-serif text-rose-dark text-right">R$ {formatPrice(b.preco)}</span>
+                        </div>
                       </div>
+
+                      <a
+                        href={`${wppBase}${encodeURIComponent(`Olá! Gostaria de orçar o Buquê ${b.nome} (${b.tipo}).`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-shine inline-flex items-center gap-3 bg-rose-dark text-white font-sans font-medium text-[0.7rem] tracking-[0.15em] uppercase px-8 py-4 rounded-full hover:bg-rose-deep hover:scale-[1.02] transition-all duration-300 shadow-lg shadow-rose-dark/20"
+                      >
+                        Orçar este buquê
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </a>
                     </div>
                   </div>
-                ))}
-              </HorizontalScroll>
+                )
+              })}
             </div>
           </div>
         </section>
 
-        {/* ── Galeria ── */}
+        {/* ── Galeria geral ── */}
         <section className="relative py-28 overflow-hidden">
           <div className="absolute -top-32 right-0 w-[400px] h-[400px] bg-rose-pale/40 rounded-full blur-[120px] pointer-events-none blob-pulse" />
 
@@ -252,12 +329,12 @@ export default function BuquesNoivaPage() {
                 <div className="w-12 h-px bg-gradient-to-l from-transparent to-rose-dark/40" />
               </div>
               <p className="text-ink-2 font-sans leading-relaxed max-w-xl mx-auto">
-                Uma seleção de composições florais assinadas Lady Laura — cada buquê é único e feito sob medida.
+                Uma seleção de composições assinadas Lady Laura — cada buquê é único e feito sob medida.
               </p>
             </div>
 
             <div className="reveal grid grid-cols-2 md:grid-cols-3 gap-4">
-              {galeria.map((foto, i) => (
+              {galeriaGeral.map((foto, i) => (
                 <div
                   key={i}
                   className="relative aspect-[3/4] rounded-[1.5rem] overflow-hidden img-hover shadow-sm shadow-rose/10 group"
@@ -276,8 +353,41 @@ export default function BuquesNoivaPage() {
           </div>
         </section>
 
-        {/* ── Como encomendar ── */}
+        {/* ── Cuidados / Atenção ── */}
         <section className="relative bg-white py-24 overflow-hidden">
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[500px] h-[500px] rounded-full bg-gold-pale/40 blur-3xl pointer-events-none -translate-y-1/2" />
+
+          <div className="max-w-5xl mx-auto px-6 relative">
+            <div className="reveal text-center mb-12">
+              <p className="text-[0.65rem] tracking-[0.4em] uppercase text-rose-dark font-sans font-medium mb-3">Atenção</p>
+              <h2 className="font-serif text-3xl md:text-4xl text-primary mb-4">Cuidados & sazonalidade</h2>
+              <div className="flex items-center justify-center gap-4">
+                <div className="w-12 h-px bg-gradient-to-r from-transparent to-rose-dark/40" />
+                <svg className="w-2.5 h-2.5 text-rose-dark/40" viewBox="0 0 12 12" fill="currentColor">
+                  <path d="M6 0L7.5 4.5L12 6L7.5 7.5L6 12L4.5 7.5L0 6L4.5 4.5Z" />
+                </svg>
+                <div className="w-12 h-px bg-gradient-to-l from-transparent to-rose-dark/40" />
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-5">
+              {cuidados.map((c, i) => (
+                <div
+                  key={c.titulo}
+                  className="reveal card-lift relative bg-base/60 backdrop-blur-sm border border-rose/15 rounded-[1.5rem] p-7 hover:border-rose-dark/30 hover:shadow-xl hover:shadow-rose/15 transition-all duration-500"
+                  style={{ transitionDelay: `${i * 0.08}s` }}
+                >
+                  <p className="text-[0.6rem] tracking-[0.3em] uppercase text-rose-dark font-sans font-semibold mb-3">{c.titulo}</p>
+                  <div className="w-8 h-px bg-rose-dark/30 mb-4" />
+                  <p className="text-ink-2 text-sm font-sans leading-[1.7]">{c.texto}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Como encomendar ── */}
+        <section className="relative py-24 overflow-hidden">
           <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-rose/15 via-rose-pale/20 to-transparent blur-3xl pointer-events-none blob-pulse opacity-40" />
 
           <div className="max-w-5xl mx-auto px-6 relative z-10">
@@ -296,19 +406,15 @@ export default function BuquesNoivaPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {comoEncomendar.map((c, i) => {
                 const icons = [
-                  // Consulta — chat
                   <svg key="i" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
                   </svg>,
-                  // Projeto sob medida — pencil
                   <svg key="i" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                   </svg>,
-                  // Antecedência — calendar
                   <svg key="i" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
                   </svg>,
-                  // Entrega & retirada — pin
                   <svg key="i" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />

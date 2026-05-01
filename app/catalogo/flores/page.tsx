@@ -92,9 +92,9 @@ function FlowerCard({ nome, sub, descricao, observacao, wppMsg, image }: {
 
 function GiftCard({ nome, itens, image, observacao }: { nome: string; itens: string[]; image: string; observacao?: string }) {
   return (
-    <div className="card-lift flex-none w-[18rem] bg-white border border-rose/15 rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl hover:shadow-rose/12 transition-all duration-500 flex flex-col group">
-      <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-rose-pale to-rose-bg">
-        <Image src={image} alt={nome} fill className="object-cover group-hover:scale-[1.08] transition-transform duration-700" sizes="300px" />
+    <div className="card-lift flex-none w-[18rem] bg-white border border-rose/10 rounded-[2rem] overflow-hidden shadow-sm shadow-rose/8 hover:shadow-2xl hover:shadow-rose/15 transition-all duration-500 flex flex-col group">
+      <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-rose-pale to-rose-bg">
+        <Image src={image} alt={nome} fill className="object-cover group-hover:scale-[1.06] transition-transform duration-700" sizes="300px" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
       <div className="p-5 flex flex-col flex-1">
@@ -460,8 +460,8 @@ export default function FloresPage() {
               <HorizontalScroll>
                 {latinhasEChocolates.map((p) => (
                   <div key={p.nome} className="card-lift flex-none w-64 bg-base border border-rose/15 rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl hover:shadow-rose/12 transition-all duration-500 flex flex-col group">
-                    <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-rose-pale to-rose-bg">
-                      <Image src={p.foto} alt={p.nome} fill className="object-cover group-hover:scale-[1.08] transition-transform duration-700" sizes="260px" />
+                    <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-rose-pale to-rose-bg">
+                      <Image src={p.foto} alt={p.nome} fill className="object-cover group-hover:scale-[1.06] transition-transform duration-700" sizes="260px" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
                     <div className="p-5 flex flex-col flex-1">
@@ -509,8 +509,8 @@ export default function FloresPage() {
               <HorizontalScroll>
                 {linhaHome.produtos.map((p) => (
                   <div key={p.nome + p.descricao} className="card-lift flex-none w-64 bg-base border border-rose/15 rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl hover:shadow-rose/12 transition-all duration-500 flex flex-col group">
-                    <div className="relative w-full aspect-[4/3] overflow-hidden bg-gradient-to-br from-rose-pale via-nude-light to-gold-pale">
-                      <Image src={p.foto} alt={p.nome} fill className="object-cover group-hover:scale-[1.08] transition-transform duration-700" sizes="260px" />
+                    <div className="relative w-full aspect-[4/5] overflow-hidden bg-gradient-to-br from-rose-pale via-nude-light to-gold-pale">
+                      <Image src={p.foto} alt={p.nome} fill className="object-cover group-hover:scale-[1.06] transition-transform duration-700" sizes="260px" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
                     <div className="p-5 flex flex-col flex-1">

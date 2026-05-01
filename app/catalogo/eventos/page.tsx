@@ -4,20 +4,20 @@ import { siteConfig } from "@/lib/data"
 import Nav from "@/components/Nav"
 import Footer from "@/components/Footer"
 import RevealInit from "@/components/RevealInit"
+import EventoFormatoCard, { type EventoFormato } from "@/components/EventoFormatoCard"
 
 const wppBase = `https://wa.me/${siteConfig.whatsapp}?text=`
 
-function DiamondBullet({ gold }: { gold?: boolean }) {
-  return (
-    <span className={`mt-1.5 shrink-0 text-[0.45rem] ${gold ? 'text-gold-warm/60' : 'text-rose-dark/50'}`}>&#9670;</span>
-  )
-}
-
-const eventos = [
+const eventos: EventoFormato[] = [
   {
     nome: 'Petit Comité',
     subtitulo: 'Reserva especial',
     capacidade: 'Até 10 pessoas',
+    fotos: [
+      '/images/eventos/petit-comite.webp',
+      '/images/eventos/petit-comite-1.webp',
+      '/images/eventos/petit-comite-2.webp',
+    ],
     itens: [
       '1 Torta ou Bolo Sweet Home',
       '1 Arranjo Floral em cristal',
@@ -27,8 +27,8 @@ const eventos = [
     ],
     infos: [
       { label: 'Duração', value: '3 horas' },
-      { label: 'Dias', value: 'Segunda a domingo' },
-      { label: 'Pagamento', value: '100% via PIX' },
+      { label: 'Dias', value: 'Seg a Dom' },
+      { label: 'Pagamento', value: '100% PIX' },
     ],
     cta: 'Reservar Petit Comité',
     wppMsg: 'Olá! Gostaria de reservar o Petit Comité.',
@@ -38,6 +38,12 @@ const eventos = [
     nome: 'Petit Jardin',
     subtitulo: 'Jardim exclusivo',
     capacidade: 'Até 40 pessoas',
+    fotos: [
+      '/images/eventos/petit-jardin.jpg',
+      '/images/eventos/petit-jardin-1.webp',
+      '/images/eventos/petit-jardin-2.jpg',
+      '/images/eventos/petit-jardin-3.webp',
+    ],
     itens: [
       'Menu de brunch completo',
       'Valet',
@@ -47,7 +53,7 @@ const eventos = [
     ],
     infos: [
       { label: 'Duração', value: '4 horas' },
-      { label: 'Menu', value: 'Brunch completo' },
+      { label: 'Menu', value: 'Brunch' },
       { label: 'Pagamento', value: 'Consulte' },
     ],
     nota: 'Jardim ao ar livre — possível realocação para o deck em caso de chuva.',
@@ -59,6 +65,13 @@ const eventos = [
     nome: 'Grand Royale',
     subtitulo: 'Casa exclusiva',
     capacidade: 'Até 55 pessoas',
+    fotos: [
+      '/images/eventos/grand-royale.jpg',
+      '/images/eventos/grand-royale-1.jpg',
+      '/images/eventos/grand-royale-2.jpg',
+      '/images/eventos/grand-royale-3.jpg',
+      '/images/eventos/grand-royale-4.jpg',
+    ],
     itens: [
       'Casa inteira exclusiva',
       'Menu completo + bebidas',
@@ -69,7 +82,7 @@ const eventos = [
     ],
     infos: [
       { label: 'Duração', value: '4 horas' },
-      { label: 'Menu', value: 'Jantar completo' },
+      { label: 'Menu', value: 'Jantar' },
       { label: 'Pagamento', value: 'Consulte' },
     ],
     cta: 'Solicitar proposta',
@@ -288,77 +301,15 @@ export default function EventosPage() {
               <p className="text-ink-2 font-sans italic text-base max-w-xl mx-auto">Para realização do seu evento em nossa casa do Jd. Esplanada.</p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {eventos.map((ev, i) => {
-                const isGold = ev.accent === 'gold'
-                const borderColor = isGold ? 'border-gold-warm/20' : 'border-rose/15'
-                const accentText = isGold ? 'text-gold-warm' : ev.accent === 'olive' ? 'text-olive' : 'text-rose-dark'
-                const accentBg = isGold ? 'bg-gold-warm' : 'bg-rose-dark'
-                const accentHover = isGold ? 'hover:bg-gold-light' : 'hover:bg-rose-deep'
-                const headerBg = isGold
-                  ? 'bg-gradient-to-br from-primary via-chocolate to-chocolate-dark'
-                  : ev.accent === 'olive'
-                    ? 'bg-gradient-to-br from-olive-light/15 via-rose-pale/40 to-cream'
-                    : 'bg-gradient-to-br from-rose/20 via-rose-pale/50 to-cream'
-                const headerText = isGold ? 'text-gold-warm' : 'text-rose-dark'
-                const headerSubtext = isGold ? 'text-white/50' : 'text-ink-3'
-                const bulletGold = isGold
-
-                return (
-                  <div
-                    key={ev.nome}
-                    className={`reveal card-lift rounded-[2rem] overflow-hidden border ${borderColor} ${isGold ? 'bg-primary' : 'bg-white'} flex flex-col shadow-sm hover:shadow-xl transition-all duration-500`}
-                    style={{ transitionDelay: `${i * 0.1}s` }}
-                  >
-                    {/* Header */}
-                    <div className={`${headerBg} px-8 py-8 border-b ${isGold ? 'border-white/10' : 'border-rose/10'}`}>
-                      <p className={`text-[0.55rem] tracking-[0.35em] uppercase ${isGold ? 'text-gold-warm/70' : `${accentText}/70`} font-sans font-medium mb-2`}>{ev.subtitulo}</p>
-                      <h3 className={`font-serif text-3xl ${headerText}`}>{ev.nome}</h3>
-                      <p className={`text-[0.6rem] tracking-[0.2em] uppercase ${headerSubtext} font-sans mt-2`}>{ev.capacidade}</p>
-                    </div>
-
-                    {/* Items */}
-                    <div className={`px-8 py-7 flex-1 ${isGold ? '' : ''}`}>
-                      <p className={`text-[0.55rem] tracking-[0.25em] uppercase ${isGold ? 'text-gold-warm/60' : 'text-ink-3'} font-sans font-medium mb-4`}>Incluso</p>
-                      <ul className={`space-y-2.5 ${isGold ? 'text-white/60' : 'text-ink-2'} text-sm font-sans`}>
-                        {ev.itens.map((item) => (
-                          <li key={item} className="flex items-start gap-3">
-                            <DiamondBullet gold={bulletGold} />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-
-                      {ev.nota && (
-                        <p className={`mt-5 text-xs italic font-sans leading-relaxed ${isGold ? 'text-white/35' : 'text-ink-4'} border-t ${isGold ? 'border-white/10' : 'border-rose/10'} pt-4`}>
-                          {ev.nota}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Info + CTA */}
-                    <div className={`px-8 pb-8`}>
-                      <div className={`space-y-3 mb-6 pb-6 border-b ${isGold ? 'border-white/10' : 'border-rose/8'}`}>
-                        {ev.infos.map((info) => (
-                          <div key={info.label} className="flex items-center justify-between">
-                            <span className={`text-[0.55rem] tracking-[0.12em] uppercase ${isGold ? 'text-gold-warm/50' : 'text-ink-3'} font-sans`}>{info.label}</span>
-                            <span className={`text-sm font-sans font-medium ${isGold ? 'text-white/70' : 'text-primary'}`}>{info.value}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      <a
-                        href={`${wppBase}${encodeURIComponent(ev.wppMsg)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`btn-shine block text-center ${accentBg} ${isGold ? 'text-primary font-semibold' : 'text-white font-medium'} font-sans text-[0.7rem] tracking-[0.14em] uppercase px-6 py-4 rounded-full ${accentHover} transition-all hover:scale-[1.02] shadow-lg ${isGold ? 'shadow-gold-warm/20' : 'shadow-rose-dark/15'}`}
-                      >
-                        {ev.cta}
-                      </a>
-                    </div>
-                  </div>
-                )
-              })}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+              {eventos.map((ev, i) => (
+                <EventoFormatoCard
+                  key={ev.nome}
+                  formato={ev}
+                  wppBase={wppBase}
+                  delay={i * 0.1}
+                />
+              ))}
             </div>
           </div>
         </section>
