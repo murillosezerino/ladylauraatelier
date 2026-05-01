@@ -26,35 +26,74 @@ function SectionHeader({ label, title, desc }: { label: string; title: string; d
   )
 }
 
-function KitCard({ kit }: { kit: { nome: string; itens: string[]; foto: string; observacao?: string } }) {
-  return (
-    <div className="card-lift flex-none w-[18rem] bg-white border border-rose/10 rounded-[2rem] overflow-hidden shadow-sm shadow-rose/8 hover:shadow-2xl hover:shadow-rose/15 transition-all duration-500 flex flex-col group">
-      <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-rose-pale to-rose-bg">
-        <Image src={kit.foto} alt={kit.nome} fill className="object-cover group-hover:scale-[1.06] transition-transform duration-700" sizes="300px" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-          <a href={`${wppBase}${encodeURIComponent(`Ola! Gostaria de encomendar o ${kit.nome}.`)}`}
-            target="_blank" rel="noopener noreferrer"
-            className="btn-shine block text-center text-[0.65rem] tracking-[0.12em] uppercase bg-white/95 text-rose-dark rounded-full px-4 py-2.5 font-sans font-medium backdrop-blur-sm">
-            Consultar
-          </a>
-        </div>
+function formatPrice(p: number) {
+  return p.toLocaleString("pt-BR", { minimumFractionDigits: p % 1 === 0 ? 0 : 2, maximumFractionDigits: 2 })
+}
+
+function PricePill({ preco }: { preco?: number | null }) {
+  if (preco == null) {
+    return (
+      <div className="absolute top-4 right-4 backdrop-blur-md bg-white/85 border border-white/40 rounded-full px-4 py-2 shadow-lg shadow-black/10">
+        <p className="text-[0.55rem] tracking-[0.25em] uppercase text-rose-dark font-sans font-medium leading-tight whitespace-nowrap">Sob consulta</p>
       </div>
-      <div className="p-5 flex flex-col flex-1">
-        <h4 className="font-serif text-lg text-primary mb-3">{kit.nome}</h4>
+    )
+  }
+  return (
+    <div className="absolute top-4 right-4 backdrop-blur-md bg-white/85 border border-white/40 rounded-full px-4 py-2 shadow-lg shadow-black/10">
+      <p className="font-serif text-base text-primary leading-tight whitespace-nowrap">R$ {formatPrice(preco)}</p>
+    </div>
+  )
+}
+
+function KitCard({ kit }: { kit: { nome: string; itens: string[]; foto: string; preco?: number | null; observacao?: string } }) {
+  return (
+    <div className="card-lift flex-none w-[20rem] bg-white border border-rose/10 rounded-[2rem] overflow-hidden shadow-sm shadow-rose/8 hover:shadow-2xl hover:shadow-rose/15 transition-all duration-500 flex flex-col group">
+      <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-rose-pale to-rose-bg">
+        <Image src={kit.foto} alt={kit.nome} fill className="object-cover group-hover:scale-[1.04] transition-transform duration-700" sizes="320px" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <PricePill preco={kit.preco} />
+      </div>
+      <div className="p-6 flex flex-col flex-1">
+        <h4 className="font-serif text-2xl text-primary mb-1 italic">{kit.nome}</h4>
+        <div className="w-10 h-px bg-rose-dark/40 mb-4" />
+        <p className="text-[0.55rem] tracking-[0.3em] uppercase text-rose-dark font-sans font-medium mb-3">Incluso</p>
         <ul className="space-y-1.5 mb-4 flex-1">
           {kit.itens.map((item, i) => (
-            <li key={i} className="flex items-start gap-2 text-sm text-ink-2 font-sans">
-              <span className="text-rose-dark mt-1 shrink-0 text-[0.5rem]">&#9670;</span>
+            <li key={i} className="flex items-start gap-2 text-sm text-ink-2 font-sans leading-relaxed">
+              <span className="text-rose-dark/60 mt-1.5 shrink-0 text-[0.5rem]">&#9670;</span>
               <span>{item}</span>
             </li>
           ))}
         </ul>
-        {kit.observacao && <p className="text-ink-4 text-xs italic font-sans mb-3">{kit.observacao}</p>}
-        <div className="mt-auto pt-4 border-t border-rose/10">
+        {kit.observacao && <p className="text-ink-4 text-xs italic font-sans mb-3 pt-3 border-t border-rose/10">{kit.observacao}</p>}
+        <div className="mt-auto pt-5">
           <a href={`${wppBase}${encodeURIComponent(`Ola! Gostaria de encomendar o ${kit.nome}.`)}`}
             target="_blank" rel="noopener noreferrer"
-            className="btn-shine block text-center text-[0.7rem] tracking-[0.12em] uppercase text-rose-dark border border-rose/30 rounded-full px-4 py-2.5 hover:bg-rose-dark hover:text-white hover:border-rose-dark transition-all duration-300 font-sans font-medium">
+            className="btn-shine block text-center bg-rose-dark text-white text-[0.65rem] tracking-[0.18em] uppercase font-sans font-medium px-6 py-3 rounded-full hover:bg-rose-deep transition-all duration-300 shadow-md shadow-rose-dark/15">
+            Consultar
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function PieceCard({ p }: { p: { nome: string; descricao?: string | null; foto: string; preco?: number | null } }) {
+  return (
+    <div className="card-lift flex-none w-72 bg-white border border-rose/10 rounded-[2rem] overflow-hidden shadow-sm shadow-rose/8 hover:shadow-2xl hover:shadow-rose/15 transition-all duration-500 flex flex-col group">
+      <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-rose-pale to-rose-bg">
+        <Image src={p.foto} alt={p.nome} fill className="object-cover group-hover:scale-[1.04] transition-transform duration-700" sizes="280px" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <PricePill preco={p.preco} />
+      </div>
+      <div className="p-6 flex flex-col flex-1">
+        <h4 className="font-serif text-xl text-primary mb-1 italic">{p.nome}</h4>
+        <div className="w-10 h-px bg-rose-dark/40 mb-4" />
+        {p.descricao && <p className="text-ink-2 text-sm font-sans leading-[1.7] mb-3 flex-1">{p.descricao}</p>}
+        <div className="mt-auto pt-5">
+          <a href={`${wppBase}${encodeURIComponent(`Ola! Gostaria de encomendar: ${p.nome}.`)}`}
+            target="_blank" rel="noopener noreferrer"
+            className="btn-shine block text-center bg-rose-dark text-white text-[0.65rem] tracking-[0.18em] uppercase font-sans font-medium px-6 py-3 rounded-full hover:bg-rose-deep transition-all duration-300 shadow-md shadow-rose-dark/15">
             Consultar
           </a>
         </div>
@@ -136,23 +175,7 @@ export default function KitsPage() {
             <SectionHeader label="Pi\u00e8ces Individuelles" title="Latinhas, Chocolates & Doces" desc="Pe\u00e7as avulsas para montar o seu presente perfeito." />
             <HorizontalScroll>
               {latinhasEChocolates.map((p) => (
-                <div key={p.nome} className="card-lift flex-none w-64 bg-base border border-rose/15 rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl hover:shadow-rose/12 transition-all duration-500 flex flex-col group">
-                  <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-rose-pale to-rose-bg">
-                    <Image src={p.foto} alt={p.nome} fill className="object-cover group-hover:scale-[1.06] transition-transform duration-700" sizes="260px" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  </div>
-                  <div className="p-5 flex flex-col flex-1">
-                    <h4 className="font-serif text-base text-primary mb-1">{p.nome}</h4>
-                    {p.descricao && <p className="text-ink-3 text-sm font-sans leading-relaxed mb-3 flex-1">{p.descricao}</p>}
-                    <div className="mt-auto pt-3 border-t border-rose/10">
-                      <a href={`${wppBase}${encodeURIComponent(`Ola! Gostaria de encomendar: ${p.nome}.`)}`}
-                        target="_blank" rel="noopener noreferrer"
-                        className="btn-shine block text-center text-[0.65rem] tracking-[0.12em] uppercase text-white bg-rose-dark rounded-full px-4 py-2.5 hover:bg-rose-deep transition-all duration-300 font-sans font-medium">
-                        Consultar valores
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <PieceCard key={p.nome} p={p} />
               ))}
             </HorizontalScroll>
           </div>
@@ -176,23 +199,7 @@ export default function KitsPage() {
 
           <HorizontalScroll>
             {linhaHome.produtos.map((p) => (
-              <div key={p.nome + p.descricao} className="card-lift flex-none w-64 bg-white border border-rose/15 rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl hover:shadow-rose/12 transition-all duration-500 flex flex-col group">
-                <div className="relative w-full aspect-[4/5] overflow-hidden bg-gradient-to-br from-rose-pale via-nude-light to-gold-pale">
-                  <Image src={p.foto} alt={p.nome} fill className="object-cover group-hover:scale-[1.06] transition-transform duration-700" sizes="260px" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <h4 className="font-serif text-base text-primary mb-1">{p.nome}</h4>
-                  <p className="text-ink-3 text-sm font-sans mb-4 flex-1">{p.descricao}</p>
-                  <div className="pt-3 border-t border-rose/10">
-                    <a href={`${wppBase}${encodeURIComponent(`Ola! Gostaria de encomendar: ${p.nome} — ${p.descricao}.`)}`}
-                      target="_blank" rel="noopener noreferrer"
-                      className="btn-shine block text-center text-[0.65rem] tracking-[0.12em] uppercase text-white bg-rose-dark rounded-full px-4 py-2.5 hover:bg-rose-deep transition-all duration-300 font-sans font-medium">
-                      Consultar valores
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <PieceCard key={p.nome + p.descricao} p={p} />
             ))}
           </HorizontalScroll>
         </section>
