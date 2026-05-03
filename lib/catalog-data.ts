@@ -355,7 +355,7 @@ export const kitsData = {
     { nome: "Barras Recheadas",     descricao: "Feitas com chocolate Belga. Consulte os sabores do dia.",                                  preco: 69,   foto: "/images/doces/barras-recheadas.jpg" },
     { nome: "Tablete de Chocolate Belga", descricao: null,                                                                                preco: 34,   foto: "/images/doces/tablete-chocolate-belga.jpg" },
     { nome: "Caixa de Brigadeiros", descricao: "4 und R$31 · 8 und R$62 · 15 und R$115",                                                  preco: 31,   foto: "/images/doces/caixa-brigadeiros.webp" },
-    { nome: "Caixa de Macarons",    descricao: "5 und R$47 · 8 und R$76 · 15 und R$143",                                                  preco: 47,   foto: "/images/macarons/caixa-macarons.jpg" },
+    { nome: "Caixa de Macarons",    descricao: "5 und R$47 · 8 und R$76 · 15 und R$143",                                                  preco: 47,   foto: "/images/macarons/macarons-caixa-rosa.webp" },
     { nome: "Caixa de Trufas",      descricao: "4 und R$38 · 8 und R$76 · 15 und R$143 · *produto sazonal, consulte disponibilidade",     preco: 38,   foto: "/images/doces/caixa-trufas.jpg" },
   ],
 

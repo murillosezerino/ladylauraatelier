@@ -59,9 +59,8 @@ const buques = [
     composicao: "Mix de Flores Nobres",
     detalhes: "38 hastes de flores nobres + folhagens",
     paleta: "Paleta de cores à escolha",
-    fotoPrincipal: "/images/buques-noiva/monet-1.webp",
+    fotoPrincipal: "/images/buques-noiva/monet-2.webp",
     galeria: [
-      "/images/buques-noiva/monet-2.webp",
       "/images/buques-noiva/monet-3.webp",
     ],
     descricao: "O statement piece — composição imponente para grandes celebrações e cerimônias formais.",
