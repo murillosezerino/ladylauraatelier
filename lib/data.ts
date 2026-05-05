@@ -98,7 +98,7 @@ export const featuredProducts = [
   {
     name: 'Macarons Artesanais',
     description: 'Dezenas de sabores preparados com técnica francesa. Perfeitos para presentes, eventos e mesas de doces.',
-    image: '/images/doces/doces-7.webp',
+    image: '/images/macarons/galeria-1.webp',
     whatsappMsg: 'Olá! Gostaria de saber mais sobre os macarons artesanais.',
   },
   {
@@ -110,7 +110,7 @@ export const featuredProducts = [
   {
     name: 'Mesa de Doces',
     description: 'Montagem completa para casamentos e eventos: profiteroles, éclairs, mille-feuille, pavlovas e mais.',
-    image: '/images/confeitaria/mesa-doces-evento.jpg',
+    image: '/images/eventos/mesa-doces-1.webp',
     whatsappMsg: 'Olá! Gostaria de solicitar orçamento para mesa de doces.',
   },
 ]
